@@ -24,7 +24,7 @@
 <meta name="author" content="The R4DS Online Learning Community" />
 
 
-<meta name="date" content="2021-07-19" />
+<meta name="date" content="2021-07-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -412,7 +412,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>We’re interested in how many accidents related to toilets we see for different locations, body parts and diagnosis.</p>
 <div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="exploration.html#cb34-1"></a>selected <span class="op">%&gt;%</span></span>
 <span id="cb34-2"><a href="exploration.html#cb34-2"></a><span class="st">  </span><span class="kw">count</span>(location, <span class="dt">wt =</span> weight, <span class="dt">sort =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
-<pre><code>## # A tibble: 6 x 2
+<pre><code>## # A tibble: 6 × 2
 ##   location                         n
 ##   &lt;chr&gt;                        &lt;dbl&gt;
 ## 1 Home                       99603. 
@@ -423,7 +423,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 6 Sports Or Recreation Place    14.8</code></pre>
 <div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="exploration.html#cb36-1"></a>selected <span class="op">%&gt;%</span></span>
 <span id="cb36-2"><a href="exploration.html#cb36-2"></a><span class="st">  </span><span class="kw">count</span>(body_part, <span class="dt">wt =</span> weight, <span class="dt">sort =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
-<pre><code>## # A tibble: 24 x 2
+<pre><code>## # A tibble: 24 × 2
 ##    body_part        n
 ##    &lt;chr&gt;        &lt;dbl&gt;
 ##  1 Head        31370.
@@ -439,7 +439,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## # … with 14 more rows</code></pre>
 <div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="exploration.html#cb38-1"></a>selected <span class="op">%&gt;%</span></span>
 <span id="cb38-2"><a href="exploration.html#cb38-2"></a><span class="st">  </span><span class="kw">count</span>(diag, <span class="dt">wt =</span> weight, <span class="dt">sort =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
-<pre><code>## # A tibble: 20 x 2
+<pre><code>## # A tibble: 20 × 2
 ##    diag                        n
 ##    &lt;chr&gt;                   &lt;dbl&gt;
 ##  1 Other Or Not Stated   32897. 

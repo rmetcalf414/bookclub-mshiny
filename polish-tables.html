@@ -24,7 +24,7 @@
 <meta name="author" content="The R4DS Online Learning Community" />
 
 
-<meta name="date" content="2021-07-19" />
+<meta name="date" content="2021-07-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -407,7 +407,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb43-2"><a href="polish-tables.html#cb43-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">diag =</span> <span class="kw">fct_lump</span>(<span class="kw">fct_infreq</span>(diag), <span class="dt">n =</span> <span class="dv">5</span>)) <span class="op">%&gt;%</span></span>
 <span id="cb43-3"><a href="polish-tables.html#cb43-3"></a><span class="st">  </span><span class="kw">group_by</span>(diag) <span class="op">%&gt;%</span></span>
 <span id="cb43-4"><a href="polish-tables.html#cb43-4"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">n =</span> <span class="kw">as.integer</span>(<span class="kw">sum</span>(weight)))</span></code></pre></div>
-<pre><code>## # A tibble: 6 x 2
+<pre><code>## # A tibble: 6 × 2
 ##   diag                        n
 ##   &lt;fct&gt;                   &lt;int&gt;
 ## 1 Other Or Not Stated   1806436
