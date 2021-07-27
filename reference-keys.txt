@@ -1,6 +1,15 @@
 fig:diagram
 fig:diagram2
 fig:diagram3
+fig:unnamed-chunk-88
+fig:unnamed-chunk-89
+fig:unnamed-chunk-90
+fig:unnamed-chunk-91
+fig:unnamed-chunk-92
+fig:unnamed-chunk-93
+fig:unnamed-chunk-96
+fig:unnamed-chunk-97
+fig:unnamed-chunk-101
 your-first-shiny-app
 introduction
 if-you-havent-installed-shiny-already
@@ -185,3 +194,10 @@ example-shinysurveys
 installation
 demo
 lets-take-a-look
+security
+introduction-7
+the-security-within-your-app
+compute-resources
+publishing-on-shinyapps.io
+conclusions-2
+resources-2

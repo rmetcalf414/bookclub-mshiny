@@ -379,6 +379,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="18.4.3" data-path="example-shinysurveys.html"><a href="example-shinysurveys.html#lets-take-a-look"><i class="fa fa-check"></i><b>18.4.3</b> Let’s take a look!</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="19" data-path="security.html"><a href="security.html"><i class="fa fa-check"></i><b>19</b> Security</a><ul>
+<li class="chapter" data-level="19.1" data-path="introduction-7.html"><a href="introduction-7.html"><i class="fa fa-check"></i><b>19.1</b> Introduction</a></li>
+<li class="chapter" data-level="19.2" data-path="the-security-within-your-app.html"><a href="the-security-within-your-app.html"><i class="fa fa-check"></i><b>19.2</b> The security within your app</a></li>
+<li class="chapter" data-level="19.3" data-path="compute-resources.html"><a href="compute-resources.html"><i class="fa fa-check"></i><b>19.3</b> Compute resources</a></li>
+<li class="chapter" data-level="19.4" data-path="publishing-on-shinyapps-io.html"><a href="publishing-on-shinyapps-io.html"><i class="fa fa-check"></i><b>19.4</b> Publishing on shinyapps.io</a></li>
+<li class="chapter" data-level="19.5" data-path="conclusions-2.html"><a href="conclusions-2.html"><i class="fa fa-check"></i><b>19.5</b> Conclusions:</a><ul>
+<li class="chapter" data-level="19.5.1" data-path="conclusions-2.html"><a href="conclusions-2.html#resources-2"><i class="fa fa-check"></i><b>19.5.1</b> Resources:</a></li>
+</ul></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -408,14 +417,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb22-5"><a href="execises.html#cb22-5"></a><span class="st">C--&gt;D[Rectangle One]</span></span>
 <span id="cb22-6"><a href="execises.html#cb22-6"></a><span class="st">C--&gt;E[Rectangle Two]</span></span>
 <span id="cb22-7"><a href="execises.html#cb22-7"></a><span class="st">&quot;</span>)</span></code></pre></div>
-<div id="htmlwidget-62e4383ff9f804c1fb2a" style="width:672px;height:480px;" class="DiagrammeR html-widget"></div>
-<script type="application/json" data-for="htmlwidget-62e4383ff9f804c1fb2a">{"x":{"diagram":"\ngraph LR\nA(Rounded)-->B[Rectangular]\nB-->C{A Rhombus}\nC-->D[Rectangle One]\nC-->E[Rectangle Two]\n"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-8f8c089eca2fba4289e5" style="width:672px;height:480px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8f8c089eca2fba4289e5">{"x":{"diagram":"\ngraph LR\nA(Rounded)-->B[Rectangular]\nB-->C{A Rhombus}\nC-->D[Rectangle One]\nC-->E[Rectangle Two]\n"},"evals":[],"jsHooks":[]}</script>
 <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="execises.html#cb23-1"></a><span class="kw">mermaid</span>(<span class="st">&quot;</span></span>
 <span id="cb23-2"><a href="execises.html#cb23-2"></a><span class="st">graph LR</span></span>
 <span id="cb23-3"><a href="execises.html#cb23-3"></a><span class="st">A[A arr_text] --- B&gt;A arrowtext]</span></span>
 <span id="cb23-4"><a href="execises.html#cb23-4"></a><span class="st">&quot;</span>)</span></code></pre></div>
-<div id="htmlwidget-55ee060d3885bc46f7c1" style="width:672px;height:480px;" class="DiagrammeR html-widget"></div>
-<script type="application/json" data-for="htmlwidget-55ee060d3885bc46f7c1">{"x":{"diagram":"\ngraph LR\nA[A arr_text] --- B>A arrowtext]\n"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-2cd2c3570691f9f1000c" style="width:672px;height:480px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2cd2c3570691f9f1000c">{"x":{"diagram":"\ngraph LR\nA[A arr_text] --- B>A arrowtext]\n"},"evals":[],"jsHooks":[]}</script>
 
 </div>
 <!-- </div> -->
@@ -476,6 +485,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

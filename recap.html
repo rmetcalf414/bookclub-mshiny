@@ -379,6 +379,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="18.4.3" data-path="example-shinysurveys.html"><a href="example-shinysurveys.html#lets-take-a-look"><i class="fa fa-check"></i><b>18.4.3</b> Let’s take a look!</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="19" data-path="security.html"><a href="security.html"><i class="fa fa-check"></i><b>19</b> Security</a><ul>
+<li class="chapter" data-level="19.1" data-path="introduction-7.html"><a href="introduction-7.html"><i class="fa fa-check"></i><b>19.1</b> Introduction</a></li>
+<li class="chapter" data-level="19.2" data-path="the-security-within-your-app.html"><a href="the-security-within-your-app.html"><i class="fa fa-check"></i><b>19.2</b> The security within your app</a></li>
+<li class="chapter" data-level="19.3" data-path="compute-resources.html"><a href="compute-resources.html"><i class="fa fa-check"></i><b>19.3</b> Compute resources</a></li>
+<li class="chapter" data-level="19.4" data-path="publishing-on-shinyapps-io.html"><a href="publishing-on-shinyapps-io.html"><i class="fa fa-check"></i><b>19.4</b> Publishing on shinyapps.io</a></li>
+<li class="chapter" data-level="19.5" data-path="conclusions-2.html"><a href="conclusions-2.html"><i class="fa fa-check"></i><b>19.5</b> Conclusions:</a><ul>
+<li class="chapter" data-level="19.5.1" data-path="conclusions-2.html"><a href="conclusions-2.html#resources-2"><i class="fa fa-check"></i><b>19.5.1</b> Resources:</a></li>
+</ul></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -401,10 +410,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="recap" class="section level2">
 <h2><span class="header-section-number">3.1</span> Recap</h2>
-<div id="htmlwidget-5224cb6102fad6dc65b5" style="width:672px;height:480px;" class="DiagrammeR html-widget"></div>
-<script type="application/json" data-for="htmlwidget-5224cb6102fad6dc65b5">{"x":{"diagram":"\ngraph LR\nA[R scripting]-->B[sequential logic]\n"},"evals":[],"jsHooks":[]}</script>
-<div id="htmlwidget-72f8cc6aa2549d4b0eb5" style="width:672px;height:480px;" class="DiagrammeR html-widget"></div>
-<script type="application/json" data-for="htmlwidget-72f8cc6aa2549d4b0eb5">{"x":{"diagram":"\ngraph LR\nA[Reactive Programming]-->B[graph of dependencies]\n"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-50e82ec39960075f95bf" style="width:672px;height:480px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-50e82ec39960075f95bf">{"x":{"diagram":"\ngraph LR\nA[R scripting]-->B[sequential logic]\n"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-98a6fffbac9f60a163d4" style="width:672px;height:480px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-98a6fffbac9f60a163d4">{"x":{"diagram":"\ngraph LR\nA[Reactive Programming]-->B[graph of dependencies]\n"},"evals":[],"jsHooks":[]}</script>
 <p>Important Learnings so far, main app components:</p>
 <ol style="list-style-type: decimal">
 <li>Front end - the ui object</li>
@@ -500,6 +509,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

@@ -379,6 +379,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="18.4.3" data-path="example-shinysurveys.html"><a href="example-shinysurveys.html#lets-take-a-look"><i class="fa fa-check"></i><b>18.4.3</b> Let’s take a look!</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="19" data-path="security.html"><a href="security.html"><i class="fa fa-check"></i><b>19</b> Security</a><ul>
+<li class="chapter" data-level="19.1" data-path="introduction-7.html"><a href="introduction-7.html"><i class="fa fa-check"></i><b>19.1</b> Introduction</a></li>
+<li class="chapter" data-level="19.2" data-path="the-security-within-your-app.html"><a href="the-security-within-your-app.html"><i class="fa fa-check"></i><b>19.2</b> The security within your app</a></li>
+<li class="chapter" data-level="19.3" data-path="compute-resources.html"><a href="compute-resources.html"><i class="fa fa-check"></i><b>19.3</b> Compute resources</a></li>
+<li class="chapter" data-level="19.4" data-path="publishing-on-shinyapps-io.html"><a href="publishing-on-shinyapps-io.html"><i class="fa fa-check"></i><b>19.4</b> Publishing on shinyapps.io</a></li>
+<li class="chapter" data-level="19.5" data-path="conclusions-2.html"><a href="conclusions-2.html"><i class="fa fa-check"></i><b>19.5</b> Conclusions:</a><ul>
+<li class="chapter" data-level="19.5.1" data-path="conclusions-2.html"><a href="conclusions-2.html#resources-2"><i class="fa fa-check"></i><b>19.5.1</b> Resources:</a></li>
+</ul></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -435,8 +444,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>To have an idea of what is happening inside the app we can sketch a graph of the connections with one of the {diagrammeR} functions for making flowcharts, such as the <strong>mermaid()</strong> function, so, we visually identify the connections related to the action of the reset button.</p>
 <p>Figure <a href="combine-reactive-values.html#fig:diagram2">15.2</a> Graph of the App</p>
 <div class="figure"><span id="fig:diagram2"></span>
-<div id="htmlwidget-ea120628f0875bffc07a" style="width:100%;height:100%;" class="DiagrammeR html-widget"></div>
-<script type="application/json" data-for="htmlwidget-ea120628f0875bffc07a">{"x":{"diagram":"\ngraph LR\n\nA((ui))-.-B\n   B(textInput)-.-C>textOutput]\n   C-. reactive connection .->D\n   D((server))-.-E\nE(reactive)-.-S(output)\n   \nA((ui))-.-F\n   F(name)-.-G(salutation)\n   G-. reactive connection .->    D((server))\n   D((server))-.-H(Hello)\nH-.-T(Your name here)\n   \nI((ui))-.-L(actionButton)\nL-.-M((server))\nM-.-N(observeEvent)\nN-.-O>updateTextInput]\n  O-.-P>no record of the reset in the reactive graph]\n\nI((ui))-.-Q\nQ(clr)-.-M\nM-.-R(Clear)\nR-.-U(name)\nU-.-P\n  style A fill:#f9f\n  style B fill:#bbf\n  style C fill:#f96\n  style D fill:#f9f\n  style I fill:#f9f\n  style L fill:#bbf\n  style M fill:#f9f\n  style O fill:#f96\n  style P fill:#bbf,stroke:#f66,stroke-width:2px,color:#fff,stroke-dasharray: 5 5\n\n "},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-da3fb6d210201e217ec0" style="width:100%;height:100%;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-da3fb6d210201e217ec0">{"x":{"diagram":"\ngraph LR\n\nA((ui))-.-B\n   B(textInput)-.-C>textOutput]\n   C-. reactive connection .->D\n   D((server))-.-E\nE(reactive)-.-S(output)\n   \nA((ui))-.-F\n   F(name)-.-G(salutation)\n   G-. reactive connection .->    D((server))\n   D((server))-.-H(Hello)\nH-.-T(Your name here)\n   \nI((ui))-.-L(actionButton)\nL-.-M((server))\nM-.-N(observeEvent)\nN-.-O>updateTextInput]\n  O-.-P>no record of the reset in the reactive graph]\n\nI((ui))-.-Q\nQ(clr)-.-M\nM-.-R(Clear)\nR-.-U(name)\nU-.-P\n  style A fill:#f9f\n  style B fill:#bbf\n  style C fill:#f96\n  style D fill:#f9f\n  style I fill:#f9f\n  style L fill:#bbf\n  style M fill:#f9f\n  style O fill:#f96\n  style P fill:#bbf,stroke:#f66,stroke-width:2px,color:#fff,stroke-dasharray: 5 5\n\n "},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 Figure 15.2: Graph of the steps made by the app
 </p>
@@ -501,6 +510,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
