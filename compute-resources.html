@@ -410,7 +410,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="compute-resources" class="section level2">
 <h2><span class="header-section-number">19.3</span> Compute resources</h2>
-<p>What about errors, holes, dangerous function combinations, selective characters such as special characters that are not recognizable by the system language so that it can be filled with strange values?</p>
+<p>What about errors, holes, dangerous function combinations, selective characters such as special characters that are not recognizable by the system language? What can be done to prevent unexpected values from being used?</p>
 <p>Malicious attackers can:</p>
 <ul>
 <li>run any R code they want</li>
@@ -441,43 +441,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
  
   })
 }</code></pre>
-<p>2 - Other kind of possibilities for error chain generator are given by the <strong>model formula</strong>, the formula can executes an extra command <code>print()</code></p>
+<p>2 - Other kinds of possibilities for error chain generators are given by the <strong>model formula</strong>, the formula can executes an extra command <code>print()</code></p>
 <p>lm(y ~ {print(“Hi!”); x}, data = df)</p>
 <p>#&gt; [1] “Hi!”</p>
-<p>3 - Third warning comes from the {glue} package where the book in this case suggest to pay attention to:</p>
+<p>3 - Third warning comes from the <strong>{glue}</strong> package, the book in this case suggests to pay attention to use:</p>
 <p>glue::glue(“{title}-{print(‘Hi’); number}”)</p>
-<p>and suggest to use <code>glue_safe()</code> instead which releases an error</p>
+<p>and suggests to substitute with <code>glue_safe()</code> which instead releases an error/warning:</p>
 <p>glue::glue_safe(“{title}-{print(‘Hi’); number}”)</p>
 <p>#&gt; Error in .transformer(expr, env): object ‘print(’Hi’); number’ not found</p>
-<p>4 - In case of <strong>variable transformation</strong> this is what can happen:</p>
-<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="compute-resources.html#cb191-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;images/22-security/xkcd.png&#39;</span>)</span></code></pre></div>
+<p>4 - In case of <strong>variable transformation</strong>, this is what can happen:</p>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-101"></span>
 <img src="images/22-security/xkcd.png" alt="https://xkcd.com/327/" width="25%" />
 <p class="caption">
 Figure 19.9: <a href="https://xkcd.com/327/" class="uri">https://xkcd.com/327/</a>
 </p>
 </div>
-<p>The code to construct a SQL query with paste() could lead to flexibilities in code costruction that would allow the addition of extra characters not warned or advised by any friendly error messages</p>
-<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="compute-resources.html#cb192-1"></a>find_student &lt;-<span class="st"> </span><span class="cf">function</span>(name) {</span>
-<span id="cb192-2"><a href="compute-resources.html#cb192-2"></a>  <span class="kw">paste0</span>(<span class="st">&quot;SELECT * FROM Students WHERE name = (&#39;&quot;</span>, name, <span class="st">&quot;&#39;);&quot;</span>)</span>
-<span id="cb192-3"><a href="compute-resources.html#cb192-3"></a>}</span>
-<span id="cb192-4"><a href="compute-resources.html#cb192-4"></a></span>
-<span id="cb192-5"><a href="compute-resources.html#cb192-5"></a></span>
-<span id="cb192-6"><a href="compute-resources.html#cb192-6"></a><span class="kw">find_student</span>(<span class="st">&quot;Hadley&quot;</span>)</span></code></pre></div>
+<p>The code to construct a SQL query with <code>paste()</code> could lead to <em>flexibilities</em> in code construction that would allow the addition of extra characters not warned or advised by any friendly error messages</p>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="compute-resources.html#cb191-1"></a>find_student &lt;-<span class="st"> </span><span class="cf">function</span>(name) {</span>
+<span id="cb191-2"><a href="compute-resources.html#cb191-2"></a>  <span class="kw">paste0</span>(<span class="st">&quot;SELECT * FROM Students WHERE name = (&#39;&quot;</span>, name, <span class="st">&quot;&#39;);&quot;</span>)</span>
+<span id="cb191-3"><a href="compute-resources.html#cb191-3"></a>}</span>
+<span id="cb191-4"><a href="compute-resources.html#cb191-4"></a></span>
+<span id="cb191-5"><a href="compute-resources.html#cb191-5"></a></span>
+<span id="cb191-6"><a href="compute-resources.html#cb191-6"></a><span class="kw">find_student</span>(<span class="st">&quot;Hadley&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;SELECT * FROM Students WHERE name = (&#39;Hadley&#39;);&quot;</code></pre>
-<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="compute-resources.html#cb194-1"></a><span class="kw">find_student</span>(<span class="st">&quot;Robert&#39;); DROP TABLE Students; --&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="compute-resources.html#cb193-1"></a><span class="kw">find_student</span>(<span class="st">&quot;Robert&#39;); DROP TABLE Students; --&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;SELECT * FROM Students WHERE name = (&#39;Robert&#39;); DROP TABLE Students; --&#39;);&quot;</code></pre>
-<p>solution: use <code>glue::glue_sql()</code></p>
-<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="compute-resources.html#cb196-1"></a>con &lt;-<span class="st"> </span>DBI<span class="op">::</span><span class="kw">dbConnect</span>(RSQLite<span class="op">::</span><span class="kw">SQLite</span>(), <span class="st">&quot;:memory:&quot;</span>)</span>
-<span id="cb196-2"><a href="compute-resources.html#cb196-2"></a></span>
-<span id="cb196-3"><a href="compute-resources.html#cb196-3"></a></span>
-<span id="cb196-4"><a href="compute-resources.html#cb196-4"></a>find_student &lt;-<span class="st"> </span><span class="cf">function</span>(name) {</span>
-<span id="cb196-5"><a href="compute-resources.html#cb196-5"></a>  </span>
-<span id="cb196-6"><a href="compute-resources.html#cb196-6"></a>  glue<span class="op">::</span><span class="kw">glue_sql</span>(<span class="st">&quot;SELECT * FROM Students WHERE name = ({name});&quot;</span>, <span class="dt">.con =</span> con)</span>
-<span id="cb196-7"><a href="compute-resources.html#cb196-7"></a>}</span>
-<span id="cb196-8"><a href="compute-resources.html#cb196-8"></a></span>
-<span id="cb196-9"><a href="compute-resources.html#cb196-9"></a></span>
-<span id="cb196-10"><a href="compute-resources.html#cb196-10"></a><span class="kw">find_student</span>(<span class="st">&quot;Robert&#39;); DROP TABLE Students; --&quot;</span>)</span></code></pre></div>
+<p><strong>solution</strong>: use <code>glue::glue_sql()</code></p>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="compute-resources.html#cb195-1"></a>con &lt;-<span class="st"> </span>DBI<span class="op">::</span><span class="kw">dbConnect</span>(RSQLite<span class="op">::</span><span class="kw">SQLite</span>(), <span class="st">&quot;:memory:&quot;</span>)</span>
+<span id="cb195-2"><a href="compute-resources.html#cb195-2"></a></span>
+<span id="cb195-3"><a href="compute-resources.html#cb195-3"></a></span>
+<span id="cb195-4"><a href="compute-resources.html#cb195-4"></a>find_student &lt;-<span class="st"> </span><span class="cf">function</span>(name) {</span>
+<span id="cb195-5"><a href="compute-resources.html#cb195-5"></a>  </span>
+<span id="cb195-6"><a href="compute-resources.html#cb195-6"></a>  glue<span class="op">::</span><span class="kw">glue_sql</span>(<span class="st">&quot;SELECT * FROM Students WHERE name = ({name});&quot;</span>, <span class="dt">.con =</span> con)</span>
+<span id="cb195-7"><a href="compute-resources.html#cb195-7"></a>}</span>
+<span id="cb195-8"><a href="compute-resources.html#cb195-8"></a></span>
+<span id="cb195-9"><a href="compute-resources.html#cb195-9"></a></span>
+<span id="cb195-10"><a href="compute-resources.html#cb195-10"></a><span class="kw">find_student</span>(<span class="st">&quot;Robert&#39;); DROP TABLE Students; --&quot;</span>)</span></code></pre></div>
 <pre><code>## &lt;SQL&gt; SELECT * FROM Students WHERE name = (&#39;Robert&#39;&#39;); DROP TABLE Students; --&#39;);</code></pre>
 <hr />
 </div>

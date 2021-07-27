@@ -411,8 +411,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="the-security-within-your-app" class="section level2">
 <h2><span class="header-section-number">19.2</span> The security within your app</h2>
 <p>Two main security actions:</p>
-<div id="htmlwidget-89edc075239f85e46c92" style="width:100%;height:100%;" class="DiagrammeR html-widget"></div>
-<script type="application/json" data-for="htmlwidget-89edc075239f85e46c92">{"x":{"diagram":"\ngraph LR\nA(validation)-.and.-B(isolation)\nstyle A fill:#f9f\nstyle B fill:#f9f"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-b1e57a2213f71daeda1b" style="width:100%;height:100%;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b1e57a2213f71daeda1b">{"x":{"diagram":"\ngraph LR\nA(validation)-.and.-B(isolation)\nstyle A fill:#f9f\nstyle B fill:#f9f"},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><p>Shiny <code>inputs</code> use client-side <strong>validation</strong> such as data that is user-specific and need the user to authenticate before use</p></li>
 <li><p>Shiny <code>server()</code> code <strong>isolation</strong>; one user cannot see data from another user in a different session, the only exception is if caching is in use, more about this is specified in the last chapter of the book</p></li>
@@ -421,13 +421,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Data</strong></p>
 <p>Sensitive data and passwords are the most targeted objectives of the attackers, for this reason is recommended to:</p>
 <ul>
-<li><p>do not storage password in the source code of your app, but eventually, in a variable in the environment</p></li>
-<li><p>use a <strong>.yml</strong> file to storage login credentials</p></li>
+<li><p>do not store password in the source code of your app, but eventually, in a variable in the environment</p></li>
+<li><p>use a <strong>.yml</strong> file to store login credentials</p></li>
 <li><p>use <code>.gitignore</code> to include the appropriate files containing your authentication credentials</p></li>
 </ul>
 <hr />
 <p><strong>Authentication</strong> and <strong>client-side validation</strong></p>
-There is more than one alternative to authenticate, first thing is that you need to <strong>add some kind of layer between the user interface and the Shiny server</strong>, i.e. a <strong>proxi</strong>
+There is more than one alternative to authenticate, first thing is that you need to <strong>add some kind of layer between the user interface and the Shiny server</strong>, i.e. a <strong>proxy</strong>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-88"></span>
 <img src="images/22-security/proxi.png" alt="proxy" width="50%" />
 <p class="caption">
@@ -436,7 +436,7 @@ Figure 19.1: proxy
 </div>
 <p>It will redirect the user to an authentication page, as in a login page, and once authenticated it will check whether the user is authorized, and then let them get access to the Shiny application.</p>
 <hr />
-<p>The following section lists six packages for configuration, authentication, and storage of login credentials. There are several options to choose from based on your need and design of the app.</p>
+<p>The following section lists five packages for configuration, authentication, and storage of login credentials. There are several options to choose from based on your need and design of the app.</p>
 <p><strong>Packages:</strong></p>
 <p>1 - The first package suggested by the <a href="https://mastering-shiny.org/scaling-security.html">book</a> is <strong><a href="https://cran.r-project.org/web/packages/config/vignettes/introduction.html">{config}</a></strong> package, it is used to manage environment specific configuration values.</p>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-89"></span>
@@ -448,8 +448,8 @@ Figure 19.2: config package
 <p>How to install <strong>config</strong> and all the other packages (substituting the package’s name where appropriate):</p>
 <p>install.packages(“config”)
 library(config)</p>
-<p>How to storage the password in a file with <a href="https://db.rstudio.com/best-practices/managing-credentials/">config in practice</a> ?</p>
-<p>The package makes easier to deploy content, and in this contest is used to keep the credentials outside of the R script by saving them in the <strong>config.yml</strong> file while keeping it in the current working directory.</p>
+<p>How to store the password in a file with <a href="https://db.rstudio.com/best-practices/managing-credentials/">config in practice</a> ?</p>
+<p>The package makes easier to deploy content, and in this context is used to keep the credentials outside of the R script by saving them in the <strong>config.yml</strong> file while keeping it in the current working directory.</p>
 <p><a href="https://yaml.org/about.html">YAML(tm)</a> are type of files made for making easier international collaboration with a language which is both human readable and computationally powerful.</p>
 <p>An example of a .yml file is a <strong>config.yml</strong> file:</p>
 <p>default:
@@ -466,7 +466,7 @@ config<span class="math inline">\(uid  config\)</span>pwd</p>
 Figure 19.3: auth0 package
 </p>
 </div>
-<p>It is an identity provider, it offers a server where to storage shiny apps as well as procedures for setting credentials at access. You need an account where to load your app and set up the credentials.</p>
+<p>It is an identity provider, it offers a server where to store shiny apps as well as procedures for setting credentials at access. You need an account where to load your app and set up the credentials.</p>
 <p><code>_auth0.yml</code> files can be created with the command <code>use_auth0()</code> which can be automatically positioned in the app.R directory and it is already filled with basic information:</p>
 <p>auth0::use_auth0()</p>
 <p>Here is the content of the <code>_auth0.yml</code> file:</p>
@@ -487,19 +487,19 @@ AUTH0_SECRET = …</p>
 <p>auth0::Sys.getenv(“AUTH0_USER”)</p>
 <p>This method is not exclusive of <code>auth0</code>package but is a recommended approach to use for storing <strong>Credentials inside Environment Variables</strong> even with other packages.</p>
 <hr />
-<p>3 - A simple and secure authentication mechanism for single ‘Shiny’ applications is <strong><a href="https://datastorm-open.github.io/shinymanager/">{shinymanager}</a></strong></p>
+<p>3 - A simple and secure authentication mechanism for single ‘Shiny’ applications is through <strong><a href="https://datastorm-open.github.io/shinymanager/">{shinymanager}</a></strong> package.</p>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-91"></span>
 <img src="images/22-security/shinymanager.png" alt="shinymanager package" width="25%" />
 <p class="caption">
 Figure 19.4: shinymanager package
 </p>
 </div>
-<p>A live demonstration of the potentiality of this package:</p>
+<p>Here is a live demonstration of the potentiality of this package:</p>
 <ul>
 <li><a href="http://shinyapps.dreamrs.fr/shinymanager-demo/">Shiny-server</a></li>
 <li><a href="https://dreamrs.shinyapps.io/shinymanager-demo/">shinyapps.io</a></li>
 </ul>
-<p>follows with these authentication credentials:</p>
+<p>it follows with these authentication credentials:</p>
 <p>user: shiny / password: shiny
 user: shinymanager / password: shinymanager (Admin)</p>
 <p>In particular it provides a function to <code>secure_app()</code> in which to wrap the <code>ui</code>:</p>
@@ -509,21 +509,21 @@ ui &lt;- secure_app(ui, choose_language = TRUE)</p>
 <p>secure_server()
 check_credentials()</p>
 <hr />
-4 - <strong><a href="https://paulc91.github.io/shinyauthr/">{shinyauthr}</a></strong> This package is very useful for providing key function to use.
+4 - The <strong><a href="https://paulc91.github.io/shinyauthr/">{shinyauthr}</a></strong> package is very useful for providing key function to use.
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-92"></span>
 <img src="images/22-security/shinyauthr.png" alt="shinyauthr package" width="25%" />
 <p class="caption">
 Figure 19.5: shinyauthr package
 </p>
 </div>
-<p>These are the main functions to use which invisibly call JavaScript with <code>shinyjs::useShinyjs()</code> internally:</p>
+<p>These are the main functions which invisibly call JavaScript with the command <code>shinyjs::useShinyjs()</code> internally:</p>
 <p>loginUI()
 loginServer()
 logoutUI()
 logoutServer()</p>
-<p>Also it provides a method for <strong>cookie-based automatic login</strong>, which means that the system can store the credentials for some time established by the creator of the app.</p>
+<p>It also provides a method for <strong>cookie-based automatic login</strong>, which means that the system can store the credentials for some time as established by the creator of the app.</p>
 <hr />
-5 - <strong><a href="https://github.com/jeroen/sodium">{sodium}</a></strong> It is software library for encryption, decryption, signatures, password hashing and more.
+5 - <strong><a href="https://github.com/jeroen/sodium">{sodium}</a></strong> package is software library for encryption, decryption, signatures, password hashing and more.
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-93"></span>
 <img src="images/22-security/sodium.png" alt="sodium package" width="25%" />
 <p class="caption">
@@ -533,15 +533,15 @@ Figure 19.6: sodium package
 <p>Generally used in this contest to encrypt passwords with simple commands such as:</p>
 <p>user_name = “user_authr_1”,
 password = sodium::password_store(“pass_authr_1”)</p>
-<p>which releases the passowrd in this format:</p>
+<p>which releases the password in this format:</p>
 <div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="the-security-within-your-app.html#cb183-1"></a>password =<span class="st"> &quot;pass_authr_1&quot;</span></span>
 <span id="cb183-2"><a href="the-security-within-your-app.html#cb183-2"></a>sodium<span class="op">::</span><span class="kw">password_store</span>(password)</span></code></pre></div>
-<pre><code>## [1] &quot;$7$C6..../....zRap.a1istnx3rddwqCcGtKE3mt47Ub8Pe/rhS8SL8/$HBZNwL.LPe/ZuCaZ8YTgqK6FYXprvQ8wIfMznooRuy.&quot;</code></pre>
+<pre><code>## [1] &quot;$7$C6..../....3sCEJ8KiXSqAnwF9GpAmUhwR5IcHA/6L.GeVAst7kr5$vmunF6C3bC5xCT2EBtHhJFvLylZkyqNfd0SF5SZEZRA&quot;</code></pre>
 <div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="the-security-within-your-app.html#cb185-1"></a>hash &lt;-<span class="st"> </span>sodium<span class="op">::</span><span class="kw">password_store</span>(password)</span>
 <span id="cb185-2"><a href="the-security-within-your-app.html#cb185-2"></a>sodium<span class="op">::</span><span class="kw">password_verify</span>(hash, password)</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <hr />
-<p>Another suggestion by the <a href="https://mastering-shiny.org/scaling-security.html">book</a> is to use</p>
+<p>Another suggestion by the <a href="https://mastering-shiny.org/scaling-security.html">book</a> is to use:</p>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-96"></span>
 <img src="images/22-security/kerberos.png" alt="Kerberos" width="25%" />
 <p class="caption">
@@ -552,15 +552,15 @@ Figure 19.7: Kerberos
 <p>The development of the product followed with version updates and the implementation by other institutions included the Royal Institute of Technology in Sweden and the Stanford University made the system available outside the US with some limitations.
 Kerberos is available with RStudio Pro Products.</p>
 <hr />
-<p>In general what happens in an app when setting up a login credentials is described below.</p>
+<p>In general what happens in an app when setting up login credentials is described below.</p>
 <p>In the <code>ui</code> you can use these commands for wrapping your code and build a module, while in the <code>server()</code> you should mind not to storage any form of credentials, but as said, storage them in a separate file (.xlm , .yml , .rds, .Renviron, …).</p>
 <p>The <code>server()</code> should include the <code>eventReactive()</code> function to check whether the user’s login and password are valid credentials, raising a silent validation error.</p>
 <p>server&lt;- function(input,output,session){</p>
 <p>eventReactive()</p>
 <p>}</p>
-<p>Shiny inputs use <strong>client-side validation</strong> when accessing an API or database in R. It is often necessary to <a href="https://www.r-bloggers.com/2019/03/how-to-avoid-publishing-credentials-in-your-code/">provide credentials</a> such as a login name and password.</p>
 <hr />
-<p>In this example is shown for simplicity an application of the {shinyauthr}; the credentials are located inside the <code>server()</code>, they should be in a <code>config.yml</code> file and then retrieved for use.</p>
+<p><strong>Examples:</strong></p>
+<p>1 - In this example is shown for simplicity an application of the <strong>{shinyauthr}</strong>: the credentials are located inside the <code>server()</code>, they should be in a <code>config.yml</code> file and then retrieved for use.</p>
 <p>You may find yourself being prompted with something like this:</p>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-97"></span>
 <img src="images/22-security/login.png" alt="Credentials" width="50%" />
@@ -616,7 +616,8 @@ Figure 19.8: Credentials
 <span id="cb187-46"><a href="the-security-within-your-app.html#cb187-46"></a>}</span>
 <span id="cb187-47"><a href="the-security-within-your-app.html#cb187-47"></a></span>
 <span id="cb187-48"><a href="the-security-within-your-app.html#cb187-48"></a><span class="co">#shinyApp(ui = ui, server = server)</span></span></code></pre></div>
-<p>Examples of Shiny inputs using <strong>client-side validation</strong> (input performed by JavaScript in the browser) where is possible for an attacker to send unexpected values:</p>
+<p>When accessing an API or database in R, Shiny inputs use <strong>client-side validation</strong> and often requires to <a href="https://www.r-bloggers.com/2019/03/how-to-avoid-publishing-credentials-in-your-code/">provide credentials</a> such as a login name and password.</p>
+<p>2 - Another example of Shiny inputs using <strong>client-side validation</strong> (input performed by JavaScript in the browser) where is possible for an attacker to send unexpected values is:</p>
 <div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="the-security-within-your-app.html#cb188-1"></a>secrets &lt;-<span class="st"> </span><span class="kw">list</span>(</span>
 <span id="cb188-2"><a href="the-security-within-your-app.html#cb188-2"></a>  <span class="dt">a =</span> <span class="st">&quot;my name&quot;</span>,</span>
 <span id="cb188-3"><a href="the-security-within-your-app.html#cb188-3"></a>  <span class="dt">b =</span> <span class="st">&quot;my birthday&quot;</span>,</span>
