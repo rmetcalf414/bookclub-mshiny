@@ -24,7 +24,7 @@
 <meta name="author" content="The R4DS Online Learning Community" />
 
 
-<meta name="date" content="2021-08-03" />
+<meta name="date" content="2021-08-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -170,6 +170,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.9" data-path="meeting-videos.html"><a href="meeting-videos.html"><i class="fa fa-check"></i><b>1.9</b> Meeting Videos</a><ul>
 <li class="chapter" data-level="1.9.1" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-1"><i class="fa fa-check"></i><b>1.9.1</b> Cohort 1</a></li>
 <li class="chapter" data-level="1.9.2" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-2"><i class="fa fa-check"></i><b>1.9.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="1.9.3" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-2-1"><i class="fa fa-check"></i><b>1.9.3</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="shiny-basic-user-interface.html"><a href="shiny-basic-user-interface.html"><i class="fa fa-check"></i><b>2</b> Shiny - Basic User Interface</a><ul>
@@ -458,7 +459,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="22.11" data-path="demo-of-the-workflow.html"><a href="demo-of-the-workflow.html"><i class="fa fa-check"></i><b>22.11</b> Demo of the workflow</a></li>
 <li class="chapter" data-level="22.12" data-path="other-resources-to-learn-more-about-git.html"><a href="other-resources-to-learn-more-about-git.html"><i class="fa fa-check"></i><b>22.12</b> Other resources to learn more about <code>git</code></a></li>
 <li class="chapter" data-level="22.13" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html"><i class="fa fa-check"></i><b>22.13</b> Meeting Videos</a><ul>
-<li class="chapter" data-level="22.13.1" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-2-1"><i class="fa fa-check"></i><b>22.13.1</b> Cohort 2</a></li>
+<li class="chapter" data-level="22.13.1" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-2-2"><i class="fa fa-check"></i><b>22.13.1</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -490,38 +491,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>profvis</li>
 </ul>
 <p>The call stack and the “Flame graph”</p>
-<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="profiling.html#cb211-1"></a><span class="kw">library</span>(profvis)</span>
-<span id="cb211-2"><a href="profiling.html#cb211-2"></a></span>
-<span id="cb211-3"><a href="profiling.html#cb211-3"></a>f &lt;-<span class="st"> </span><span class="cf">function</span>() {</span>
-<span id="cb211-4"><a href="profiling.html#cb211-4"></a>    <span class="kw">pause</span>(<span class="fl">0.2</span>)</span>
-<span id="cb211-5"><a href="profiling.html#cb211-5"></a>  <span class="kw">g</span>()</span>
-<span id="cb211-6"><a href="profiling.html#cb211-6"></a>    <span class="kw">h</span>()</span>
-<span id="cb211-7"><a href="profiling.html#cb211-7"></a>    <span class="dv">10</span></span>
-<span id="cb211-8"><a href="profiling.html#cb211-8"></a>}</span>
-<span id="cb211-9"><a href="profiling.html#cb211-9"></a>g &lt;-<span class="st"> </span><span class="cf">function</span>() {</span>
-<span id="cb211-10"><a href="profiling.html#cb211-10"></a>    <span class="kw">pause</span>(<span class="fl">0.1</span>)</span>
-<span id="cb211-11"><a href="profiling.html#cb211-11"></a>  <span class="kw">h</span>()</span>
-<span id="cb211-12"><a href="profiling.html#cb211-12"></a>}</span>
-<span id="cb211-13"><a href="profiling.html#cb211-13"></a>h &lt;-<span class="st"> </span><span class="cf">function</span>() {</span>
-<span id="cb211-14"><a href="profiling.html#cb211-14"></a>    <span class="kw">pause</span>(<span class="fl">0.3</span>)</span>
-<span id="cb211-15"><a href="profiling.html#cb211-15"></a>}</span>
-<span id="cb211-16"><a href="profiling.html#cb211-16"></a></span>
-<span id="cb211-17"><a href="profiling.html#cb211-17"></a>profvis<span class="op">::</span><span class="kw">profvis</span>(<span class="kw">f</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="profiling.html#cb212-1"></a><span class="kw">library</span>(profvis)</span>
+<span id="cb212-2"><a href="profiling.html#cb212-2"></a></span>
+<span id="cb212-3"><a href="profiling.html#cb212-3"></a>f &lt;-<span class="st"> </span><span class="cf">function</span>() {</span>
+<span id="cb212-4"><a href="profiling.html#cb212-4"></a>    <span class="kw">pause</span>(<span class="fl">0.2</span>)</span>
+<span id="cb212-5"><a href="profiling.html#cb212-5"></a>  <span class="kw">g</span>()</span>
+<span id="cb212-6"><a href="profiling.html#cb212-6"></a>    <span class="kw">h</span>()</span>
+<span id="cb212-7"><a href="profiling.html#cb212-7"></a>    <span class="dv">10</span></span>
+<span id="cb212-8"><a href="profiling.html#cb212-8"></a>}</span>
+<span id="cb212-9"><a href="profiling.html#cb212-9"></a>g &lt;-<span class="st"> </span><span class="cf">function</span>() {</span>
+<span id="cb212-10"><a href="profiling.html#cb212-10"></a>    <span class="kw">pause</span>(<span class="fl">0.1</span>)</span>
+<span id="cb212-11"><a href="profiling.html#cb212-11"></a>  <span class="kw">h</span>()</span>
+<span id="cb212-12"><a href="profiling.html#cb212-12"></a>}</span>
+<span id="cb212-13"><a href="profiling.html#cb212-13"></a>h &lt;-<span class="st"> </span><span class="cf">function</span>() {</span>
+<span id="cb212-14"><a href="profiling.html#cb212-14"></a>    <span class="kw">pause</span>(<span class="fl">0.3</span>)</span>
+<span id="cb212-15"><a href="profiling.html#cb212-15"></a>}</span>
+<span id="cb212-16"><a href="profiling.html#cb212-16"></a></span>
+<span id="cb212-17"><a href="profiling.html#cb212-17"></a>profvis<span class="op">::</span><span class="kw">profvis</span>(<span class="kw">f</span>())</span></code></pre></div>
 <p>Similar for {shiny}, but need explicit call to start the app (and close it with [Ctrl-C])</p>
-<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="profiling.html#cb212-1"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(</span>
-<span id="cb212-2"><a href="profiling.html#cb212-2"></a>    <span class="kw">actionButton</span>(<span class="st">&quot;x&quot;</span>, <span class="st">&quot;Push me&quot;</span>),</span>
-<span id="cb212-3"><a href="profiling.html#cb212-3"></a>      <span class="kw">textOutput</span>(<span class="st">&quot;y&quot;</span>)</span>
-<span id="cb212-4"><a href="profiling.html#cb212-4"></a>    )</span>
-<span id="cb212-5"><a href="profiling.html#cb212-5"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
-<span id="cb212-6"><a href="profiling.html#cb212-6"></a>    output<span class="op">$</span>y &lt;-<span class="st"> </span><span class="kw">eventReactive</span>(input<span class="op">$</span>x, <span class="kw">f</span>())</span>
-<span id="cb212-7"><a href="profiling.html#cb212-7"></a>}</span>
-<span id="cb212-8"><a href="profiling.html#cb212-8"></a></span>
-<span id="cb212-9"><a href="profiling.html#cb212-9"></a>app &lt;-<span class="st"> </span><span class="kw">shinyApp</span>(ui, server)</span></code></pre></div>
-<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="profiling.html#cb213-1"></a>profvis<span class="op">::</span><span class="kw">profvis</span>(</span>
-<span id="cb213-2"><a href="profiling.html#cb213-2"></a>  shiny<span class="op">::</span><span class="kw">runApp</span>(</span>
-<span id="cb213-3"><a href="profiling.html#cb213-3"></a>    <span class="kw">app</span>()</span>
-<span id="cb213-4"><a href="profiling.html#cb213-4"></a>  )</span>
-<span id="cb213-5"><a href="profiling.html#cb213-5"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="profiling.html#cb213-1"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(</span>
+<span id="cb213-2"><a href="profiling.html#cb213-2"></a>    <span class="kw">actionButton</span>(<span class="st">&quot;x&quot;</span>, <span class="st">&quot;Push me&quot;</span>),</span>
+<span id="cb213-3"><a href="profiling.html#cb213-3"></a>      <span class="kw">textOutput</span>(<span class="st">&quot;y&quot;</span>)</span>
+<span id="cb213-4"><a href="profiling.html#cb213-4"></a>    )</span>
+<span id="cb213-5"><a href="profiling.html#cb213-5"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
+<span id="cb213-6"><a href="profiling.html#cb213-6"></a>    output<span class="op">$</span>y &lt;-<span class="st"> </span><span class="kw">eventReactive</span>(input<span class="op">$</span>x, <span class="kw">f</span>())</span>
+<span id="cb213-7"><a href="profiling.html#cb213-7"></a>}</span>
+<span id="cb213-8"><a href="profiling.html#cb213-8"></a></span>
+<span id="cb213-9"><a href="profiling.html#cb213-9"></a>app &lt;-<span class="st"> </span><span class="kw">shinyApp</span>(ui, server)</span></code></pre></div>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="profiling.html#cb214-1"></a>profvis<span class="op">::</span><span class="kw">profvis</span>(</span>
+<span id="cb214-2"><a href="profiling.html#cb214-2"></a>  shiny<span class="op">::</span><span class="kw">runApp</span>(</span>
+<span id="cb214-3"><a href="profiling.html#cb214-3"></a>    <span class="kw">app</span>()</span>
+<span id="cb214-4"><a href="profiling.html#cb214-4"></a>  )</span>
+<span id="cb214-5"><a href="profiling.html#cb214-5"></a>)</span></code></pre></div>
 <p>Note that data downloads may not be tracked.</p>
 </div>
 </div>

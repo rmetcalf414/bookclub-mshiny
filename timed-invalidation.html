@@ -24,7 +24,7 @@
 <meta name="author" content="The R4DS Online Learning Community" />
 
 
-<meta name="date" content="2021-08-03" />
+<meta name="date" content="2021-08-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -170,6 +170,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.9" data-path="meeting-videos.html"><a href="meeting-videos.html"><i class="fa fa-check"></i><b>1.9</b> Meeting Videos</a><ul>
 <li class="chapter" data-level="1.9.1" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-1"><i class="fa fa-check"></i><b>1.9.1</b> Cohort 1</a></li>
 <li class="chapter" data-level="1.9.2" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-2"><i class="fa fa-check"></i><b>1.9.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="1.9.3" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-2-1"><i class="fa fa-check"></i><b>1.9.3</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="shiny-basic-user-interface.html"><a href="shiny-basic-user-interface.html"><i class="fa fa-check"></i><b>2</b> Shiny - Basic User Interface</a><ul>
@@ -458,7 +459,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="22.11" data-path="demo-of-the-workflow.html"><a href="demo-of-the-workflow.html"><i class="fa fa-check"></i><b>22.11</b> Demo of the workflow</a></li>
 <li class="chapter" data-level="22.12" data-path="other-resources-to-learn-more-about-git.html"><a href="other-resources-to-learn-more-about-git.html"><i class="fa fa-check"></i><b>22.12</b> Other resources to learn more about <code>git</code></a></li>
 <li class="chapter" data-level="22.13" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html"><i class="fa fa-check"></i><b>22.13</b> Meeting Videos</a><ul>
-<li class="chapter" data-level="22.13.1" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-2-1"><i class="fa fa-check"></i><b>22.13.1</b> Cohort 2</a></li>
+<li class="chapter" data-level="22.13.1" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-2-2"><i class="fa fa-check"></i><b>22.13.1</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -484,44 +485,44 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="timed-invalidation" class="section level2">
 <h2><span class="header-section-number">14.8</span> Timed Invalidation</h2>
 <p>In section 3.5.1</p>
-<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="timed-invalidation.html#cb168-1"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
-<span id="cb168-2"><a href="timed-invalidation.html#cb168-2"></a>  <span class="co"># timer is invalidated every 500ms</span></span>
-<span id="cb168-3"><a href="timed-invalidation.html#cb168-3"></a>  <span class="co"># A) How is that possible?</span></span>
-<span id="cb168-4"><a href="timed-invalidation.html#cb168-4"></a>  timer &lt;-<span class="st"> </span><span class="kw">reactiveTimer</span>(<span class="dv">500</span>)</span>
-<span id="cb168-5"><a href="timed-invalidation.html#cb168-5"></a>  </span>
-<span id="cb168-6"><a href="timed-invalidation.html#cb168-6"></a>  x1 &lt;-<span class="st"> </span><span class="kw">reactive</span>({</span>
-<span id="cb168-7"><a href="timed-invalidation.html#cb168-7"></a>    <span class="co"># ... hence, a new x1 and x2 are sampled each 500ms</span></span>
-<span id="cb168-8"><a href="timed-invalidation.html#cb168-8"></a>    <span class="co"># B) What if sampling x1 took longer than 500ms?</span></span>
-<span id="cb168-9"><a href="timed-invalidation.html#cb168-9"></a></span>
-<span id="cb168-10"><a href="timed-invalidation.html#cb168-10"></a>    <span class="kw">timer</span>()</span>
-<span id="cb168-11"><a href="timed-invalidation.html#cb168-11"></a>    <span class="kw">rpois</span>(input<span class="op">$</span>n, input<span class="op">$</span>lambda1)</span>
-<span id="cb168-12"><a href="timed-invalidation.html#cb168-12"></a>  })</span>
-<span id="cb168-13"><a href="timed-invalidation.html#cb168-13"></a>  x2 &lt;-<span class="st"> </span><span class="kw">reactive</span>({</span>
-<span id="cb168-14"><a href="timed-invalidation.html#cb168-14"></a>    <span class="kw">timer</span>()</span>
-<span id="cb168-15"><a href="timed-invalidation.html#cb168-15"></a>    <span class="kw">rpois</span>(input<span class="op">$</span>n, input<span class="op">$</span>lambda2)</span>
-<span id="cb168-16"><a href="timed-invalidation.html#cb168-16"></a>  })</span>
-<span id="cb168-17"><a href="timed-invalidation.html#cb168-17"></a>  </span>
-<span id="cb168-18"><a href="timed-invalidation.html#cb168-18"></a>  output<span class="op">$</span>hist &lt;-<span class="st"> </span><span class="kw">renderPlot</span>({</span>
-<span id="cb168-19"><a href="timed-invalidation.html#cb168-19"></a>    <span class="kw">freqpoly</span>(<span class="kw">x1</span>(), <span class="kw">x2</span>(), <span class="dt">binwidth =</span> <span class="dv">1</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">40</span>))</span>
-<span id="cb168-20"><a href="timed-invalidation.html#cb168-20"></a>  }, <span class="dt">res =</span> <span class="dv">96</span>)</span>
-<span id="cb168-21"><a href="timed-invalidation.html#cb168-21"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="timed-invalidation.html#cb169-1"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
+<span id="cb169-2"><a href="timed-invalidation.html#cb169-2"></a>  <span class="co"># timer is invalidated every 500ms</span></span>
+<span id="cb169-3"><a href="timed-invalidation.html#cb169-3"></a>  <span class="co"># A) How is that possible?</span></span>
+<span id="cb169-4"><a href="timed-invalidation.html#cb169-4"></a>  timer &lt;-<span class="st"> </span><span class="kw">reactiveTimer</span>(<span class="dv">500</span>)</span>
+<span id="cb169-5"><a href="timed-invalidation.html#cb169-5"></a>  </span>
+<span id="cb169-6"><a href="timed-invalidation.html#cb169-6"></a>  x1 &lt;-<span class="st"> </span><span class="kw">reactive</span>({</span>
+<span id="cb169-7"><a href="timed-invalidation.html#cb169-7"></a>    <span class="co"># ... hence, a new x1 and x2 are sampled each 500ms</span></span>
+<span id="cb169-8"><a href="timed-invalidation.html#cb169-8"></a>    <span class="co"># B) What if sampling x1 took longer than 500ms?</span></span>
+<span id="cb169-9"><a href="timed-invalidation.html#cb169-9"></a></span>
+<span id="cb169-10"><a href="timed-invalidation.html#cb169-10"></a>    <span class="kw">timer</span>()</span>
+<span id="cb169-11"><a href="timed-invalidation.html#cb169-11"></a>    <span class="kw">rpois</span>(input<span class="op">$</span>n, input<span class="op">$</span>lambda1)</span>
+<span id="cb169-12"><a href="timed-invalidation.html#cb169-12"></a>  })</span>
+<span id="cb169-13"><a href="timed-invalidation.html#cb169-13"></a>  x2 &lt;-<span class="st"> </span><span class="kw">reactive</span>({</span>
+<span id="cb169-14"><a href="timed-invalidation.html#cb169-14"></a>    <span class="kw">timer</span>()</span>
+<span id="cb169-15"><a href="timed-invalidation.html#cb169-15"></a>    <span class="kw">rpois</span>(input<span class="op">$</span>n, input<span class="op">$</span>lambda2)</span>
+<span id="cb169-16"><a href="timed-invalidation.html#cb169-16"></a>  })</span>
+<span id="cb169-17"><a href="timed-invalidation.html#cb169-17"></a>  </span>
+<span id="cb169-18"><a href="timed-invalidation.html#cb169-18"></a>  output<span class="op">$</span>hist &lt;-<span class="st"> </span><span class="kw">renderPlot</span>({</span>
+<span id="cb169-19"><a href="timed-invalidation.html#cb169-19"></a>    <span class="kw">freqpoly</span>(<span class="kw">x1</span>(), <span class="kw">x2</span>(), <span class="dt">binwidth =</span> <span class="dv">1</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">40</span>))</span>
+<span id="cb169-20"><a href="timed-invalidation.html#cb169-20"></a>  }, <span class="dt">res =</span> <span class="dv">96</span>)</span>
+<span id="cb169-21"><a href="timed-invalidation.html#cb169-21"></a>}</span></code></pre></div>
 <p><code>invalidateLater(ms)</code> allows the programmer to invalidate a node in the graph</p>
-<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="timed-invalidation.html#cb169-1"></a><span class="co"># Example, add a new random number to a sum once every 300ms</span></span>
-<span id="cb169-2"><a href="timed-invalidation.html#cb169-2"></a></span>
-<span id="cb169-3"><a href="timed-invalidation.html#cb169-3"></a>sum &lt;-<span class="st"> </span><span class="kw">reactiveVal</span>(<span class="dv">0</span>)</span>
-<span id="cb169-4"><a href="timed-invalidation.html#cb169-4"></a><span class="kw">observe</span>({</span>
-<span id="cb169-5"><a href="timed-invalidation.html#cb169-5"></a>  <span class="kw">invalidateLater</span>(<span class="dv">300</span>)</span>
-<span id="cb169-6"><a href="timed-invalidation.html#cb169-6"></a>  <span class="kw">sum</span>(<span class="kw">isolate</span>(<span class="kw">sum</span>()) <span class="op">+</span><span class="st"> </span><span class="kw">runif</span>(<span class="dv">1</span>))</span>
-<span id="cb169-7"><a href="timed-invalidation.html#cb169-7"></a>})</span></code></pre></div>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="timed-invalidation.html#cb170-1"></a><span class="co"># Example, add a new random number to a sum once every 300ms</span></span>
+<span id="cb170-2"><a href="timed-invalidation.html#cb170-2"></a></span>
+<span id="cb170-3"><a href="timed-invalidation.html#cb170-3"></a>sum &lt;-<span class="st"> </span><span class="kw">reactiveVal</span>(<span class="dv">0</span>)</span>
+<span id="cb170-4"><a href="timed-invalidation.html#cb170-4"></a><span class="kw">observe</span>({</span>
+<span id="cb170-5"><a href="timed-invalidation.html#cb170-5"></a>  <span class="kw">invalidateLater</span>(<span class="dv">300</span>)</span>
+<span id="cb170-6"><a href="timed-invalidation.html#cb170-6"></a>  <span class="kw">sum</span>(<span class="kw">isolate</span>(<span class="kw">sum</span>()) <span class="op">+</span><span class="st"> </span><span class="kw">runif</span>(<span class="dv">1</span>))</span>
+<span id="cb170-7"><a href="timed-invalidation.html#cb170-7"></a>})</span></code></pre></div>
 <p>Note that <code>invalidateLater</code> runs from the time it is invoked.
 Combine it with on.exit() to ensure the node is invalidated a fixed-time after the node’s
 computation completes</p>
-<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="timed-invalidation.html#cb170-1"></a><span class="co"># e.g.: iterate: load a file, one second after you finished reading it</span></span>
-<span id="cb170-2"><a href="timed-invalidation.html#cb170-2"></a></span>
-<span id="cb170-3"><a href="timed-invalidation.html#cb170-3"></a>data &lt;-<span class="st"> </span><span class="kw">reactive</span>({</span>
-<span id="cb170-4"><a href="timed-invalidation.html#cb170-4"></a>  <span class="kw">on.exit</span>(<span class="kw">invalidateLater</span>(<span class="dv">1000</span>))</span>
-<span id="cb170-5"><a href="timed-invalidation.html#cb170-5"></a>  <span class="kw">read.csv</span>(<span class="st">&quot;data.csv&quot;</span>)</span>
-<span id="cb170-6"><a href="timed-invalidation.html#cb170-6"></a>})</span></code></pre></div>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="timed-invalidation.html#cb171-1"></a><span class="co"># e.g.: iterate: load a file, one second after you finished reading it</span></span>
+<span id="cb171-2"><a href="timed-invalidation.html#cb171-2"></a></span>
+<span id="cb171-3"><a href="timed-invalidation.html#cb171-3"></a>data &lt;-<span class="st"> </span><span class="kw">reactive</span>({</span>
+<span id="cb171-4"><a href="timed-invalidation.html#cb171-4"></a>  <span class="kw">on.exit</span>(<span class="kw">invalidateLater</span>(<span class="dv">1000</span>))</span>
+<span id="cb171-5"><a href="timed-invalidation.html#cb171-5"></a>  <span class="kw">read.csv</span>(<span class="st">&quot;data.csv&quot;</span>)</span>
+<span id="cb171-6"><a href="timed-invalidation.html#cb171-6"></a>})</span></code></pre></div>
 <p>Additional tools <code>reactivePoll</code> and <code>reactiveFileReader</code> are built on invalidateLater</p>
 <p>Beware, the accuracy of timing may be affected by other processes</p>
 

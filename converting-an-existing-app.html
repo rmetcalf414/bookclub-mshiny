@@ -24,7 +24,7 @@
 <meta name="author" content="The R4DS Online Learning Community" />
 
 
-<meta name="date" content="2021-08-03" />
+<meta name="date" content="2021-08-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -170,6 +170,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.9" data-path="meeting-videos.html"><a href="meeting-videos.html"><i class="fa fa-check"></i><b>1.9</b> Meeting Videos</a><ul>
 <li class="chapter" data-level="1.9.1" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-1"><i class="fa fa-check"></i><b>1.9.1</b> Cohort 1</a></li>
 <li class="chapter" data-level="1.9.2" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-2"><i class="fa fa-check"></i><b>1.9.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="1.9.3" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-2-1"><i class="fa fa-check"></i><b>1.9.3</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="shiny-basic-user-interface.html"><a href="shiny-basic-user-interface.html"><i class="fa fa-check"></i><b>2</b> Shiny - Basic User Interface</a><ul>
@@ -458,7 +459,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="22.11" data-path="demo-of-the-workflow.html"><a href="demo-of-the-workflow.html"><i class="fa fa-check"></i><b>22.11</b> Demo of the workflow</a></li>
 <li class="chapter" data-level="22.12" data-path="other-resources-to-learn-more-about-git.html"><a href="other-resources-to-learn-more-about-git.html"><i class="fa fa-check"></i><b>22.12</b> Other resources to learn more about <code>git</code></a></li>
 <li class="chapter" data-level="22.13" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html"><i class="fa fa-check"></i><b>22.13</b> Meeting Videos</a><ul>
-<li class="chapter" data-level="22.13.1" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-2-1"><i class="fa fa-check"></i><b>22.13.1</b> Cohort 2</a></li>
+<li class="chapter" data-level="22.13.1" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-2-2"><i class="fa fa-check"></i><b>22.13.1</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -489,27 +490,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>If your app uses modules, place related ones in individual <code>.R</code> files with <code>usethis::use_r("module-category")</code>.</li>
 <li>Wrap core app inside a function and place within a <code>.R</code> file, e.g:</li>
 </ol>
-<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="converting-an-existing-app.html#cb184-1"></a>greetingApp &lt;-<span class="st"> </span><span class="cf">function</span>() {</span>
-<span id="cb184-2"><a href="converting-an-existing-app.html#cb184-2"></a><span class="co"># define a user-interface with two elements: a text input with an ID, </span></span>
-<span id="cb184-3"><a href="converting-an-existing-app.html#cb184-3"></a><span class="co"># label, and initial value; define a textOutput that </span></span>
-<span id="cb184-4"><a href="converting-an-existing-app.html#cb184-4"></a><span class="co"># returns the input + greeting</span></span>
-<span id="cb184-5"><a href="converting-an-existing-app.html#cb184-5"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(</span>
-<span id="cb184-6"><a href="converting-an-existing-app.html#cb184-6"></a>  <span class="kw">textInput</span>(<span class="dt">inputId =</span> <span class="st">&quot;nameInput&quot;</span>, </span>
-<span id="cb184-7"><a href="converting-an-existing-app.html#cb184-7"></a>            <span class="dt">label =</span> <span class="st">&quot;What is your name?&quot;</span>, </span>
-<span id="cb184-8"><a href="converting-an-existing-app.html#cb184-8"></a>            <span class="dt">value =</span> <span class="st">&quot;World&quot;</span>),</span>
-<span id="cb184-9"><a href="converting-an-existing-app.html#cb184-9"></a>  <span class="kw">textOutput</span>(<span class="st">&quot;name&quot;</span>)</span>
-<span id="cb184-10"><a href="converting-an-existing-app.html#cb184-10"></a>)</span>
-<span id="cb184-11"><a href="converting-an-existing-app.html#cb184-11"></a></span>
-<span id="cb184-12"><a href="converting-an-existing-app.html#cb184-12"></a><span class="co"># define the server side logic to manipulate the inputs</span></span>
-<span id="cb184-13"><a href="converting-an-existing-app.html#cb184-13"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
-<span id="cb184-14"><a href="converting-an-existing-app.html#cb184-14"></a>  <span class="co"># define the output that concatenates the strings </span></span>
-<span id="cb184-15"><a href="converting-an-existing-app.html#cb184-15"></a>  <span class="co"># &quot;Hello, &quot; + user input + &quot;.&quot;</span></span>
-<span id="cb184-16"><a href="converting-an-existing-app.html#cb184-16"></a>  output<span class="op">$</span>name &lt;-<span class="st"> </span><span class="kw">renderText</span>({<span class="kw">paste0</span>(<span class="st">&quot;Hello, &quot;</span>, input<span class="op">$</span>nameInput, <span class="st">&quot;.&quot;</span>)})</span>
-<span id="cb184-17"><a href="converting-an-existing-app.html#cb184-17"></a>}</span>
-<span id="cb184-18"><a href="converting-an-existing-app.html#cb184-18"></a></span>
-<span id="cb184-19"><a href="converting-an-existing-app.html#cb184-19"></a><span class="co"># run the application</span></span>
-<span id="cb184-20"><a href="converting-an-existing-app.html#cb184-20"></a><span class="kw">shinyApp</span>(ui, server)</span>
-<span id="cb184-21"><a href="converting-an-existing-app.html#cb184-21"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="converting-an-existing-app.html#cb185-1"></a>greetingApp &lt;-<span class="st"> </span><span class="cf">function</span>() {</span>
+<span id="cb185-2"><a href="converting-an-existing-app.html#cb185-2"></a><span class="co"># define a user-interface with two elements: a text input with an ID, </span></span>
+<span id="cb185-3"><a href="converting-an-existing-app.html#cb185-3"></a><span class="co"># label, and initial value; define a textOutput that </span></span>
+<span id="cb185-4"><a href="converting-an-existing-app.html#cb185-4"></a><span class="co"># returns the input + greeting</span></span>
+<span id="cb185-5"><a href="converting-an-existing-app.html#cb185-5"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(</span>
+<span id="cb185-6"><a href="converting-an-existing-app.html#cb185-6"></a>  <span class="kw">textInput</span>(<span class="dt">inputId =</span> <span class="st">&quot;nameInput&quot;</span>, </span>
+<span id="cb185-7"><a href="converting-an-existing-app.html#cb185-7"></a>            <span class="dt">label =</span> <span class="st">&quot;What is your name?&quot;</span>, </span>
+<span id="cb185-8"><a href="converting-an-existing-app.html#cb185-8"></a>            <span class="dt">value =</span> <span class="st">&quot;World&quot;</span>),</span>
+<span id="cb185-9"><a href="converting-an-existing-app.html#cb185-9"></a>  <span class="kw">textOutput</span>(<span class="st">&quot;name&quot;</span>)</span>
+<span id="cb185-10"><a href="converting-an-existing-app.html#cb185-10"></a>)</span>
+<span id="cb185-11"><a href="converting-an-existing-app.html#cb185-11"></a></span>
+<span id="cb185-12"><a href="converting-an-existing-app.html#cb185-12"></a><span class="co"># define the server side logic to manipulate the inputs</span></span>
+<span id="cb185-13"><a href="converting-an-existing-app.html#cb185-13"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
+<span id="cb185-14"><a href="converting-an-existing-app.html#cb185-14"></a>  <span class="co"># define the output that concatenates the strings </span></span>
+<span id="cb185-15"><a href="converting-an-existing-app.html#cb185-15"></a>  <span class="co"># &quot;Hello, &quot; + user input + &quot;.&quot;</span></span>
+<span id="cb185-16"><a href="converting-an-existing-app.html#cb185-16"></a>  output<span class="op">$</span>name &lt;-<span class="st"> </span><span class="kw">renderText</span>({<span class="kw">paste0</span>(<span class="st">&quot;Hello, &quot;</span>, input<span class="op">$</span>nameInput, <span class="st">&quot;.&quot;</span>)})</span>
+<span id="cb185-17"><a href="converting-an-existing-app.html#cb185-17"></a>}</span>
+<span id="cb185-18"><a href="converting-an-existing-app.html#cb185-18"></a></span>
+<span id="cb185-19"><a href="converting-an-existing-app.html#cb185-19"></a><span class="co"># run the application</span></span>
+<span id="cb185-20"><a href="converting-an-existing-app.html#cb185-20"></a><span class="kw">shinyApp</span>(ui, server)</span>
+<span id="cb185-21"><a href="converting-an-existing-app.html#cb185-21"></a>}</span></code></pre></div>
 <ol start="5" style="list-style-type: decimal">
 <li>Call <code>devtools::load_all()</code> and your function – <code>greetingApp()</code> to say hello to your package!</li>
 </ol>

@@ -24,7 +24,7 @@
 <meta name="author" content="The R4DS Online Learning Community" />
 
 
-<meta name="date" content="2021-08-03" />
+<meta name="date" content="2021-08-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -170,6 +170,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.9" data-path="meeting-videos.html"><a href="meeting-videos.html"><i class="fa fa-check"></i><b>1.9</b> Meeting Videos</a><ul>
 <li class="chapter" data-level="1.9.1" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-1"><i class="fa fa-check"></i><b>1.9.1</b> Cohort 1</a></li>
 <li class="chapter" data-level="1.9.2" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-2"><i class="fa fa-check"></i><b>1.9.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="1.9.3" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-2-1"><i class="fa fa-check"></i><b>1.9.3</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="shiny-basic-user-interface.html"><a href="shiny-basic-user-interface.html"><i class="fa fa-check"></i><b>2</b> Shiny - Basic User Interface</a><ul>
@@ -458,7 +459,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="22.11" data-path="demo-of-the-workflow.html"><a href="demo-of-the-workflow.html"><i class="fa fa-check"></i><b>22.11</b> Demo of the workflow</a></li>
 <li class="chapter" data-level="22.12" data-path="other-resources-to-learn-more-about-git.html"><a href="other-resources-to-learn-more-about-git.html"><i class="fa fa-check"></i><b>22.12</b> Other resources to learn more about <code>git</code></a></li>
 <li class="chapter" data-level="22.13" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html"><i class="fa fa-check"></i><b>22.13</b> Meeting Videos</a><ul>
-<li class="chapter" data-level="22.13.1" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-2-1"><i class="fa fa-check"></i><b>22.13.1</b> Cohort 2</a></li>
+<li class="chapter" data-level="22.13.1" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-2-2"><i class="fa fa-check"></i><b>22.13.1</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -501,19 +502,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>Further we have a <strong>weight</strong> attribute for an estimation how may people the current case represents if the dataset was scaled to the entire US population.</p>
 <p>Code to download the data:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="the-data.html#cb28-1"></a><span class="kw">dir.create</span>(<span class="st">&quot;neiss&quot;</span>)</span>
-<span id="cb28-2"><a href="the-data.html#cb28-2"></a></span>
-<span id="cb28-3"><a href="the-data.html#cb28-3"></a>download &lt;-<span class="st"> </span><span class="cf">function</span>(name) {</span>
-<span id="cb28-4"><a href="the-data.html#cb28-4"></a>  url &lt;-<span class="st"> &quot;https://github.com/hadley/mastering-shiny/raw/master/neiss/&quot;</span></span>
-<span id="cb28-5"><a href="the-data.html#cb28-5"></a>  <span class="kw">download.file</span>(<span class="kw">paste0</span>(url, name), <span class="kw">paste0</span>(<span class="st">&quot;neiss/&quot;</span>, name), <span class="dt">quiet =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb28-6"><a href="the-data.html#cb28-6"></a>}</span>
-<span id="cb28-7"><a href="the-data.html#cb28-7"></a></span>
-<span id="cb28-8"><a href="the-data.html#cb28-8"></a><span class="kw">download</span>(<span class="st">&quot;injuries.tsv.gz&quot;</span>)</span>
-<span id="cb28-9"><a href="the-data.html#cb28-9"></a><span class="kw">download</span>(<span class="st">&quot;population.tsv&quot;</span>)</span>
-<span id="cb28-10"><a href="the-data.html#cb28-10"></a><span class="kw">download</span>(<span class="st">&quot;products.tsv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="the-data.html#cb29-1"></a><span class="kw">dir.create</span>(<span class="st">&quot;neiss&quot;</span>)</span>
+<span id="cb29-2"><a href="the-data.html#cb29-2"></a></span>
+<span id="cb29-3"><a href="the-data.html#cb29-3"></a>download &lt;-<span class="st"> </span><span class="cf">function</span>(name) {</span>
+<span id="cb29-4"><a href="the-data.html#cb29-4"></a>  url &lt;-<span class="st"> &quot;https://github.com/hadley/mastering-shiny/raw/master/neiss/&quot;</span></span>
+<span id="cb29-5"><a href="the-data.html#cb29-5"></a>  <span class="kw">download.file</span>(<span class="kw">paste0</span>(url, name), <span class="kw">paste0</span>(<span class="st">&quot;neiss/&quot;</span>, name), <span class="dt">quiet =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb29-6"><a href="the-data.html#cb29-6"></a>}</span>
+<span id="cb29-7"><a href="the-data.html#cb29-7"></a></span>
+<span id="cb29-8"><a href="the-data.html#cb29-8"></a><span class="kw">download</span>(<span class="st">&quot;injuries.tsv.gz&quot;</span>)</span>
+<span id="cb29-9"><a href="the-data.html#cb29-9"></a><span class="kw">download</span>(<span class="st">&quot;population.tsv&quot;</span>)</span>
+<span id="cb29-10"><a href="the-data.html#cb29-10"></a><span class="kw">download</span>(<span class="st">&quot;products.tsv&quot;</span>)</span></code></pre></div>
 <p>Main data:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="the-data.html#cb29-1"></a>injuries &lt;-<span class="st"> </span><span class="kw">vroom</span>(<span class="st">&quot;neiss/injuries.tsv.gz&quot;</span>)</span>
-<span id="cb29-2"><a href="the-data.html#cb29-2"></a>injuries</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="the-data.html#cb30-1"></a>injuries &lt;-<span class="st"> </span><span class="kw">vroom</span>(<span class="st">&quot;neiss/injuries.tsv.gz&quot;</span>)</span>
+<span id="cb30-2"><a href="the-data.html#cb30-2"></a>injuries</span></code></pre></div>
 <pre><code>## # A tibble: 255,064 × 10
 ##    trmt_date    age sex    race       body_part  diag  location prod_code weight
 ##    &lt;date&gt;     &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt;        &lt;dbl&gt;  &lt;dbl&gt;
@@ -529,8 +530,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 10 2017-01-01    58 female not stated Lower Leg  Frac… Home          1842   87.1
 ## # … with 255,054 more rows, and 1 more variable: narrative &lt;chr&gt;</code></pre>
 <p>Product names:</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="the-data.html#cb31-1"></a>products &lt;-<span class="st"> </span><span class="kw">vroom</span>(<span class="st">&quot;neiss/products.tsv&quot;</span>)</span>
-<span id="cb31-2"><a href="the-data.html#cb31-2"></a>products</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="the-data.html#cb32-1"></a>products &lt;-<span class="st"> </span><span class="kw">vroom</span>(<span class="st">&quot;neiss/products.tsv&quot;</span>)</span>
+<span id="cb32-2"><a href="the-data.html#cb32-2"></a>products</span></code></pre></div>
 <pre><code>## # A tibble: 38 × 2
 ##    prod_code title                                   
 ##        &lt;dbl&gt; &lt;chr&gt;                                   
@@ -546,8 +547,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 10      1205 basketball (activity, apparel or equip.)
 ## # … with 28 more rows</code></pre>
 <p>Population data:</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="the-data.html#cb33-1"></a>population &lt;-<span class="st"> </span><span class="kw">vroom</span>(<span class="st">&quot;neiss/population.tsv&quot;</span>)</span>
-<span id="cb33-2"><a href="the-data.html#cb33-2"></a>population</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="the-data.html#cb34-1"></a>population &lt;-<span class="st"> </span><span class="kw">vroom</span>(<span class="st">&quot;neiss/population.tsv&quot;</span>)</span>
+<span id="cb34-2"><a href="the-data.html#cb34-2"></a>population</span></code></pre></div>
 <pre><code>## # A tibble: 170 × 3
 ##      age sex    population
 ##    &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt;

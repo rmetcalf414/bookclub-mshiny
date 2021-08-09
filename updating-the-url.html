@@ -24,7 +24,7 @@
 <meta name="author" content="The R4DS Online Learning Community" />
 
 
-<meta name="date" content="2021-08-03" />
+<meta name="date" content="2021-08-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -170,6 +170,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.9" data-path="meeting-videos.html"><a href="meeting-videos.html"><i class="fa fa-check"></i><b>1.9</b> Meeting Videos</a><ul>
 <li class="chapter" data-level="1.9.1" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-1"><i class="fa fa-check"></i><b>1.9.1</b> Cohort 1</a></li>
 <li class="chapter" data-level="1.9.2" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-2"><i class="fa fa-check"></i><b>1.9.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="1.9.3" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-2-1"><i class="fa fa-check"></i><b>1.9.3</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="shiny-basic-user-interface.html"><a href="shiny-basic-user-interface.html"><i class="fa fa-check"></i><b>2</b> Shiny - Basic User Interface</a><ul>
@@ -458,7 +459,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="22.11" data-path="demo-of-the-workflow.html"><a href="demo-of-the-workflow.html"><i class="fa fa-check"></i><b>22.11</b> Demo of the workflow</a></li>
 <li class="chapter" data-level="22.12" data-path="other-resources-to-learn-more-about-git.html"><a href="other-resources-to-learn-more-about-git.html"><i class="fa fa-check"></i><b>22.12</b> Other resources to learn more about <code>git</code></a></li>
 <li class="chapter" data-level="22.13" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html"><i class="fa fa-check"></i><b>22.13</b> Meeting Videos</a><ul>
-<li class="chapter" data-level="22.13.1" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-2-1"><i class="fa fa-check"></i><b>22.13.1</b> Cohort 2</a></li>
+<li class="chapter" data-level="22.13.1" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-2-2"><i class="fa fa-check"></i><b>22.13.1</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -485,10 +486,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">11.4</span> Updating the URL</h2>
 <p>It is probably more <em>convenient</em> to have the URL just update itself whenever inputs change instead of having the user press button each time a state must be captured.</p>
 <p>This can be accomplished by wrapping information like <code>input</code> values and <code>session</code> information around an observer as such:</p>
-<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="updating-the-url.html#cb126-1"></a><span class="kw">observe</span>({</span>
-<span id="cb126-2"><a href="updating-the-url.html#cb126-2"></a>  <span class="kw">reactiveValuesToList</span>(input)</span>
-<span id="cb126-3"><a href="updating-the-url.html#cb126-3"></a>  session<span class="op">$</span><span class="kw">doBookmark</span>()</span>
-<span id="cb126-4"><a href="updating-the-url.html#cb126-4"></a>})</span></code></pre></div>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="updating-the-url.html#cb127-1"></a><span class="kw">observe</span>({</span>
+<span id="cb127-2"><a href="updating-the-url.html#cb127-2"></a>  <span class="kw">reactiveValuesToList</span>(input)</span>
+<span id="cb127-3"><a href="updating-the-url.html#cb127-3"></a>  session<span class="op">$</span><span class="kw">doBookmark</span>()</span>
+<span id="cb127-4"><a href="updating-the-url.html#cb127-4"></a>})</span></code></pre></div>
 <p>The <code>reactiveValuesToList(input)</code> step does what you might expect <code>as.list()</code> to do in base R. It takes the reactive object, <code>input</code> and stores its values and dependencies in a list.</p>
 <p>The next step invokes the <code>doBookmark()</code> function from the session object. The session object is an environment that can be used to access information and functionality relating to the session. <code>doBookmark()</code> invokes the <code>onBookmarked()</code> <em>callback</em> function.</p>
 <p>FYI: a callback function is:</p>
@@ -499,7 +500,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">11.4.1</span> Storing a richer state</h3>
 <p>URL bookmarking is simple and works everywhere you may want to deploy your Shiny app however, could become very long if you have a large number of inputs. If this is the case, it may be better to store your state on the server side.</p>
 <p>Shiny saves the state of your app in an <code>.rds</code> file on the server and generates a shorter and easier URL. To do this, you can simply change the <code>enableBookmarking</code> argument to be “server” instead of “url”</p>
-<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="updating-the-url.html#cb127-1"></a><span class="kw">shinyApp</span>(ui, server, <span class="dt">enableBookmarking =</span> <span class="st">&quot;server&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="updating-the-url.html#cb128-1"></a><span class="kw">shinyApp</span>(ui, server, <span class="dt">enableBookmarking =</span> <span class="st">&quot;server&quot;</span>)</span></code></pre></div>
 <p>This generates URLs like this: <code>http://127.0.0.1:4087/?_state_id_=0d645f1b28f05c97</code></p>
 <p>The parameter in this instance is the <code>state_id</code> which corresponds to a directory in your working directory - <code>shiny_bookmarks/0d645f1b28f05c97</code></p>
 <p>⚠️ Be sure to have a mechanism to routinely delete these directories. If your app requires bookmarking in a complex state and you do not delete these files, your app is going to take up more disk space and may start to lag. However, when you <em>do</em> delete these files, their corresponding URLs will also stop working. Just be sure to either send updated links to stakeholders or be mindful of the state of your app.</p>

@@ -26,6 +26,7 @@ other-resources
 meeting-videos
 cohort-1
 cohort-2
+cohort-2-1
 shiny---basic-user-interface
 learning-objectives
 fyi
@@ -257,4 +258,4 @@ push-changes-to-remote-repository
 demo-of-the-workflow
 other-resources-to-learn-more-about-git
 meeting-videos-1
-cohort-2-1
+cohort-2-2

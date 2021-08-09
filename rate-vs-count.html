@@ -24,7 +24,7 @@
 <meta name="author" content="The R4DS Online Learning Community" />
 
 
-<meta name="date" content="2021-08-03" />
+<meta name="date" content="2021-08-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -170,6 +170,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.9" data-path="meeting-videos.html"><a href="meeting-videos.html"><i class="fa fa-check"></i><b>1.9</b> Meeting Videos</a><ul>
 <li class="chapter" data-level="1.9.1" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-1"><i class="fa fa-check"></i><b>1.9.1</b> Cohort 1</a></li>
 <li class="chapter" data-level="1.9.2" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-2"><i class="fa fa-check"></i><b>1.9.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="1.9.3" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-2-1"><i class="fa fa-check"></i><b>1.9.3</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="shiny-basic-user-interface.html"><a href="shiny-basic-user-interface.html"><i class="fa fa-check"></i><b>2</b> Shiny - Basic User Interface</a><ul>
@@ -458,7 +459,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="22.11" data-path="demo-of-the-workflow.html"><a href="demo-of-the-workflow.html"><i class="fa fa-check"></i><b>22.11</b> Demo of the workflow</a></li>
 <li class="chapter" data-level="22.12" data-path="other-resources-to-learn-more-about-git.html"><a href="other-resources-to-learn-more-about-git.html"><i class="fa fa-check"></i><b>22.12</b> Other resources to learn more about <code>git</code></a></li>
 <li class="chapter" data-level="22.13" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html"><i class="fa fa-check"></i><b>22.13</b> Meeting Videos</a><ul>
-<li class="chapter" data-level="22.13.1" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-2-1"><i class="fa fa-check"></i><b>22.13.1</b> Cohort 2</a></li>
+<li class="chapter" data-level="22.13.1" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-2-2"><i class="fa fa-check"></i><b>22.13.1</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -485,53 +486,53 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">4.6</span> Rate vs count</h2>
 <p>Next step is to give the user the chance to plot the data relative to 10,000 People or in absolute numbers.</p>
 <p>The new ui looks like this:</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="rate-vs-count.html#cb48-1"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(</span>
-<span id="cb48-2"><a href="rate-vs-count.html#cb48-2"></a>  <span class="kw">fluidRow</span>(</span>
-<span id="cb48-3"><a href="rate-vs-count.html#cb48-3"></a>    <span class="kw">column</span>(</span>
-<span id="cb48-4"><a href="rate-vs-count.html#cb48-4"></a>      <span class="dt">width =</span> <span class="dv">8</span>,</span>
-<span id="cb48-5"><a href="rate-vs-count.html#cb48-5"></a>      <span class="kw">selectInput</span>(</span>
-<span id="cb48-6"><a href="rate-vs-count.html#cb48-6"></a>        <span class="dt">inputId =</span> <span class="st">&quot;code&quot;</span>,</span>
-<span id="cb48-7"><a href="rate-vs-count.html#cb48-7"></a>        <span class="dt">label =</span> <span class="st">&quot;Product&quot;</span>,</span>
-<span id="cb48-8"><a href="rate-vs-count.html#cb48-8"></a>        <span class="dt">choices =</span> prod_codes,</span>
-<span id="cb48-9"><a href="rate-vs-count.html#cb48-9"></a>        <span class="dt">width =</span> <span class="st">&quot;100%&quot;</span></span>
-<span id="cb48-10"><a href="rate-vs-count.html#cb48-10"></a>      )</span>
-<span id="cb48-11"><a href="rate-vs-count.html#cb48-11"></a>    ),</span>
-<span id="cb48-12"><a href="rate-vs-count.html#cb48-12"></a>    <span class="kw">column</span>(</span>
-<span id="cb48-13"><a href="rate-vs-count.html#cb48-13"></a>      <span class="dt">width =</span> <span class="dv">2</span>,</span>
-<span id="cb48-14"><a href="rate-vs-count.html#cb48-14"></a>      <span class="kw">selectInput</span>(<span class="dt">inputId =</span> <span class="st">&quot;y&quot;</span>, <span class="dt">label =</span> <span class="st">&quot;Y axis&quot;</span>, <span class="dt">choices =</span> <span class="kw">c</span>(<span class="st">&quot;rate&quot;</span>, <span class="st">&quot;count&quot;</span>))</span>
-<span id="cb48-15"><a href="rate-vs-count.html#cb48-15"></a>    )</span>
-<span id="cb48-16"><a href="rate-vs-count.html#cb48-16"></a>  ),</span>
-<span id="cb48-17"><a href="rate-vs-count.html#cb48-17"></a>  <span class="kw">fluidRow</span>(</span>
-<span id="cb48-18"><a href="rate-vs-count.html#cb48-18"></a>    <span class="kw">column</span>(<span class="dt">width =</span> <span class="dv">4</span>, <span class="kw">tableOutput</span>(<span class="dt">outputId =</span> <span class="st">&quot;diag&quot;</span>)),</span>
-<span id="cb48-19"><a href="rate-vs-count.html#cb48-19"></a>    <span class="kw">column</span>(<span class="dt">width =</span> <span class="dv">4</span>, <span class="kw">tableOutput</span>(<span class="dt">outputId =</span> <span class="st">&quot;body_part&quot;</span>)),</span>
-<span id="cb48-20"><a href="rate-vs-count.html#cb48-20"></a>    <span class="kw">column</span>(<span class="dt">width =</span> <span class="dv">4</span>, <span class="kw">tableOutput</span>(<span class="dt">outputId =</span> <span class="st">&quot;location&quot;</span>))</span>
-<span id="cb48-21"><a href="rate-vs-count.html#cb48-21"></a>  ),</span>
-<span id="cb48-22"><a href="rate-vs-count.html#cb48-22"></a>  <span class="kw">fluidRow</span>(</span>
-<span id="cb48-23"><a href="rate-vs-count.html#cb48-23"></a>    <span class="kw">column</span>(<span class="dt">width =</span> <span class="dv">12</span>, <span class="kw">plotOutput</span>(<span class="dt">outputId =</span> <span class="st">&quot;age_sex&quot;</span>))</span>
-<span id="cb48-24"><a href="rate-vs-count.html#cb48-24"></a>  )</span>
-<span id="cb48-25"><a href="rate-vs-count.html#cb48-25"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="rate-vs-count.html#cb49-1"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(</span>
+<span id="cb49-2"><a href="rate-vs-count.html#cb49-2"></a>  <span class="kw">fluidRow</span>(</span>
+<span id="cb49-3"><a href="rate-vs-count.html#cb49-3"></a>    <span class="kw">column</span>(</span>
+<span id="cb49-4"><a href="rate-vs-count.html#cb49-4"></a>      <span class="dt">width =</span> <span class="dv">8</span>,</span>
+<span id="cb49-5"><a href="rate-vs-count.html#cb49-5"></a>      <span class="kw">selectInput</span>(</span>
+<span id="cb49-6"><a href="rate-vs-count.html#cb49-6"></a>        <span class="dt">inputId =</span> <span class="st">&quot;code&quot;</span>,</span>
+<span id="cb49-7"><a href="rate-vs-count.html#cb49-7"></a>        <span class="dt">label =</span> <span class="st">&quot;Product&quot;</span>,</span>
+<span id="cb49-8"><a href="rate-vs-count.html#cb49-8"></a>        <span class="dt">choices =</span> prod_codes,</span>
+<span id="cb49-9"><a href="rate-vs-count.html#cb49-9"></a>        <span class="dt">width =</span> <span class="st">&quot;100%&quot;</span></span>
+<span id="cb49-10"><a href="rate-vs-count.html#cb49-10"></a>      )</span>
+<span id="cb49-11"><a href="rate-vs-count.html#cb49-11"></a>    ),</span>
+<span id="cb49-12"><a href="rate-vs-count.html#cb49-12"></a>    <span class="kw">column</span>(</span>
+<span id="cb49-13"><a href="rate-vs-count.html#cb49-13"></a>      <span class="dt">width =</span> <span class="dv">2</span>,</span>
+<span id="cb49-14"><a href="rate-vs-count.html#cb49-14"></a>      <span class="kw">selectInput</span>(<span class="dt">inputId =</span> <span class="st">&quot;y&quot;</span>, <span class="dt">label =</span> <span class="st">&quot;Y axis&quot;</span>, <span class="dt">choices =</span> <span class="kw">c</span>(<span class="st">&quot;rate&quot;</span>, <span class="st">&quot;count&quot;</span>))</span>
+<span id="cb49-15"><a href="rate-vs-count.html#cb49-15"></a>    )</span>
+<span id="cb49-16"><a href="rate-vs-count.html#cb49-16"></a>  ),</span>
+<span id="cb49-17"><a href="rate-vs-count.html#cb49-17"></a>  <span class="kw">fluidRow</span>(</span>
+<span id="cb49-18"><a href="rate-vs-count.html#cb49-18"></a>    <span class="kw">column</span>(<span class="dt">width =</span> <span class="dv">4</span>, <span class="kw">tableOutput</span>(<span class="dt">outputId =</span> <span class="st">&quot;diag&quot;</span>)),</span>
+<span id="cb49-19"><a href="rate-vs-count.html#cb49-19"></a>    <span class="kw">column</span>(<span class="dt">width =</span> <span class="dv">4</span>, <span class="kw">tableOutput</span>(<span class="dt">outputId =</span> <span class="st">&quot;body_part&quot;</span>)),</span>
+<span id="cb49-20"><a href="rate-vs-count.html#cb49-20"></a>    <span class="kw">column</span>(<span class="dt">width =</span> <span class="dv">4</span>, <span class="kw">tableOutput</span>(<span class="dt">outputId =</span> <span class="st">&quot;location&quot;</span>))</span>
+<span id="cb49-21"><a href="rate-vs-count.html#cb49-21"></a>  ),</span>
+<span id="cb49-22"><a href="rate-vs-count.html#cb49-22"></a>  <span class="kw">fluidRow</span>(</span>
+<span id="cb49-23"><a href="rate-vs-count.html#cb49-23"></a>    <span class="kw">column</span>(<span class="dt">width =</span> <span class="dv">12</span>, <span class="kw">plotOutput</span>(<span class="dt">outputId =</span> <span class="st">&quot;age_sex&quot;</span>))</span>
+<span id="cb49-24"><a href="rate-vs-count.html#cb49-24"></a>  )</span>
+<span id="cb49-25"><a href="rate-vs-count.html#cb49-25"></a>)</span></code></pre></div>
 <p>And plot rendering changes to:</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="rate-vs-count.html#cb49-1"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
-<span id="cb49-2"><a href="rate-vs-count.html#cb49-2"></a>  ...</span>
-<span id="cb49-3"><a href="rate-vs-count.html#cb49-3"></a>  </span>
-<span id="cb49-4"><a href="rate-vs-count.html#cb49-4"></a>  output<span class="op">$</span>age_sex &lt;-<span class="st"> </span><span class="kw">renderPlot</span>(</span>
-<span id="cb49-5"><a href="rate-vs-count.html#cb49-5"></a>    <span class="dt">expr =</span> {</span>
-<span id="cb49-6"><a href="rate-vs-count.html#cb49-6"></a>      <span class="cf">if</span> (input<span class="op">$</span>y <span class="op">==</span><span class="st"> &quot;count&quot;</span>) {</span>
-<span id="cb49-7"><a href="rate-vs-count.html#cb49-7"></a>        <span class="kw">summary</span>() <span class="op">%&gt;%</span></span>
-<span id="cb49-8"><a href="rate-vs-count.html#cb49-8"></a><span class="st">          </span><span class="kw">ggplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> age, <span class="dt">y =</span> n, <span class="dt">colour =</span> sex)) <span class="op">+</span></span>
-<span id="cb49-9"><a href="rate-vs-count.html#cb49-9"></a><span class="st">          </span><span class="kw">geom_line</span>() <span class="op">+</span></span>
-<span id="cb49-10"><a href="rate-vs-count.html#cb49-10"></a><span class="st">          </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="st">&quot;Estimated number of injuries&quot;</span>)</span>
-<span id="cb49-11"><a href="rate-vs-count.html#cb49-11"></a>        </span>
-<span id="cb49-12"><a href="rate-vs-count.html#cb49-12"></a>      } <span class="cf">else</span> {</span>
-<span id="cb49-13"><a href="rate-vs-count.html#cb49-13"></a>        <span class="kw">summary</span>() <span class="op">%&gt;%</span></span>
-<span id="cb49-14"><a href="rate-vs-count.html#cb49-14"></a><span class="st">          </span><span class="kw">ggplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> age, <span class="dt">y =</span> rate, <span class="dt">colour =</span> sex)) <span class="op">+</span></span>
-<span id="cb49-15"><a href="rate-vs-count.html#cb49-15"></a><span class="st">          </span><span class="kw">geom_line</span>(<span class="dt">na.rm =</span> <span class="ot">TRUE</span>) <span class="op">+</span></span>
-<span id="cb49-16"><a href="rate-vs-count.html#cb49-16"></a><span class="st">          </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="st">&quot;Injuries per 10,000 people&quot;</span>)</span>
-<span id="cb49-17"><a href="rate-vs-count.html#cb49-17"></a>      }</span>
-<span id="cb49-18"><a href="rate-vs-count.html#cb49-18"></a>    },</span>
-<span id="cb49-19"><a href="rate-vs-count.html#cb49-19"></a>    <span class="dt">res =</span> <span class="dv">96</span></span>
-<span id="cb49-20"><a href="rate-vs-count.html#cb49-20"></a>  )</span>
-<span id="cb49-21"><a href="rate-vs-count.html#cb49-21"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="rate-vs-count.html#cb50-1"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
+<span id="cb50-2"><a href="rate-vs-count.html#cb50-2"></a>  ...</span>
+<span id="cb50-3"><a href="rate-vs-count.html#cb50-3"></a>  </span>
+<span id="cb50-4"><a href="rate-vs-count.html#cb50-4"></a>  output<span class="op">$</span>age_sex &lt;-<span class="st"> </span><span class="kw">renderPlot</span>(</span>
+<span id="cb50-5"><a href="rate-vs-count.html#cb50-5"></a>    <span class="dt">expr =</span> {</span>
+<span id="cb50-6"><a href="rate-vs-count.html#cb50-6"></a>      <span class="cf">if</span> (input<span class="op">$</span>y <span class="op">==</span><span class="st"> &quot;count&quot;</span>) {</span>
+<span id="cb50-7"><a href="rate-vs-count.html#cb50-7"></a>        <span class="kw">summary</span>() <span class="op">%&gt;%</span></span>
+<span id="cb50-8"><a href="rate-vs-count.html#cb50-8"></a><span class="st">          </span><span class="kw">ggplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> age, <span class="dt">y =</span> n, <span class="dt">colour =</span> sex)) <span class="op">+</span></span>
+<span id="cb50-9"><a href="rate-vs-count.html#cb50-9"></a><span class="st">          </span><span class="kw">geom_line</span>() <span class="op">+</span></span>
+<span id="cb50-10"><a href="rate-vs-count.html#cb50-10"></a><span class="st">          </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="st">&quot;Estimated number of injuries&quot;</span>)</span>
+<span id="cb50-11"><a href="rate-vs-count.html#cb50-11"></a>        </span>
+<span id="cb50-12"><a href="rate-vs-count.html#cb50-12"></a>      } <span class="cf">else</span> {</span>
+<span id="cb50-13"><a href="rate-vs-count.html#cb50-13"></a>        <span class="kw">summary</span>() <span class="op">%&gt;%</span></span>
+<span id="cb50-14"><a href="rate-vs-count.html#cb50-14"></a><span class="st">          </span><span class="kw">ggplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> age, <span class="dt">y =</span> rate, <span class="dt">colour =</span> sex)) <span class="op">+</span></span>
+<span id="cb50-15"><a href="rate-vs-count.html#cb50-15"></a><span class="st">          </span><span class="kw">geom_line</span>(<span class="dt">na.rm =</span> <span class="ot">TRUE</span>) <span class="op">+</span></span>
+<span id="cb50-16"><a href="rate-vs-count.html#cb50-16"></a><span class="st">          </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="st">&quot;Injuries per 10,000 people&quot;</span>)</span>
+<span id="cb50-17"><a href="rate-vs-count.html#cb50-17"></a>      }</span>
+<span id="cb50-18"><a href="rate-vs-count.html#cb50-18"></a>    },</span>
+<span id="cb50-19"><a href="rate-vs-count.html#cb50-19"></a>    <span class="dt">res =</span> <span class="dv">96</span></span>
+<span id="cb50-20"><a href="rate-vs-count.html#cb50-20"></a>  )</span>
+<span id="cb50-21"><a href="rate-vs-count.html#cb50-21"></a>}</span></code></pre></div>
 </div>
             </section>
 

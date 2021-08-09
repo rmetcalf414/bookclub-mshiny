@@ -24,7 +24,7 @@
 <meta name="author" content="The R4DS Online Learning Community" />
 
 
-<meta name="date" content="2021-08-03" />
+<meta name="date" content="2021-08-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -170,6 +170,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.9" data-path="meeting-videos.html"><a href="meeting-videos.html"><i class="fa fa-check"></i><b>1.9</b> Meeting Videos</a><ul>
 <li class="chapter" data-level="1.9.1" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-1"><i class="fa fa-check"></i><b>1.9.1</b> Cohort 1</a></li>
 <li class="chapter" data-level="1.9.2" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-2"><i class="fa fa-check"></i><b>1.9.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="1.9.3" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-2-1"><i class="fa fa-check"></i><b>1.9.3</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="shiny-basic-user-interface.html"><a href="shiny-basic-user-interface.html"><i class="fa fa-check"></i><b>2</b> Shiny - Basic User Interface</a><ul>
@@ -458,7 +459,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="22.11" data-path="demo-of-the-workflow.html"><a href="demo-of-the-workflow.html"><i class="fa fa-check"></i><b>22.11</b> Demo of the workflow</a></li>
 <li class="chapter" data-level="22.12" data-path="other-resources-to-learn-more-about-git.html"><a href="other-resources-to-learn-more-about-git.html"><i class="fa fa-check"></i><b>22.12</b> Other resources to learn more about <code>git</code></a></li>
 <li class="chapter" data-level="22.13" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html"><i class="fa fa-check"></i><b>22.13</b> Meeting Videos</a><ul>
-<li class="chapter" data-level="22.13.1" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-2-1"><i class="fa fa-check"></i><b>22.13.1</b> Cohort 2</a></li>
+<li class="chapter" data-level="22.13.1" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-2-2"><i class="fa fa-check"></i><b>22.13.1</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -491,58 +492,58 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 <p>CASE 1: Reading uploaded data</p>
-<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="server-functions.html#cb181-1"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
-<span id="cb181-2"><a href="server-functions.html#cb181-2"></a>  data &lt;-<span class="st"> </span><span class="kw">reactive</span>({</span>
-<span id="cb181-3"><a href="server-functions.html#cb181-3"></a>    <span class="kw">req</span>(input<span class="op">$</span>file)</span>
-<span id="cb181-4"><a href="server-functions.html#cb181-4"></a>    </span>
-<span id="cb181-5"><a href="server-functions.html#cb181-5"></a>    ext &lt;-<span class="st"> </span>tools<span class="op">::</span><span class="kw">file_ext</span>(input<span class="op">$</span>file<span class="op">$</span>name)</span>
-<span id="cb181-6"><a href="server-functions.html#cb181-6"></a>    <span class="cf">switch</span>(ext,</span>
-<span id="cb181-7"><a href="server-functions.html#cb181-7"></a>      <span class="dt">csv =</span> vroom<span class="op">::</span><span class="kw">vroom</span>(input<span class="op">$</span>file<span class="op">$</span>datapath, <span class="dt">delim =</span> <span class="st">&quot;,&quot;</span>),</span>
-<span id="cb181-8"><a href="server-functions.html#cb181-8"></a>      <span class="dt">tsv =</span> vroom<span class="op">::</span><span class="kw">vroom</span>(input<span class="op">$</span>file<span class="op">$</span>datapath, <span class="dt">delim =</span> <span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>),</span>
-<span id="cb181-9"><a href="server-functions.html#cb181-9"></a>      <span class="kw">validate</span>(<span class="st">&quot;Invalid file; Please upload a .csv or .tsv file&quot;</span>)</span>
-<span id="cb181-10"><a href="server-functions.html#cb181-10"></a>    )</span>
-<span id="cb181-11"><a href="server-functions.html#cb181-11"></a>  })</span>
-<span id="cb181-12"><a href="server-functions.html#cb181-12"></a>  </span>
-<span id="cb181-13"><a href="server-functions.html#cb181-13"></a>  output<span class="op">$</span>head &lt;-<span class="st"> </span><span class="kw">renderTable</span>({</span>
-<span id="cb181-14"><a href="server-functions.html#cb181-14"></a>    <span class="kw">head</span>(<span class="kw">data</span>(), input<span class="op">$</span>n)</span>
-<span id="cb181-15"><a href="server-functions.html#cb181-15"></a>  })</span>
-<span id="cb181-16"><a href="server-functions.html#cb181-16"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="server-functions.html#cb182-1"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
+<span id="cb182-2"><a href="server-functions.html#cb182-2"></a>  data &lt;-<span class="st"> </span><span class="kw">reactive</span>({</span>
+<span id="cb182-3"><a href="server-functions.html#cb182-3"></a>    <span class="kw">req</span>(input<span class="op">$</span>file)</span>
+<span id="cb182-4"><a href="server-functions.html#cb182-4"></a>    </span>
+<span id="cb182-5"><a href="server-functions.html#cb182-5"></a>    ext &lt;-<span class="st"> </span>tools<span class="op">::</span><span class="kw">file_ext</span>(input<span class="op">$</span>file<span class="op">$</span>name)</span>
+<span id="cb182-6"><a href="server-functions.html#cb182-6"></a>    <span class="cf">switch</span>(ext,</span>
+<span id="cb182-7"><a href="server-functions.html#cb182-7"></a>      <span class="dt">csv =</span> vroom<span class="op">::</span><span class="kw">vroom</span>(input<span class="op">$</span>file<span class="op">$</span>datapath, <span class="dt">delim =</span> <span class="st">&quot;,&quot;</span>),</span>
+<span id="cb182-8"><a href="server-functions.html#cb182-8"></a>      <span class="dt">tsv =</span> vroom<span class="op">::</span><span class="kw">vroom</span>(input<span class="op">$</span>file<span class="op">$</span>datapath, <span class="dt">delim =</span> <span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>),</span>
+<span id="cb182-9"><a href="server-functions.html#cb182-9"></a>      <span class="kw">validate</span>(<span class="st">&quot;Invalid file; Please upload a .csv or .tsv file&quot;</span>)</span>
+<span id="cb182-10"><a href="server-functions.html#cb182-10"></a>    )</span>
+<span id="cb182-11"><a href="server-functions.html#cb182-11"></a>  })</span>
+<span id="cb182-12"><a href="server-functions.html#cb182-12"></a>  </span>
+<span id="cb182-13"><a href="server-functions.html#cb182-13"></a>  output<span class="op">$</span>head &lt;-<span class="st"> </span><span class="kw">renderTable</span>({</span>
+<span id="cb182-14"><a href="server-functions.html#cb182-14"></a>    <span class="kw">head</span>(<span class="kw">data</span>(), input<span class="op">$</span>n)</span>
+<span id="cb182-15"><a href="server-functions.html#cb182-15"></a>  })</span>
+<span id="cb182-16"><a href="server-functions.html#cb182-16"></a>}</span></code></pre></div>
 <p>To a function that extracts:</p>
-<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="server-functions.html#cb182-1"></a><span class="co"># IN ITS OWN FILE</span></span>
-<span id="cb182-2"><a href="server-functions.html#cb182-2"></a>load_file &lt;-<span class="st"> </span><span class="cf">function</span>(name, path) {</span>
-<span id="cb182-3"><a href="server-functions.html#cb182-3"></a>  ext &lt;-<span class="st"> </span>tools<span class="op">::</span><span class="kw">file_ext</span>(name)</span>
-<span id="cb182-4"><a href="server-functions.html#cb182-4"></a>  <span class="cf">switch</span>(ext,</span>
-<span id="cb182-5"><a href="server-functions.html#cb182-5"></a>    <span class="dt">csv =</span> vroom<span class="op">::</span><span class="kw">vroom</span>(path, <span class="dt">delim =</span> <span class="st">&quot;,&quot;</span>),</span>
-<span id="cb182-6"><a href="server-functions.html#cb182-6"></a>    <span class="dt">tsv =</span> vroom<span class="op">::</span><span class="kw">vroom</span>(path, <span class="dt">delim =</span> <span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>),</span>
-<span id="cb182-7"><a href="server-functions.html#cb182-7"></a>    <span class="co"># validate works similarly to stop() outside of shiny</span></span>
-<span id="cb182-8"><a href="server-functions.html#cb182-8"></a>    <span class="kw">validate</span>(<span class="st">&quot;Invalid file; Please upload a .csv or .tsv file&quot;</span>)</span>
-<span id="cb182-9"><a href="server-functions.html#cb182-9"></a>  )</span>
-<span id="cb182-10"><a href="server-functions.html#cb182-10"></a>}</span>
-<span id="cb182-11"><a href="server-functions.html#cb182-11"></a><span class="co">#----------------------------------------------</span></span>
-<span id="cb182-12"><a href="server-functions.html#cb182-12"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
-<span id="cb182-13"><a href="server-functions.html#cb182-13"></a>  data &lt;-<span class="st"> </span><span class="kw">reactive</span>({</span>
-<span id="cb182-14"><a href="server-functions.html#cb182-14"></a>    <span class="kw">req</span>(input<span class="op">$</span>file)</span>
-<span id="cb182-15"><a href="server-functions.html#cb182-15"></a>    <span class="kw">load_file</span>(input<span class="op">$</span>file<span class="op">$</span>name, input<span class="op">$</span>file<span class="op">$</span>datapath)</span>
-<span id="cb182-16"><a href="server-functions.html#cb182-16"></a>  })</span>
-<span id="cb182-17"><a href="server-functions.html#cb182-17"></a>  </span>
-<span id="cb182-18"><a href="server-functions.html#cb182-18"></a>  output<span class="op">$</span>head &lt;-<span class="st"> </span><span class="kw">renderTable</span>({</span>
-<span id="cb182-19"><a href="server-functions.html#cb182-19"></a>    <span class="kw">head</span>(<span class="kw">data</span>(), input<span class="op">$</span>n)</span>
-<span id="cb182-20"><a href="server-functions.html#cb182-20"></a>  })</span>
-<span id="cb182-21"><a href="server-functions.html#cb182-21"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="server-functions.html#cb183-1"></a><span class="co"># IN ITS OWN FILE</span></span>
+<span id="cb183-2"><a href="server-functions.html#cb183-2"></a>load_file &lt;-<span class="st"> </span><span class="cf">function</span>(name, path) {</span>
+<span id="cb183-3"><a href="server-functions.html#cb183-3"></a>  ext &lt;-<span class="st"> </span>tools<span class="op">::</span><span class="kw">file_ext</span>(name)</span>
+<span id="cb183-4"><a href="server-functions.html#cb183-4"></a>  <span class="cf">switch</span>(ext,</span>
+<span id="cb183-5"><a href="server-functions.html#cb183-5"></a>    <span class="dt">csv =</span> vroom<span class="op">::</span><span class="kw">vroom</span>(path, <span class="dt">delim =</span> <span class="st">&quot;,&quot;</span>),</span>
+<span id="cb183-6"><a href="server-functions.html#cb183-6"></a>    <span class="dt">tsv =</span> vroom<span class="op">::</span><span class="kw">vroom</span>(path, <span class="dt">delim =</span> <span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>),</span>
+<span id="cb183-7"><a href="server-functions.html#cb183-7"></a>    <span class="co"># validate works similarly to stop() outside of shiny</span></span>
+<span id="cb183-8"><a href="server-functions.html#cb183-8"></a>    <span class="kw">validate</span>(<span class="st">&quot;Invalid file; Please upload a .csv or .tsv file&quot;</span>)</span>
+<span id="cb183-9"><a href="server-functions.html#cb183-9"></a>  )</span>
+<span id="cb183-10"><a href="server-functions.html#cb183-10"></a>}</span>
+<span id="cb183-11"><a href="server-functions.html#cb183-11"></a><span class="co">#----------------------------------------------</span></span>
+<span id="cb183-12"><a href="server-functions.html#cb183-12"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
+<span id="cb183-13"><a href="server-functions.html#cb183-13"></a>  data &lt;-<span class="st"> </span><span class="kw">reactive</span>({</span>
+<span id="cb183-14"><a href="server-functions.html#cb183-14"></a>    <span class="kw">req</span>(input<span class="op">$</span>file)</span>
+<span id="cb183-15"><a href="server-functions.html#cb183-15"></a>    <span class="kw">load_file</span>(input<span class="op">$</span>file<span class="op">$</span>name, input<span class="op">$</span>file<span class="op">$</span>datapath)</span>
+<span id="cb183-16"><a href="server-functions.html#cb183-16"></a>  })</span>
+<span id="cb183-17"><a href="server-functions.html#cb183-17"></a>  </span>
+<span id="cb183-18"><a href="server-functions.html#cb183-18"></a>  output<span class="op">$</span>head &lt;-<span class="st"> </span><span class="kw">renderTable</span>({</span>
+<span id="cb183-19"><a href="server-functions.html#cb183-19"></a>    <span class="kw">head</span>(<span class="kw">data</span>(), input<span class="op">$</span>n)</span>
+<span id="cb183-20"><a href="server-functions.html#cb183-20"></a>  })</span>
+<span id="cb183-21"><a href="server-functions.html#cb183-21"></a>}</span></code></pre></div>
 <p>Note: generally better to keep reactive and non-reactive parts of app as separate as possible</p>
 <div id="internal-functions" class="section level3">
 <h3><span class="header-section-number">17.3.1</span> Internal functions</h3>
 <p>If the function needs to use input, output or session, it makes more sense to write the function directly in the server</p>
-<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="server-functions.html#cb183-1"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
-<span id="cb183-2"><a href="server-functions.html#cb183-2"></a>  switch_page &lt;-<span class="st"> </span><span class="cf">function</span>(i) {</span>
-<span id="cb183-3"><a href="server-functions.html#cb183-3"></a>    <span class="kw">updateTabsetPanel</span>(<span class="dt">input =</span> <span class="st">&quot;wizard&quot;</span>, <span class="dt">selected =</span> <span class="kw">paste0</span>(<span class="st">&quot;page_&quot;</span>, i))</span>
-<span id="cb183-4"><a href="server-functions.html#cb183-4"></a>  }</span>
-<span id="cb183-5"><a href="server-functions.html#cb183-5"></a>  </span>
-<span id="cb183-6"><a href="server-functions.html#cb183-6"></a>  <span class="kw">observeEvent</span>(input<span class="op">$</span>page_<span class="dv">12</span>, <span class="kw">switch_page</span>(<span class="dv">2</span>))</span>
-<span id="cb183-7"><a href="server-functions.html#cb183-7"></a>  <span class="kw">observeEvent</span>(input<span class="op">$</span>page_<span class="dv">21</span>, <span class="kw">switch_page</span>(<span class="dv">1</span>))</span>
-<span id="cb183-8"><a href="server-functions.html#cb183-8"></a>  <span class="kw">observeEvent</span>(input<span class="op">$</span>page_<span class="dv">23</span>, <span class="kw">switch_page</span>(<span class="dv">3</span>))</span>
-<span id="cb183-9"><a href="server-functions.html#cb183-9"></a>  <span class="kw">observeEvent</span>(input<span class="op">$</span>page_<span class="dv">32</span>, <span class="kw">switch_page</span>(<span class="dv">2</span>))</span>
-<span id="cb183-10"><a href="server-functions.html#cb183-10"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="server-functions.html#cb184-1"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
+<span id="cb184-2"><a href="server-functions.html#cb184-2"></a>  switch_page &lt;-<span class="st"> </span><span class="cf">function</span>(i) {</span>
+<span id="cb184-3"><a href="server-functions.html#cb184-3"></a>    <span class="kw">updateTabsetPanel</span>(<span class="dt">input =</span> <span class="st">&quot;wizard&quot;</span>, <span class="dt">selected =</span> <span class="kw">paste0</span>(<span class="st">&quot;page_&quot;</span>, i))</span>
+<span id="cb184-4"><a href="server-functions.html#cb184-4"></a>  }</span>
+<span id="cb184-5"><a href="server-functions.html#cb184-5"></a>  </span>
+<span id="cb184-6"><a href="server-functions.html#cb184-6"></a>  <span class="kw">observeEvent</span>(input<span class="op">$</span>page_<span class="dv">12</span>, <span class="kw">switch_page</span>(<span class="dv">2</span>))</span>
+<span id="cb184-7"><a href="server-functions.html#cb184-7"></a>  <span class="kw">observeEvent</span>(input<span class="op">$</span>page_<span class="dv">21</span>, <span class="kw">switch_page</span>(<span class="dv">1</span>))</span>
+<span id="cb184-8"><a href="server-functions.html#cb184-8"></a>  <span class="kw">observeEvent</span>(input<span class="op">$</span>page_<span class="dv">23</span>, <span class="kw">switch_page</span>(<span class="dv">3</span>))</span>
+<span id="cb184-9"><a href="server-functions.html#cb184-9"></a>  <span class="kw">observeEvent</span>(input<span class="op">$</span>page_<span class="dv">32</span>, <span class="kw">switch_page</span>(<span class="dv">2</span>))</span>
+<span id="cb184-10"><a href="server-functions.html#cb184-10"></a>}</span></code></pre></div>
 <hr />
 
 </div>

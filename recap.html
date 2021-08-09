@@ -24,7 +24,7 @@
 <meta name="author" content="The R4DS Online Learning Community" />
 
 
-<meta name="date" content="2021-08-03" />
+<meta name="date" content="2021-08-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -170,6 +170,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.9" data-path="meeting-videos.html"><a href="meeting-videos.html"><i class="fa fa-check"></i><b>1.9</b> Meeting Videos</a><ul>
 <li class="chapter" data-level="1.9.1" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-1"><i class="fa fa-check"></i><b>1.9.1</b> Cohort 1</a></li>
 <li class="chapter" data-level="1.9.2" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-2"><i class="fa fa-check"></i><b>1.9.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="1.9.3" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-2-1"><i class="fa fa-check"></i><b>1.9.3</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="shiny-basic-user-interface.html"><a href="shiny-basic-user-interface.html"><i class="fa fa-check"></i><b>2</b> Shiny - Basic User Interface</a><ul>
@@ -458,7 +459,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="22.11" data-path="demo-of-the-workflow.html"><a href="demo-of-the-workflow.html"><i class="fa fa-check"></i><b>22.11</b> Demo of the workflow</a></li>
 <li class="chapter" data-level="22.12" data-path="other-resources-to-learn-more-about-git.html"><a href="other-resources-to-learn-more-about-git.html"><i class="fa fa-check"></i><b>22.12</b> Other resources to learn more about <code>git</code></a></li>
 <li class="chapter" data-level="22.13" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html"><i class="fa fa-check"></i><b>22.13</b> Meeting Videos</a><ul>
-<li class="chapter" data-level="22.13.1" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-2-1"><i class="fa fa-check"></i><b>22.13.1</b> Cohort 2</a></li>
+<li class="chapter" data-level="22.13.1" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-2-2"><i class="fa fa-check"></i><b>22.13.1</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -483,10 +484,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="recap" class="section level2">
 <h2><span class="header-section-number">3.1</span> Recap</h2>
-<div id="htmlwidget-965979687ca7b3e6a897" style="width:672px;height:480px;" class="DiagrammeR html-widget"></div>
-<script type="application/json" data-for="htmlwidget-965979687ca7b3e6a897">{"x":{"diagram":"\ngraph LR\nA[R scripting]-->B[sequential logic]\n"},"evals":[],"jsHooks":[]}</script>
-<div id="htmlwidget-3d69cb8a561543731197" style="width:672px;height:480px;" class="DiagrammeR html-widget"></div>
-<script type="application/json" data-for="htmlwidget-3d69cb8a561543731197">{"x":{"diagram":"\ngraph LR\nA[Reactive Programming]-->B[graph of dependencies]\n"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-6ff4cb8a8e5703a3e689" style="width:672px;height:480px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6ff4cb8a8e5703a3e689">{"x":{"diagram":"\ngraph LR\nA[R scripting]-->B[sequential logic]\n"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-e33dba0a0528585885f9" style="width:672px;height:480px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e33dba0a0528585885f9">{"x":{"diagram":"\ngraph LR\nA[Reactive Programming]-->B[graph of dependencies]\n"},"evals":[],"jsHooks":[]}</script>
 <p>Important Learnings so far, main app components:</p>
 <ol style="list-style-type: decimal">
 <li>Front end - the ui object</li>
@@ -514,16 +515,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 - list-like object<br />
 - used for sending output<br />
 - ALWAYS use with a render fn() - sets up the reactive context &amp; renders the HTML.</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="recap.html#cb22-1"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(</span>
-<span id="cb22-2"><a href="recap.html#cb22-2"></a>  <span class="kw">textInput</span>(<span class="st">&quot;name&quot;</span>, <span class="st">&quot;What&#39;s your name?&quot;</span>),</span>
-<span id="cb22-3"><a href="recap.html#cb22-3"></a>  <span class="kw">textOutput</span>(<span class="st">&quot;greeting&quot;</span>)</span>
-<span id="cb22-4"><a href="recap.html#cb22-4"></a>)</span>
-<span id="cb22-5"><a href="recap.html#cb22-5"></a></span>
-<span id="cb22-6"><a href="recap.html#cb22-6"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
-<span id="cb22-7"><a href="recap.html#cb22-7"></a>  output<span class="op">$</span>greeting &lt;-<span class="st"> </span><span class="kw">renderText</span>({</span>
-<span id="cb22-8"><a href="recap.html#cb22-8"></a>    <span class="kw">paste0</span>(<span class="st">&quot;Hello &quot;</span>, input<span class="op">$</span>name, <span class="st">&quot;!&quot;</span>)</span>
-<span id="cb22-9"><a href="recap.html#cb22-9"></a>  })</span>
-<span id="cb22-10"><a href="recap.html#cb22-10"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="recap.html#cb23-1"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(</span>
+<span id="cb23-2"><a href="recap.html#cb23-2"></a>  <span class="kw">textInput</span>(<span class="st">&quot;name&quot;</span>, <span class="st">&quot;What&#39;s your name?&quot;</span>),</span>
+<span id="cb23-3"><a href="recap.html#cb23-3"></a>  <span class="kw">textOutput</span>(<span class="st">&quot;greeting&quot;</span>)</span>
+<span id="cb23-4"><a href="recap.html#cb23-4"></a>)</span>
+<span id="cb23-5"><a href="recap.html#cb23-5"></a></span>
+<span id="cb23-6"><a href="recap.html#cb23-6"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
+<span id="cb23-7"><a href="recap.html#cb23-7"></a>  output<span class="op">$</span>greeting &lt;-<span class="st"> </span><span class="kw">renderText</span>({</span>
+<span id="cb23-8"><a href="recap.html#cb23-8"></a>    <span class="kw">paste0</span>(<span class="st">&quot;Hello &quot;</span>, input<span class="op">$</span>name, <span class="st">&quot;!&quot;</span>)</span>
+<span id="cb23-9"><a href="recap.html#cb23-9"></a>  })</span>
+<span id="cb23-10"><a href="recap.html#cb23-10"></a>}</span></code></pre></div>
 </div>
             </section>
 

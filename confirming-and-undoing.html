@@ -24,7 +24,7 @@
 <meta name="author" content="The R4DS Online Learning Community" />
 
 
-<meta name="date" content="2021-08-03" />
+<meta name="date" content="2021-08-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -170,6 +170,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.9" data-path="meeting-videos.html"><a href="meeting-videos.html"><i class="fa fa-check"></i><b>1.9</b> Meeting Videos</a><ul>
 <li class="chapter" data-level="1.9.1" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-1"><i class="fa fa-check"></i><b>1.9.1</b> Cohort 1</a></li>
 <li class="chapter" data-level="1.9.2" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-2"><i class="fa fa-check"></i><b>1.9.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="1.9.3" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-2-1"><i class="fa fa-check"></i><b>1.9.3</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="shiny-basic-user-interface.html"><a href="shiny-basic-user-interface.html"><i class="fa fa-check"></i><b>2</b> Shiny - Basic User Interface</a><ul>
@@ -458,7 +459,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="22.11" data-path="demo-of-the-workflow.html"><a href="demo-of-the-workflow.html"><i class="fa fa-check"></i><b>22.11</b> Demo of the workflow</a></li>
 <li class="chapter" data-level="22.12" data-path="other-resources-to-learn-more-about-git.html"><a href="other-resources-to-learn-more-about-git.html"><i class="fa fa-check"></i><b>22.12</b> Other resources to learn more about <code>git</code></a></li>
 <li class="chapter" data-level="22.13" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html"><i class="fa fa-check"></i><b>22.13</b> Meeting Videos</a><ul>
-<li class="chapter" data-level="22.13.1" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-2-1"><i class="fa fa-check"></i><b>22.13.1</b> Cohort 2</a></li>
+<li class="chapter" data-level="22.13.1" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-2-2"><i class="fa fa-check"></i><b>22.13.1</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -491,31 +492,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>create a dialog box with <code>modalDialog()</code></li>
 </ul>
-<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="confirming-and-undoing.html#cb110-1"></a>modal_confirm &lt;-<span class="st"> </span><span class="kw">modalDialog</span>(</span>
-<span id="cb110-2"><a href="confirming-and-undoing.html#cb110-2"></a>  <span class="st">&quot;Are you sure you want to continue?&quot;</span>,</span>
-<span id="cb110-3"><a href="confirming-and-undoing.html#cb110-3"></a>  <span class="dt">title =</span> <span class="st">&quot;Deleting files&quot;</span>,</span>
-<span id="cb110-4"><a href="confirming-and-undoing.html#cb110-4"></a>  <span class="dt">footer =</span> <span class="kw">tagList</span>(</span>
-<span id="cb110-5"><a href="confirming-and-undoing.html#cb110-5"></a>    <span class="kw">actionButton</span>(<span class="st">&quot;cancel&quot;</span>, <span class="st">&quot;Cancel&quot;</span>),</span>
-<span id="cb110-6"><a href="confirming-and-undoing.html#cb110-6"></a>    <span class="kw">actionButton</span>(<span class="st">&quot;ok&quot;</span>, <span class="st">&quot;Delete&quot;</span>, <span class="dt">class =</span> <span class="st">&quot;btn btn-danger&quot;</span>)</span>
-<span id="cb110-7"><a href="confirming-and-undoing.html#cb110-7"></a>  )</span>
-<span id="cb110-8"><a href="confirming-and-undoing.html#cb110-8"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="confirming-and-undoing.html#cb111-1"></a>modal_confirm &lt;-<span class="st"> </span><span class="kw">modalDialog</span>(</span>
+<span id="cb111-2"><a href="confirming-and-undoing.html#cb111-2"></a>  <span class="st">&quot;Are you sure you want to continue?&quot;</span>,</span>
+<span id="cb111-3"><a href="confirming-and-undoing.html#cb111-3"></a>  <span class="dt">title =</span> <span class="st">&quot;Deleting files&quot;</span>,</span>
+<span id="cb111-4"><a href="confirming-and-undoing.html#cb111-4"></a>  <span class="dt">footer =</span> <span class="kw">tagList</span>(</span>
+<span id="cb111-5"><a href="confirming-and-undoing.html#cb111-5"></a>    <span class="kw">actionButton</span>(<span class="st">&quot;cancel&quot;</span>, <span class="st">&quot;Cancel&quot;</span>),</span>
+<span id="cb111-6"><a href="confirming-and-undoing.html#cb111-6"></a>    <span class="kw">actionButton</span>(<span class="st">&quot;ok&quot;</span>, <span class="st">&quot;Delete&quot;</span>, <span class="dt">class =</span> <span class="st">&quot;btn btn-danger&quot;</span>)</span>
+<span id="cb111-7"><a href="confirming-and-undoing.html#cb111-7"></a>  )</span>
+<span id="cb111-8"><a href="confirming-and-undoing.html#cb111-8"></a>)</span></code></pre></div>
 <p><img src="https://d33wubrfki0l68.cloudfront.net/1fd6b657c2fd4df4ef9de687459e433e0b6144f4/93f7d/demos/action-feedback/dialog.png" /></p>
-<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="confirming-and-undoing.html#cb111-1"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(</span>
-<span id="cb111-2"><a href="confirming-and-undoing.html#cb111-2"></a>  <span class="kw">actionButton</span>(<span class="st">&quot;delete&quot;</span>, <span class="st">&quot;Delete all files?&quot;</span>)</span>
-<span id="cb111-3"><a href="confirming-and-undoing.html#cb111-3"></a>)</span></code></pre></div>
-<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="confirming-and-undoing.html#cb112-1"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
-<span id="cb112-2"><a href="confirming-and-undoing.html#cb112-2"></a>  <span class="kw">observeEvent</span>(input<span class="op">$</span>delete, {</span>
-<span id="cb112-3"><a href="confirming-and-undoing.html#cb112-3"></a>    <span class="kw">showModal</span>(modal_confirm)</span>
-<span id="cb112-4"><a href="confirming-and-undoing.html#cb112-4"></a>  })</span>
-<span id="cb112-5"><a href="confirming-and-undoing.html#cb112-5"></a>  </span>
-<span id="cb112-6"><a href="confirming-and-undoing.html#cb112-6"></a>  <span class="kw">observeEvent</span>(input<span class="op">$</span>ok, {</span>
-<span id="cb112-7"><a href="confirming-and-undoing.html#cb112-7"></a>    <span class="kw">showNotification</span>(<span class="st">&quot;Files deleted&quot;</span>)</span>
-<span id="cb112-8"><a href="confirming-and-undoing.html#cb112-8"></a>    <span class="kw">removeModal</span>()</span>
-<span id="cb112-9"><a href="confirming-and-undoing.html#cb112-9"></a>  })</span>
-<span id="cb112-10"><a href="confirming-and-undoing.html#cb112-10"></a>  <span class="kw">observeEvent</span>(input<span class="op">$</span>cancel, {</span>
-<span id="cb112-11"><a href="confirming-and-undoing.html#cb112-11"></a>    <span class="kw">removeModal</span>()</span>
-<span id="cb112-12"><a href="confirming-and-undoing.html#cb112-12"></a>  })</span>
-<span id="cb112-13"><a href="confirming-and-undoing.html#cb112-13"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="confirming-and-undoing.html#cb112-1"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(</span>
+<span id="cb112-2"><a href="confirming-and-undoing.html#cb112-2"></a>  <span class="kw">actionButton</span>(<span class="st">&quot;delete&quot;</span>, <span class="st">&quot;Delete all files?&quot;</span>)</span>
+<span id="cb112-3"><a href="confirming-and-undoing.html#cb112-3"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="confirming-and-undoing.html#cb113-1"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
+<span id="cb113-2"><a href="confirming-and-undoing.html#cb113-2"></a>  <span class="kw">observeEvent</span>(input<span class="op">$</span>delete, {</span>
+<span id="cb113-3"><a href="confirming-and-undoing.html#cb113-3"></a>    <span class="kw">showModal</span>(modal_confirm)</span>
+<span id="cb113-4"><a href="confirming-and-undoing.html#cb113-4"></a>  })</span>
+<span id="cb113-5"><a href="confirming-and-undoing.html#cb113-5"></a>  </span>
+<span id="cb113-6"><a href="confirming-and-undoing.html#cb113-6"></a>  <span class="kw">observeEvent</span>(input<span class="op">$</span>ok, {</span>
+<span id="cb113-7"><a href="confirming-and-undoing.html#cb113-7"></a>    <span class="kw">showNotification</span>(<span class="st">&quot;Files deleted&quot;</span>)</span>
+<span id="cb113-8"><a href="confirming-and-undoing.html#cb113-8"></a>    <span class="kw">removeModal</span>()</span>
+<span id="cb113-9"><a href="confirming-and-undoing.html#cb113-9"></a>  })</span>
+<span id="cb113-10"><a href="confirming-and-undoing.html#cb113-10"></a>  <span class="kw">observeEvent</span>(input<span class="op">$</span>cancel, {</span>
+<span id="cb113-11"><a href="confirming-and-undoing.html#cb113-11"></a>    <span class="kw">removeModal</span>()</span>
+<span id="cb113-12"><a href="confirming-and-undoing.html#cb113-12"></a>  })</span>
+<span id="cb113-13"><a href="confirming-and-undoing.html#cb113-13"></a>}</span></code></pre></div>
 </div>
 <div id="undoing-an-action" class="section level3">
 <h3><span class="header-section-number">8.4.2</span> Undoing an action</h3>

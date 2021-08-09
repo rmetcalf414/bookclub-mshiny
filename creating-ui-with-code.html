@@ -24,7 +24,7 @@
 <meta name="author" content="The R4DS Online Learning Community" />
 
 
-<meta name="date" content="2021-08-03" />
+<meta name="date" content="2021-08-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -170,6 +170,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.9" data-path="meeting-videos.html"><a href="meeting-videos.html"><i class="fa fa-check"></i><b>1.9</b> Meeting Videos</a><ul>
 <li class="chapter" data-level="1.9.1" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-1"><i class="fa fa-check"></i><b>1.9.1</b> Cohort 1</a></li>
 <li class="chapter" data-level="1.9.2" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-2"><i class="fa fa-check"></i><b>1.9.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="1.9.3" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-2-1"><i class="fa fa-check"></i><b>1.9.3</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="shiny-basic-user-interface.html"><a href="shiny-basic-user-interface.html"><i class="fa fa-check"></i><b>2</b> Shiny - Basic User Interface</a><ul>
@@ -458,7 +459,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="22.11" data-path="demo-of-the-workflow.html"><a href="demo-of-the-workflow.html"><i class="fa fa-check"></i><b>22.11</b> Demo of the workflow</a></li>
 <li class="chapter" data-level="22.12" data-path="other-resources-to-learn-more-about-git.html"><a href="other-resources-to-learn-more-about-git.html"><i class="fa fa-check"></i><b>22.12</b> Other resources to learn more about <code>git</code></a></li>
 <li class="chapter" data-level="22.13" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html"><i class="fa fa-check"></i><b>22.13</b> Meeting Videos</a><ul>
-<li class="chapter" data-level="22.13.1" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-2-1"><i class="fa fa-check"></i><b>22.13.1</b> Cohort 2</a></li>
+<li class="chapter" data-level="22.13.1" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-2-2"><i class="fa fa-check"></i><b>22.13.1</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -485,34 +486,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">10.4</span> Creating UI with code</h2>
 <p><strong>Create and modify the user interface while the app is running</strong></p>
 <hr />
-<div id="htmlwidget-8d47a5b38d2b4723e084" style="width:100%;height:100%;" class="DiagrammeR html-widget"></div>
-<script type="application/json" data-for="htmlwidget-8d47a5b38d2b4723e084">{"x":{"diagram":"\ngraph LR\nA[uiOutput]-->B[renderUI]\n"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-9b1b29c9f70cf6e74ea9" style="width:100%;height:100%;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-9b1b29c9f70cf6e74ea9">{"x":{"diagram":"\ngraph LR\nA[uiOutput]-->B[renderUI]\n"},"evals":[],"jsHooks":[]}</script>
 <p>The last two functions <strong>uiOutput()</strong> and <strong>renderUI()</strong>, are for applying the technique of rendering the UI by setting the value of the new input to the current value of the existing control.</p>
 <p>This technique gives the developer the ability to create and modify the user interface while the app is running.</p>
 <p><strong>uiOutput()</strong> act in the UI part of the app while <strong>renderUI()</strong> act in the Server.</p>
 <p>In this contest the function <strong>isolate()</strong> would be able to do this isolating a particular input, for more info see: <a href="https://mastering-shiny.org/reactivity-objects.html#isolate">Section 15.4.1</a></p>
 <p>Final example to show the position of the two functions inside the <strong>UI</strong> and the <strong>Server</strong>:</p>
-<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="creating-ui-with-code.html#cb124-1"></a><span class="co">##############################################</span></span>
-<span id="cb124-2"><a href="creating-ui-with-code.html#cb124-2"></a></span>
-<span id="cb124-3"><a href="creating-ui-with-code.html#cb124-3"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(</span>
-<span id="cb124-4"><a href="creating-ui-with-code.html#cb124-4"></a>  <span class="kw">selectInput</span>(<span class="st">&quot;type&quot;</span>, <span class="st">&quot;type&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;slider&quot;</span>, <span class="st">&quot;numeric&quot;</span>)),</span>
-<span id="cb124-5"><a href="creating-ui-with-code.html#cb124-5"></a>  </span>
-<span id="cb124-6"><a href="creating-ui-with-code.html#cb124-6"></a>  <span class="kw">uiOutput</span>(<span class="st">&quot;numeric&quot;</span>)</span>
-<span id="cb124-7"><a href="creating-ui-with-code.html#cb124-7"></a>)</span>
-<span id="cb124-8"><a href="creating-ui-with-code.html#cb124-8"></a></span>
-<span id="cb124-9"><a href="creating-ui-with-code.html#cb124-9"></a><span class="co">###############################################</span></span>
-<span id="cb124-10"><a href="creating-ui-with-code.html#cb124-10"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
-<span id="cb124-11"><a href="creating-ui-with-code.html#cb124-11"></a>  </span>
-<span id="cb124-12"><a href="creating-ui-with-code.html#cb124-12"></a>  output<span class="op">$</span>numeric &lt;-<span class="st"> </span><span class="kw">renderUI</span>({</span>
-<span id="cb124-13"><a href="creating-ui-with-code.html#cb124-13"></a>    </span>
-<span id="cb124-14"><a href="creating-ui-with-code.html#cb124-14"></a>    <span class="cf">if</span> (input<span class="op">$</span>type <span class="op">==</span><span class="st"> &quot;slider&quot;</span>) {</span>
-<span id="cb124-15"><a href="creating-ui-with-code.html#cb124-15"></a>      <span class="kw">sliderInput</span>(<span class="st">&quot;n&quot;</span>, <span class="st">&quot;n&quot;</span>, <span class="dt">value =</span> <span class="dv">0</span>, <span class="dt">min =</span> <span class="dv">0</span>, <span class="dt">max =</span> <span class="dv">100</span>)</span>
-<span id="cb124-16"><a href="creating-ui-with-code.html#cb124-16"></a>    } <span class="cf">else</span> {</span>
-<span id="cb124-17"><a href="creating-ui-with-code.html#cb124-17"></a>      <span class="kw">numericInput</span>(<span class="st">&quot;n&quot;</span>, <span class="st">&quot;n&quot;</span>, <span class="dt">value =</span> <span class="dv">0</span>, <span class="dt">min =</span> <span class="dv">0</span>, <span class="dt">max =</span> <span class="dv">100</span>)  </span>
-<span id="cb124-18"><a href="creating-ui-with-code.html#cb124-18"></a>    }</span>
-<span id="cb124-19"><a href="creating-ui-with-code.html#cb124-19"></a>  })</span>
-<span id="cb124-20"><a href="creating-ui-with-code.html#cb124-20"></a>}</span>
-<span id="cb124-21"><a href="creating-ui-with-code.html#cb124-21"></a><span class="co">####################################</span></span></code></pre></div>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="creating-ui-with-code.html#cb125-1"></a><span class="co">##############################################</span></span>
+<span id="cb125-2"><a href="creating-ui-with-code.html#cb125-2"></a></span>
+<span id="cb125-3"><a href="creating-ui-with-code.html#cb125-3"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(</span>
+<span id="cb125-4"><a href="creating-ui-with-code.html#cb125-4"></a>  <span class="kw">selectInput</span>(<span class="st">&quot;type&quot;</span>, <span class="st">&quot;type&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;slider&quot;</span>, <span class="st">&quot;numeric&quot;</span>)),</span>
+<span id="cb125-5"><a href="creating-ui-with-code.html#cb125-5"></a>  </span>
+<span id="cb125-6"><a href="creating-ui-with-code.html#cb125-6"></a>  <span class="kw">uiOutput</span>(<span class="st">&quot;numeric&quot;</span>)</span>
+<span id="cb125-7"><a href="creating-ui-with-code.html#cb125-7"></a>)</span>
+<span id="cb125-8"><a href="creating-ui-with-code.html#cb125-8"></a></span>
+<span id="cb125-9"><a href="creating-ui-with-code.html#cb125-9"></a><span class="co">###############################################</span></span>
+<span id="cb125-10"><a href="creating-ui-with-code.html#cb125-10"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
+<span id="cb125-11"><a href="creating-ui-with-code.html#cb125-11"></a>  </span>
+<span id="cb125-12"><a href="creating-ui-with-code.html#cb125-12"></a>  output<span class="op">$</span>numeric &lt;-<span class="st"> </span><span class="kw">renderUI</span>({</span>
+<span id="cb125-13"><a href="creating-ui-with-code.html#cb125-13"></a>    </span>
+<span id="cb125-14"><a href="creating-ui-with-code.html#cb125-14"></a>    <span class="cf">if</span> (input<span class="op">$</span>type <span class="op">==</span><span class="st"> &quot;slider&quot;</span>) {</span>
+<span id="cb125-15"><a href="creating-ui-with-code.html#cb125-15"></a>      <span class="kw">sliderInput</span>(<span class="st">&quot;n&quot;</span>, <span class="st">&quot;n&quot;</span>, <span class="dt">value =</span> <span class="dv">0</span>, <span class="dt">min =</span> <span class="dv">0</span>, <span class="dt">max =</span> <span class="dv">100</span>)</span>
+<span id="cb125-16"><a href="creating-ui-with-code.html#cb125-16"></a>    } <span class="cf">else</span> {</span>
+<span id="cb125-17"><a href="creating-ui-with-code.html#cb125-17"></a>      <span class="kw">numericInput</span>(<span class="st">&quot;n&quot;</span>, <span class="st">&quot;n&quot;</span>, <span class="dt">value =</span> <span class="dv">0</span>, <span class="dt">min =</span> <span class="dv">0</span>, <span class="dt">max =</span> <span class="dv">100</span>)  </span>
+<span id="cb125-18"><a href="creating-ui-with-code.html#cb125-18"></a>    }</span>
+<span id="cb125-19"><a href="creating-ui-with-code.html#cb125-19"></a>  })</span>
+<span id="cb125-20"><a href="creating-ui-with-code.html#cb125-20"></a>}</span>
+<span id="cb125-21"><a href="creating-ui-with-code.html#cb125-21"></a><span class="co">####################################</span></span></code></pre></div>
 <p>In addition to the aforementioned functions more features are available as a composition of each other and many more, to allow the user for <em>Multiple controls</em>, <em>Dynamic filtering</em> and <em>Dialog boxes</em>.</p>
 <hr />
 </div>

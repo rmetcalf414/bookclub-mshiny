@@ -24,7 +24,7 @@
 <meta name="author" content="The R4DS Online Learning Community" />
 
 
-<meta name="date" content="2021-08-03" />
+<meta name="date" content="2021-08-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -170,6 +170,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.9" data-path="meeting-videos.html"><a href="meeting-videos.html"><i class="fa fa-check"></i><b>1.9</b> Meeting Videos</a><ul>
 <li class="chapter" data-level="1.9.1" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-1"><i class="fa fa-check"></i><b>1.9.1</b> Cohort 1</a></li>
 <li class="chapter" data-level="1.9.2" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-2"><i class="fa fa-check"></i><b>1.9.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="1.9.3" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-2-1"><i class="fa fa-check"></i><b>1.9.3</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="shiny-basic-user-interface.html"><a href="shiny-basic-user-interface.html"><i class="fa fa-check"></i><b>2</b> Shiny - Basic User Interface</a><ul>
@@ -458,7 +459,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="22.11" data-path="demo-of-the-workflow.html"><a href="demo-of-the-workflow.html"><i class="fa fa-check"></i><b>22.11</b> Demo of the workflow</a></li>
 <li class="chapter" data-level="22.12" data-path="other-resources-to-learn-more-about-git.html"><a href="other-resources-to-learn-more-about-git.html"><i class="fa fa-check"></i><b>22.12</b> Other resources to learn more about <code>git</code></a></li>
 <li class="chapter" data-level="22.13" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html"><i class="fa fa-check"></i><b>22.13</b> Meeting Videos</a><ul>
-<li class="chapter" data-level="22.13.1" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-2-1"><i class="fa fa-check"></i><b>22.13.1</b> Cohort 2</a></li>
+<li class="chapter" data-level="22.13.1" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-2-2"><i class="fa fa-check"></i><b>22.13.1</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -491,21 +492,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <div id="transient-notifications" class="section level3">
 <h3><span class="header-section-number">8.2.1</span> Transient notifications</h3>
-<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="notifications.html#cb102-1"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(</span>
-<span id="cb102-2"><a href="notifications.html#cb102-2"></a>  <span class="kw">actionButton</span>(<span class="st">&quot;goodnight&quot;</span>, <span class="st">&quot;Good night&quot;</span>)</span>
-<span id="cb102-3"><a href="notifications.html#cb102-3"></a>)</span>
-<span id="cb102-4"><a href="notifications.html#cb102-4"></a></span>
-<span id="cb102-5"><a href="notifications.html#cb102-5"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
-<span id="cb102-6"><a href="notifications.html#cb102-6"></a>  <span class="kw">observeEvent</span>(input<span class="op">$</span>goodnight, {</span>
-<span id="cb102-7"><a href="notifications.html#cb102-7"></a>    <span class="kw">showNotification</span>(<span class="st">&quot;So long&quot;</span>)</span>
-<span id="cb102-8"><a href="notifications.html#cb102-8"></a>    <span class="kw">Sys.sleep</span>(<span class="dv">1</span>)</span>
-<span id="cb102-9"><a href="notifications.html#cb102-9"></a>    <span class="kw">showNotification</span>(<span class="st">&quot;Farewell&quot;</span>)</span>
-<span id="cb102-10"><a href="notifications.html#cb102-10"></a>    <span class="kw">Sys.sleep</span>(<span class="dv">1</span>)</span>
-<span id="cb102-11"><a href="notifications.html#cb102-11"></a>    <span class="kw">showNotification</span>(<span class="st">&quot;Auf Wiedersehen&quot;</span>)</span>
-<span id="cb102-12"><a href="notifications.html#cb102-12"></a>    <span class="kw">Sys.sleep</span>(<span class="dv">1</span>)</span>
-<span id="cb102-13"><a href="notifications.html#cb102-13"></a>    <span class="kw">showNotification</span>(<span class="st">&quot;Adieu&quot;</span>)</span>
-<span id="cb102-14"><a href="notifications.html#cb102-14"></a>  })</span>
-<span id="cb102-15"><a href="notifications.html#cb102-15"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="notifications.html#cb103-1"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(</span>
+<span id="cb103-2"><a href="notifications.html#cb103-2"></a>  <span class="kw">actionButton</span>(<span class="st">&quot;goodnight&quot;</span>, <span class="st">&quot;Good night&quot;</span>)</span>
+<span id="cb103-3"><a href="notifications.html#cb103-3"></a>)</span>
+<span id="cb103-4"><a href="notifications.html#cb103-4"></a></span>
+<span id="cb103-5"><a href="notifications.html#cb103-5"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
+<span id="cb103-6"><a href="notifications.html#cb103-6"></a>  <span class="kw">observeEvent</span>(input<span class="op">$</span>goodnight, {</span>
+<span id="cb103-7"><a href="notifications.html#cb103-7"></a>    <span class="kw">showNotification</span>(<span class="st">&quot;So long&quot;</span>)</span>
+<span id="cb103-8"><a href="notifications.html#cb103-8"></a>    <span class="kw">Sys.sleep</span>(<span class="dv">1</span>)</span>
+<span id="cb103-9"><a href="notifications.html#cb103-9"></a>    <span class="kw">showNotification</span>(<span class="st">&quot;Farewell&quot;</span>)</span>
+<span id="cb103-10"><a href="notifications.html#cb103-10"></a>    <span class="kw">Sys.sleep</span>(<span class="dv">1</span>)</span>
+<span id="cb103-11"><a href="notifications.html#cb103-11"></a>    <span class="kw">showNotification</span>(<span class="st">&quot;Auf Wiedersehen&quot;</span>)</span>
+<span id="cb103-12"><a href="notifications.html#cb103-12"></a>    <span class="kw">Sys.sleep</span>(<span class="dv">1</span>)</span>
+<span id="cb103-13"><a href="notifications.html#cb103-13"></a>    <span class="kw">showNotification</span>(<span class="st">&quot;Adieu&quot;</span>)</span>
+<span id="cb103-14"><a href="notifications.html#cb103-14"></a>  })</span>
+<span id="cb103-15"><a href="notifications.html#cb103-15"></a>}</span></code></pre></div>
 <p>–&gt; example app</p>
 </div>
 <div id="removing-on-completion" class="section level3">
@@ -515,14 +516,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Set <code>duration = NULL</code> and <code>closeButton = FALSE</code> so that the notification stays visible until the task is complete</li>
 <li>Store the id returned by <code>showNotification()</code>, and then pass this value to <code>removeNotification()</code> (&amp; <code>on.exit()</code>)</li>
 </ul>
-<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="notifications.html#cb103-1"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
-<span id="cb103-2"><a href="notifications.html#cb103-2"></a>  data &lt;-<span class="st"> </span><span class="kw">reactive</span>({</span>
-<span id="cb103-3"><a href="notifications.html#cb103-3"></a>    id &lt;-<span class="st"> </span><span class="kw">showNotification</span>(<span class="st">&quot;Reading data...&quot;</span>, <span class="dt">duration =</span> <span class="ot">NULL</span>, <span class="dt">closeButton =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb103-4"><a href="notifications.html#cb103-4"></a>    <span class="kw">on.exit</span>(<span class="kw">removeNotification</span>(id), <span class="dt">add =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb103-5"><a href="notifications.html#cb103-5"></a>    </span>
-<span id="cb103-6"><a href="notifications.html#cb103-6"></a>    <span class="kw">read.csv</span>(input<span class="op">$</span>file<span class="op">$</span>datapath)</span>
-<span id="cb103-7"><a href="notifications.html#cb103-7"></a>  })</span>
-<span id="cb103-8"><a href="notifications.html#cb103-8"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="notifications.html#cb104-1"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
+<span id="cb104-2"><a href="notifications.html#cb104-2"></a>  data &lt;-<span class="st"> </span><span class="kw">reactive</span>({</span>
+<span id="cb104-3"><a href="notifications.html#cb104-3"></a>    id &lt;-<span class="st"> </span><span class="kw">showNotification</span>(<span class="st">&quot;Reading data...&quot;</span>, <span class="dt">duration =</span> <span class="ot">NULL</span>, <span class="dt">closeButton =</span> <span class="ot">FALSE</span>)</span>
+<span id="cb104-4"><a href="notifications.html#cb104-4"></a>    <span class="kw">on.exit</span>(<span class="kw">removeNotification</span>(id), <span class="dt">add =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb104-5"><a href="notifications.html#cb104-5"></a>    </span>
+<span id="cb104-6"><a href="notifications.html#cb104-6"></a>    <span class="kw">read.csv</span>(input<span class="op">$</span>file<span class="op">$</span>datapath)</span>
+<span id="cb104-7"><a href="notifications.html#cb104-7"></a>  })</span>
+<span id="cb104-8"><a href="notifications.html#cb104-8"></a>}</span></code></pre></div>
 </div>
 <div id="progressive-updates" class="section level3">
 <h3><span class="header-section-number">8.2.3</span> Progressive updates</h3>
@@ -530,34 +531,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>multiple calls to <code>showNotification()</code> –&gt; multiple notifications</li>
 <li>capture <code>id</code> from first call, use it in subsequent calls</li>
 </ul>
-<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="notifications.html#cb104-1"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(</span>
-<span id="cb104-2"><a href="notifications.html#cb104-2"></a>  <span class="kw">tableOutput</span>(<span class="st">&quot;data&quot;</span>)</span>
-<span id="cb104-3"><a href="notifications.html#cb104-3"></a>)</span>
-<span id="cb104-4"><a href="notifications.html#cb104-4"></a></span>
-<span id="cb104-5"><a href="notifications.html#cb104-5"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
-<span id="cb104-6"><a href="notifications.html#cb104-6"></a>  notify &lt;-<span class="st"> </span><span class="cf">function</span>(msg, <span class="dt">id =</span> <span class="ot">NULL</span>) {</span>
-<span id="cb104-7"><a href="notifications.html#cb104-7"></a>    <span class="kw">showNotification</span>(msg, <span class="dt">id =</span> id, <span class="dt">duration =</span> <span class="ot">NULL</span>, <span class="dt">closeButton =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb104-8"><a href="notifications.html#cb104-8"></a>  }</span>
-<span id="cb104-9"><a href="notifications.html#cb104-9"></a></span>
-<span id="cb104-10"><a href="notifications.html#cb104-10"></a>  data &lt;-<span class="st"> </span><span class="kw">reactive</span>({ </span>
-<span id="cb104-11"><a href="notifications.html#cb104-11"></a>    id &lt;-<span class="st"> </span><span class="kw">notify</span>(<span class="st">&quot;Reading data...&quot;</span>)</span>
-<span id="cb104-12"><a href="notifications.html#cb104-12"></a>    <span class="kw">on.exit</span>(<span class="kw">removeNotification</span>(id), <span class="dt">add =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb104-13"><a href="notifications.html#cb104-13"></a>    <span class="kw">Sys.sleep</span>(<span class="dv">1</span>)</span>
-<span id="cb104-14"><a href="notifications.html#cb104-14"></a>      </span>
-<span id="cb104-15"><a href="notifications.html#cb104-15"></a>    <span class="kw">notify</span>(<span class="st">&quot;Reticulating splines...&quot;</span>, <span class="dt">id =</span> id)</span>
-<span id="cb104-16"><a href="notifications.html#cb104-16"></a>    <span class="kw">Sys.sleep</span>(<span class="dv">1</span>)</span>
-<span id="cb104-17"><a href="notifications.html#cb104-17"></a>    </span>
-<span id="cb104-18"><a href="notifications.html#cb104-18"></a>    <span class="kw">notify</span>(<span class="st">&quot;Herding llamas...&quot;</span>, <span class="dt">id =</span> id)</span>
-<span id="cb104-19"><a href="notifications.html#cb104-19"></a>    <span class="kw">Sys.sleep</span>(<span class="dv">1</span>)</span>
-<span id="cb104-20"><a href="notifications.html#cb104-20"></a></span>
-<span id="cb104-21"><a href="notifications.html#cb104-21"></a>    <span class="kw">notify</span>(<span class="st">&quot;Orthogonalizing matrices...&quot;</span>, <span class="dt">id =</span> id)</span>
-<span id="cb104-22"><a href="notifications.html#cb104-22"></a>    <span class="kw">Sys.sleep</span>(<span class="dv">1</span>)</span>
-<span id="cb104-23"><a href="notifications.html#cb104-23"></a>        </span>
-<span id="cb104-24"><a href="notifications.html#cb104-24"></a>    mtcars</span>
-<span id="cb104-25"><a href="notifications.html#cb104-25"></a>  })</span>
-<span id="cb104-26"><a href="notifications.html#cb104-26"></a>  </span>
-<span id="cb104-27"><a href="notifications.html#cb104-27"></a>  output<span class="op">$</span>data &lt;-<span class="st"> </span><span class="kw">renderTable</span>(<span class="kw">head</span>(<span class="kw">data</span>()))</span>
-<span id="cb104-28"><a href="notifications.html#cb104-28"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="notifications.html#cb105-1"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(</span>
+<span id="cb105-2"><a href="notifications.html#cb105-2"></a>  <span class="kw">tableOutput</span>(<span class="st">&quot;data&quot;</span>)</span>
+<span id="cb105-3"><a href="notifications.html#cb105-3"></a>)</span>
+<span id="cb105-4"><a href="notifications.html#cb105-4"></a></span>
+<span id="cb105-5"><a href="notifications.html#cb105-5"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
+<span id="cb105-6"><a href="notifications.html#cb105-6"></a>  notify &lt;-<span class="st"> </span><span class="cf">function</span>(msg, <span class="dt">id =</span> <span class="ot">NULL</span>) {</span>
+<span id="cb105-7"><a href="notifications.html#cb105-7"></a>    <span class="kw">showNotification</span>(msg, <span class="dt">id =</span> id, <span class="dt">duration =</span> <span class="ot">NULL</span>, <span class="dt">closeButton =</span> <span class="ot">FALSE</span>)</span>
+<span id="cb105-8"><a href="notifications.html#cb105-8"></a>  }</span>
+<span id="cb105-9"><a href="notifications.html#cb105-9"></a></span>
+<span id="cb105-10"><a href="notifications.html#cb105-10"></a>  data &lt;-<span class="st"> </span><span class="kw">reactive</span>({ </span>
+<span id="cb105-11"><a href="notifications.html#cb105-11"></a>    id &lt;-<span class="st"> </span><span class="kw">notify</span>(<span class="st">&quot;Reading data...&quot;</span>)</span>
+<span id="cb105-12"><a href="notifications.html#cb105-12"></a>    <span class="kw">on.exit</span>(<span class="kw">removeNotification</span>(id), <span class="dt">add =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb105-13"><a href="notifications.html#cb105-13"></a>    <span class="kw">Sys.sleep</span>(<span class="dv">1</span>)</span>
+<span id="cb105-14"><a href="notifications.html#cb105-14"></a>      </span>
+<span id="cb105-15"><a href="notifications.html#cb105-15"></a>    <span class="kw">notify</span>(<span class="st">&quot;Reticulating splines...&quot;</span>, <span class="dt">id =</span> id)</span>
+<span id="cb105-16"><a href="notifications.html#cb105-16"></a>    <span class="kw">Sys.sleep</span>(<span class="dv">1</span>)</span>
+<span id="cb105-17"><a href="notifications.html#cb105-17"></a>    </span>
+<span id="cb105-18"><a href="notifications.html#cb105-18"></a>    <span class="kw">notify</span>(<span class="st">&quot;Herding llamas...&quot;</span>, <span class="dt">id =</span> id)</span>
+<span id="cb105-19"><a href="notifications.html#cb105-19"></a>    <span class="kw">Sys.sleep</span>(<span class="dv">1</span>)</span>
+<span id="cb105-20"><a href="notifications.html#cb105-20"></a></span>
+<span id="cb105-21"><a href="notifications.html#cb105-21"></a>    <span class="kw">notify</span>(<span class="st">&quot;Orthogonalizing matrices...&quot;</span>, <span class="dt">id =</span> id)</span>
+<span id="cb105-22"><a href="notifications.html#cb105-22"></a>    <span class="kw">Sys.sleep</span>(<span class="dv">1</span>)</span>
+<span id="cb105-23"><a href="notifications.html#cb105-23"></a>        </span>
+<span id="cb105-24"><a href="notifications.html#cb105-24"></a>    mtcars</span>
+<span id="cb105-25"><a href="notifications.html#cb105-25"></a>  })</span>
+<span id="cb105-26"><a href="notifications.html#cb105-26"></a>  </span>
+<span id="cb105-27"><a href="notifications.html#cb105-27"></a>  output<span class="op">$</span>data &lt;-<span class="st"> </span><span class="kw">renderTable</span>(<span class="kw">head</span>(<span class="kw">data</span>()))</span>
+<span id="cb105-28"><a href="notifications.html#cb105-28"></a>}</span></code></pre></div>
 </div>
 </div>
             </section>

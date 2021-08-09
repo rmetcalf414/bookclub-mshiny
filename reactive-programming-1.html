@@ -24,7 +24,7 @@
 <meta name="author" content="The R4DS Online Learning Community" />
 
 
-<meta name="date" content="2021-08-03" />
+<meta name="date" content="2021-08-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -170,6 +170,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.9" data-path="meeting-videos.html"><a href="meeting-videos.html"><i class="fa fa-check"></i><b>1.9</b> Meeting Videos</a><ul>
 <li class="chapter" data-level="1.9.1" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-1"><i class="fa fa-check"></i><b>1.9.1</b> Cohort 1</a></li>
 <li class="chapter" data-level="1.9.2" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-2"><i class="fa fa-check"></i><b>1.9.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="1.9.3" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-2-1"><i class="fa fa-check"></i><b>1.9.3</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="shiny-basic-user-interface.html"><a href="shiny-basic-user-interface.html"><i class="fa fa-check"></i><b>2</b> Shiny - Basic User Interface</a><ul>
@@ -458,7 +459,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="22.11" data-path="demo-of-the-workflow.html"><a href="demo-of-the-workflow.html"><i class="fa fa-check"></i><b>22.11</b> Demo of the workflow</a></li>
 <li class="chapter" data-level="22.12" data-path="other-resources-to-learn-more-about-git.html"><a href="other-resources-to-learn-more-about-git.html"><i class="fa fa-check"></i><b>22.12</b> Other resources to learn more about <code>git</code></a></li>
 <li class="chapter" data-level="22.13" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html"><i class="fa fa-check"></i><b>22.13</b> Meeting Videos</a><ul>
-<li class="chapter" data-level="22.13.1" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-2-1"><i class="fa fa-check"></i><b>22.13.1</b> Cohort 2</a></li>
+<li class="chapter" data-level="22.13.1" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-2-2"><i class="fa fa-check"></i><b>22.13.1</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -484,34 +485,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="reactive-programming-1" class="section level2">
 <h2><span class="header-section-number">12.3</span> Reactive programming</h2>
 <p>Reactive programming combines features of solutions we’ve seen so far.</p>
-<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="reactive-programming-1.html#cb132-1"></a><span class="kw">library</span>(shiny)</span>
-<span id="cb132-2"><a href="reactive-programming-1.html#cb132-2"></a><span class="kw">reactiveConsole</span>(<span class="ot">TRUE</span>) <span class="co"># let&#39;s us use reactivity in console</span></span>
-<span id="cb132-3"><a href="reactive-programming-1.html#cb132-3"></a></span>
-<span id="cb132-4"><a href="reactive-programming-1.html#cb132-4"></a>temp_c &lt;-<span class="st"> </span><span class="kw">reactiveVal</span>(<span class="dv">10</span>) <span class="co"># create</span></span>
-<span id="cb132-5"><a href="reactive-programming-1.html#cb132-5"></a><span class="kw">temp_c</span>()                  <span class="co"># get</span></span>
-<span id="cb132-6"><a href="reactive-programming-1.html#cb132-6"></a><span class="co">#&gt; [1] 10</span></span>
-<span id="cb132-7"><a href="reactive-programming-1.html#cb132-7"></a><span class="kw">temp_c</span>(<span class="dv">20</span>)                <span class="co"># set</span></span>
-<span id="cb132-8"><a href="reactive-programming-1.html#cb132-8"></a><span class="kw">temp_c</span>()                  <span class="co"># get</span></span>
-<span id="cb132-9"><a href="reactive-programming-1.html#cb132-9"></a><span class="co">#&gt; [1] 20</span></span>
-<span id="cb132-10"><a href="reactive-programming-1.html#cb132-10"></a></span>
-<span id="cb132-11"><a href="reactive-programming-1.html#cb132-11"></a></span>
-<span id="cb132-12"><a href="reactive-programming-1.html#cb132-12"></a>temp_f &lt;-<span class="st"> </span><span class="kw">reactive</span>({</span>
-<span id="cb132-13"><a href="reactive-programming-1.html#cb132-13"></a>  <span class="kw">message</span>(<span class="st">&quot;Converting&quot;</span>) </span>
-<span id="cb132-14"><a href="reactive-programming-1.html#cb132-14"></a>  (<span class="kw">temp_c</span>() <span class="op">*</span><span class="st"> </span><span class="dv">9</span> <span class="op">/</span><span class="st"> </span><span class="dv">5</span>) <span class="op">+</span><span class="st"> </span><span class="dv">32</span></span>
-<span id="cb132-15"><a href="reactive-programming-1.html#cb132-15"></a>})</span>
-<span id="cb132-16"><a href="reactive-programming-1.html#cb132-16"></a><span class="kw">temp_f</span>()</span>
-<span id="cb132-17"><a href="reactive-programming-1.html#cb132-17"></a><span class="co">#&gt; Converting</span></span>
-<span id="cb132-18"><a href="reactive-programming-1.html#cb132-18"></a><span class="co">#&gt; [1] 68</span></span>
-<span id="cb132-19"><a href="reactive-programming-1.html#cb132-19"></a></span>
-<span id="cb132-20"><a href="reactive-programming-1.html#cb132-20"></a><span class="co"># temp_f automatically updates</span></span>
-<span id="cb132-21"><a href="reactive-programming-1.html#cb132-21"></a><span class="kw">temp_c</span>(<span class="op">-</span><span class="dv">10</span>)</span>
-<span id="cb132-22"><a href="reactive-programming-1.html#cb132-22"></a><span class="kw">temp_f</span>()</span>
-<span id="cb132-23"><a href="reactive-programming-1.html#cb132-23"></a><span class="co">#&gt; Converting</span></span>
-<span id="cb132-24"><a href="reactive-programming-1.html#cb132-24"></a><span class="co">#&gt; [1] 14</span></span>
-<span id="cb132-25"><a href="reactive-programming-1.html#cb132-25"></a></span>
-<span id="cb132-26"><a href="reactive-programming-1.html#cb132-26"></a><span class="co"># _and_ only computes when needed (don&#39;t see &quot;Converting&quot;)</span></span>
-<span id="cb132-27"><a href="reactive-programming-1.html#cb132-27"></a><span class="kw">temp_f</span>()</span>
-<span id="cb132-28"><a href="reactive-programming-1.html#cb132-28"></a><span class="co">#&gt; [1] 14</span></span></code></pre></div>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="reactive-programming-1.html#cb133-1"></a><span class="kw">library</span>(shiny)</span>
+<span id="cb133-2"><a href="reactive-programming-1.html#cb133-2"></a><span class="kw">reactiveConsole</span>(<span class="ot">TRUE</span>) <span class="co"># let&#39;s us use reactivity in console</span></span>
+<span id="cb133-3"><a href="reactive-programming-1.html#cb133-3"></a></span>
+<span id="cb133-4"><a href="reactive-programming-1.html#cb133-4"></a>temp_c &lt;-<span class="st"> </span><span class="kw">reactiveVal</span>(<span class="dv">10</span>) <span class="co"># create</span></span>
+<span id="cb133-5"><a href="reactive-programming-1.html#cb133-5"></a><span class="kw">temp_c</span>()                  <span class="co"># get</span></span>
+<span id="cb133-6"><a href="reactive-programming-1.html#cb133-6"></a><span class="co">#&gt; [1] 10</span></span>
+<span id="cb133-7"><a href="reactive-programming-1.html#cb133-7"></a><span class="kw">temp_c</span>(<span class="dv">20</span>)                <span class="co"># set</span></span>
+<span id="cb133-8"><a href="reactive-programming-1.html#cb133-8"></a><span class="kw">temp_c</span>()                  <span class="co"># get</span></span>
+<span id="cb133-9"><a href="reactive-programming-1.html#cb133-9"></a><span class="co">#&gt; [1] 20</span></span>
+<span id="cb133-10"><a href="reactive-programming-1.html#cb133-10"></a></span>
+<span id="cb133-11"><a href="reactive-programming-1.html#cb133-11"></a></span>
+<span id="cb133-12"><a href="reactive-programming-1.html#cb133-12"></a>temp_f &lt;-<span class="st"> </span><span class="kw">reactive</span>({</span>
+<span id="cb133-13"><a href="reactive-programming-1.html#cb133-13"></a>  <span class="kw">message</span>(<span class="st">&quot;Converting&quot;</span>) </span>
+<span id="cb133-14"><a href="reactive-programming-1.html#cb133-14"></a>  (<span class="kw">temp_c</span>() <span class="op">*</span><span class="st"> </span><span class="dv">9</span> <span class="op">/</span><span class="st"> </span><span class="dv">5</span>) <span class="op">+</span><span class="st"> </span><span class="dv">32</span></span>
+<span id="cb133-15"><a href="reactive-programming-1.html#cb133-15"></a>})</span>
+<span id="cb133-16"><a href="reactive-programming-1.html#cb133-16"></a><span class="kw">temp_f</span>()</span>
+<span id="cb133-17"><a href="reactive-programming-1.html#cb133-17"></a><span class="co">#&gt; Converting</span></span>
+<span id="cb133-18"><a href="reactive-programming-1.html#cb133-18"></a><span class="co">#&gt; [1] 68</span></span>
+<span id="cb133-19"><a href="reactive-programming-1.html#cb133-19"></a></span>
+<span id="cb133-20"><a href="reactive-programming-1.html#cb133-20"></a><span class="co"># temp_f automatically updates</span></span>
+<span id="cb133-21"><a href="reactive-programming-1.html#cb133-21"></a><span class="kw">temp_c</span>(<span class="op">-</span><span class="dv">10</span>)</span>
+<span id="cb133-22"><a href="reactive-programming-1.html#cb133-22"></a><span class="kw">temp_f</span>()</span>
+<span id="cb133-23"><a href="reactive-programming-1.html#cb133-23"></a><span class="co">#&gt; Converting</span></span>
+<span id="cb133-24"><a href="reactive-programming-1.html#cb133-24"></a><span class="co">#&gt; [1] 14</span></span>
+<span id="cb133-25"><a href="reactive-programming-1.html#cb133-25"></a></span>
+<span id="cb133-26"><a href="reactive-programming-1.html#cb133-26"></a><span class="co"># _and_ only computes when needed (don&#39;t see &quot;Converting&quot;)</span></span>
+<span id="cb133-27"><a href="reactive-programming-1.html#cb133-27"></a><span class="kw">temp_f</span>()</span>
+<span id="cb133-28"><a href="reactive-programming-1.html#cb133-28"></a><span class="co">#&gt; [1] 14</span></span></code></pre></div>
 <p>2 important properties of reactive expressions</p>
 <ul>
 <li><strong>lazy</strong>. only does work when it’s called</li>

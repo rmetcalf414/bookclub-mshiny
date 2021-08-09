@@ -24,7 +24,7 @@
 <meta name="author" content="The R4DS Online Learning Community" />
 
 
-<meta name="date" content="2021-08-03" />
+<meta name="date" content="2021-08-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -170,6 +170,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.9" data-path="meeting-videos.html"><a href="meeting-videos.html"><i class="fa fa-check"></i><b>1.9</b> Meeting Videos</a><ul>
 <li class="chapter" data-level="1.9.1" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-1"><i class="fa fa-check"></i><b>1.9.1</b> Cohort 1</a></li>
 <li class="chapter" data-level="1.9.2" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-2"><i class="fa fa-check"></i><b>1.9.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="1.9.3" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-2-1"><i class="fa fa-check"></i><b>1.9.3</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="shiny-basic-user-interface.html"><a href="shiny-basic-user-interface.html"><i class="fa fa-check"></i><b>2</b> Shiny - Basic User Interface</a><ul>
@@ -458,7 +459,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="22.11" data-path="demo-of-the-workflow.html"><a href="demo-of-the-workflow.html"><i class="fa fa-check"></i><b>22.11</b> Demo of the workflow</a></li>
 <li class="chapter" data-level="22.12" data-path="other-resources-to-learn-more-about-git.html"><a href="other-resources-to-learn-more-about-git.html"><i class="fa fa-check"></i><b>22.12</b> Other resources to learn more about <code>git</code></a></li>
 <li class="chapter" data-level="22.13" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html"><i class="fa fa-check"></i><b>22.13</b> Meeting Videos</a><ul>
-<li class="chapter" data-level="22.13.1" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-2-1"><i class="fa fa-check"></i><b>22.13.1</b> Cohort 2</a></li>
+<li class="chapter" data-level="22.13.1" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-2-2"><i class="fa fa-check"></i><b>22.13.1</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -485,15 +486,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">4.3</span> Exploration</h2>
 <p>As motivation for the app we want to build, we’re going to explore the data.</p>
 <p>Let’s have a look at accidents related to toilets:</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="exploration.html#cb35-1"></a><span class="co"># product code for toilets is 649</span></span>
-<span id="cb35-2"><a href="exploration.html#cb35-2"></a>selected &lt;-<span class="st"> </span>injuries <span class="op">%&gt;%</span></span>
-<span id="cb35-3"><a href="exploration.html#cb35-3"></a><span class="st">  </span><span class="kw">filter</span>(prod_code <span class="op">==</span><span class="st"> </span><span class="dv">649</span>)</span>
-<span id="cb35-4"><a href="exploration.html#cb35-4"></a></span>
-<span id="cb35-5"><a href="exploration.html#cb35-5"></a><span class="kw">nrow</span>(selected)</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="exploration.html#cb36-1"></a><span class="co"># product code for toilets is 649</span></span>
+<span id="cb36-2"><a href="exploration.html#cb36-2"></a>selected &lt;-<span class="st"> </span>injuries <span class="op">%&gt;%</span></span>
+<span id="cb36-3"><a href="exploration.html#cb36-3"></a><span class="st">  </span><span class="kw">filter</span>(prod_code <span class="op">==</span><span class="st"> </span><span class="dv">649</span>)</span>
+<span id="cb36-4"><a href="exploration.html#cb36-4"></a></span>
+<span id="cb36-5"><a href="exploration.html#cb36-5"></a><span class="kw">nrow</span>(selected)</span></code></pre></div>
 <pre><code>## [1] 2993</code></pre>
 <p>We’re interested in how many accidents related to toilets we see for different locations, body parts and diagnosis.</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="exploration.html#cb37-1"></a>selected <span class="op">%&gt;%</span></span>
-<span id="cb37-2"><a href="exploration.html#cb37-2"></a><span class="st">  </span><span class="kw">count</span>(location, <span class="dt">wt =</span> weight, <span class="dt">sort =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="exploration.html#cb38-1"></a>selected <span class="op">%&gt;%</span></span>
+<span id="cb38-2"><a href="exploration.html#cb38-2"></a><span class="st">  </span><span class="kw">count</span>(location, <span class="dt">wt =</span> weight, <span class="dt">sort =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 2
 ##   location                         n
 ##   &lt;chr&gt;                        &lt;dbl&gt;
@@ -503,8 +504,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 4 School                       659. 
 ## 5 Street Or Highway             16.2
 ## 6 Sports Or Recreation Place    14.8</code></pre>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="exploration.html#cb39-1"></a>selected <span class="op">%&gt;%</span></span>
-<span id="cb39-2"><a href="exploration.html#cb39-2"></a><span class="st">  </span><span class="kw">count</span>(body_part, <span class="dt">wt =</span> weight, <span class="dt">sort =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="exploration.html#cb40-1"></a>selected <span class="op">%&gt;%</span></span>
+<span id="cb40-2"><a href="exploration.html#cb40-2"></a><span class="st">  </span><span class="kw">count</span>(body_part, <span class="dt">wt =</span> weight, <span class="dt">sort =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 24 × 2
 ##    body_part        n
 ##    &lt;chr&gt;        &lt;dbl&gt;
@@ -519,8 +520,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  9 All Of Body  3438.
 ## 10 Ankle        3315.
 ## # … with 14 more rows</code></pre>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="exploration.html#cb41-1"></a>selected <span class="op">%&gt;%</span></span>
-<span id="cb41-2"><a href="exploration.html#cb41-2"></a><span class="st">  </span><span class="kw">count</span>(diag, <span class="dt">wt =</span> weight, <span class="dt">sort =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="exploration.html#cb42-1"></a>selected <span class="op">%&gt;%</span></span>
+<span id="cb42-2"><a href="exploration.html#cb42-2"></a><span class="st">  </span><span class="kw">count</span>(diag, <span class="dt">wt =</span> weight, <span class="dt">sort =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 20 × 2
 ##    diag                        n
 ##    &lt;chr&gt;                   &lt;dbl&gt;
@@ -545,15 +546,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 19 Burns, Thermal           34.0
 ## 20 Burns, Scald             17.0</code></pre>
 <p>Next we’ll we create a plot for the number of accidents for different age and sex:</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="exploration.html#cb43-1"></a>summary &lt;-<span class="st"> </span>selected <span class="op">%&gt;%</span></span>
-<span id="cb43-2"><a href="exploration.html#cb43-2"></a><span class="st">  </span><span class="kw">count</span>(age, sex, <span class="dt">wt =</span> weight) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb43-3"><a href="exploration.html#cb43-3"></a><span class="st">  </span><span class="kw">left_join</span>(<span class="dt">y =</span> population, <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&quot;age&quot;</span>, <span class="st">&quot;sex&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb43-4"><a href="exploration.html#cb43-4"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">rate =</span> n <span class="op">/</span><span class="st"> </span>population <span class="op">*</span><span class="st"> </span><span class="fl">1e4</span>)</span>
-<span id="cb43-5"><a href="exploration.html#cb43-5"></a></span>
-<span id="cb43-6"><a href="exploration.html#cb43-6"></a>summary <span class="op">%&gt;%</span></span>
-<span id="cb43-7"><a href="exploration.html#cb43-7"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> age, <span class="dt">y =</span> rate, <span class="dt">color =</span> sex)) <span class="op">+</span></span>
-<span id="cb43-8"><a href="exploration.html#cb43-8"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">na.rm =</span> <span class="ot">TRUE</span>) <span class="op">+</span></span>
-<span id="cb43-9"><a href="exploration.html#cb43-9"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="st">&quot;Injuries per 10,000 people&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="exploration.html#cb44-1"></a>summary &lt;-<span class="st"> </span>selected <span class="op">%&gt;%</span></span>
+<span id="cb44-2"><a href="exploration.html#cb44-2"></a><span class="st">  </span><span class="kw">count</span>(age, sex, <span class="dt">wt =</span> weight) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb44-3"><a href="exploration.html#cb44-3"></a><span class="st">  </span><span class="kw">left_join</span>(<span class="dt">y =</span> population, <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&quot;age&quot;</span>, <span class="st">&quot;sex&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb44-4"><a href="exploration.html#cb44-4"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">rate =</span> n <span class="op">/</span><span class="st"> </span>population <span class="op">*</span><span class="st"> </span><span class="fl">1e4</span>)</span>
+<span id="cb44-5"><a href="exploration.html#cb44-5"></a></span>
+<span id="cb44-6"><a href="exploration.html#cb44-6"></a>summary <span class="op">%&gt;%</span></span>
+<span id="cb44-7"><a href="exploration.html#cb44-7"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> age, <span class="dt">y =</span> rate, <span class="dt">color =</span> sex)) <span class="op">+</span></span>
+<span id="cb44-8"><a href="exploration.html#cb44-8"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">na.rm =</span> <span class="ot">TRUE</span>) <span class="op">+</span></span>
+<span id="cb44-9"><a href="exploration.html#cb44-9"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="st">&quot;Injuries per 10,000 people&quot;</span>)</span></code></pre></div>
 <p><img src="bookclub-mshiny_files/figure-html/line-plot-1.png" width="672" /></p>
 <p>The goal is to build an app, which outputs the tables and the plot for different products, which the user selects.</p>
 </div>

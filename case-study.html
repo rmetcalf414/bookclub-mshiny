@@ -24,7 +24,7 @@
 <meta name="author" content="The R4DS Online Learning Community" />
 
 
-<meta name="date" content="2021-08-03" />
+<meta name="date" content="2021-08-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -170,6 +170,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.9" data-path="meeting-videos.html"><a href="meeting-videos.html"><i class="fa fa-check"></i><b>1.9</b> Meeting Videos</a><ul>
 <li class="chapter" data-level="1.9.1" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-1"><i class="fa fa-check"></i><b>1.9.1</b> Cohort 1</a></li>
 <li class="chapter" data-level="1.9.2" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-2"><i class="fa fa-check"></i><b>1.9.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="1.9.3" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-2-1"><i class="fa fa-check"></i><b>1.9.3</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="shiny-basic-user-interface.html"><a href="shiny-basic-user-interface.html"><i class="fa fa-check"></i><b>2</b> Shiny - Basic User Interface</a><ul>
@@ -458,7 +459,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="22.11" data-path="demo-of-the-workflow.html"><a href="demo-of-the-workflow.html"><i class="fa fa-check"></i><b>22.11</b> Demo of the workflow</a></li>
 <li class="chapter" data-level="22.12" data-path="other-resources-to-learn-more-about-git.html"><a href="other-resources-to-learn-more-about-git.html"><i class="fa fa-check"></i><b>22.12</b> Other resources to learn more about <code>git</code></a></li>
 <li class="chapter" data-level="22.13" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html"><i class="fa fa-check"></i><b>22.13</b> Meeting Videos</a><ul>
-<li class="chapter" data-level="22.13.1" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-2-1"><i class="fa fa-check"></i><b>22.13.1</b> Cohort 2</a></li>
+<li class="chapter" data-level="22.13.1" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-2-2"><i class="fa fa-check"></i><b>22.13.1</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -504,78 +505,6 @@ correct user ID</li>
 <li>Can we add some extra plots / tables and make a multipage layout</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="case-study.html#cb94-1"></a><span class="co"># Plot a wordcloud to summarise the tags that a stack-overflow user tends to</span></span>
-<span id="cb94-2"><a href="case-study.html#cb94-2"></a><span class="co"># answer/ask about</span></span>
-<span id="cb94-3"><a href="case-study.html#cb94-3"></a></span>
-<span id="cb94-4"><a href="case-study.html#cb94-4"></a><span class="kw">library</span>(shiny)</span>
-<span id="cb94-5"><a href="case-study.html#cb94-5"></a><span class="kw">library</span>(wordcloud)</span>
-<span id="cb94-6"><a href="case-study.html#cb94-6"></a><span class="kw">library</span>(stackr)</span>
-<span id="cb94-7"><a href="case-study.html#cb94-7"></a></span>
-<span id="cb94-8"><a href="case-study.html#cb94-8"></a><span class="co"># Helper functions</span></span>
-<span id="cb94-9"><a href="case-study.html#cb94-9"></a></span>
-<span id="cb94-10"><a href="case-study.html#cb94-10"></a>make_word_cloud &lt;-<span class="st"> </span><span class="cf">function</span>(df) {</span>
-<span id="cb94-11"><a href="case-study.html#cb94-11"></a>  <span class="kw">with</span>(</span>
-<span id="cb94-12"><a href="case-study.html#cb94-12"></a>    df,</span>
-<span id="cb94-13"><a href="case-study.html#cb94-13"></a>    wordcloud<span class="op">::</span><span class="kw">wordcloud</span>(</span>
-<span id="cb94-14"><a href="case-study.html#cb94-14"></a>      <span class="dt">words =</span> tag_name,</span>
-<span id="cb94-15"><a href="case-study.html#cb94-15"></a>      <span class="dt">freq =</span> answer_score,</span>
-<span id="cb94-16"><a href="case-study.html#cb94-16"></a>      <span class="dt">min.freq =</span> <span class="dv">0</span>,</span>
-<span id="cb94-17"><a href="case-study.html#cb94-17"></a>      <span class="dt">colors =</span> RColorBrewer<span class="op">::</span><span class="kw">brewer.pal</span>(<span class="dv">6</span>, <span class="st">&quot;Purples&quot;</span>)[<span class="op">-</span><span class="dv">1</span>],</span>
-<span id="cb94-18"><a href="case-study.html#cb94-18"></a>      <span class="dt">scale =</span> <span class="kw">c</span>(<span class="dv">10</span>, <span class="fl">0.5</span>)</span>
-<span id="cb94-19"><a href="case-study.html#cb94-19"></a>    )</span>
-<span id="cb94-20"><a href="case-study.html#cb94-20"></a>  )</span>
-<span id="cb94-21"><a href="case-study.html#cb94-21"></a>}</span>
-<span id="cb94-22"><a href="case-study.html#cb94-22"></a></span>
-<span id="cb94-23"><a href="case-study.html#cb94-23"></a><span class="co"># Define UI for application that plots information about a user&#39;s stack</span></span>
-<span id="cb94-24"><a href="case-study.html#cb94-24"></a><span class="co"># overflow presence</span></span>
-<span id="cb94-25"><a href="case-study.html#cb94-25"></a></span>
-<span id="cb94-26"><a href="case-study.html#cb94-26"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(</span>
-<span id="cb94-27"><a href="case-study.html#cb94-27"></a></span>
-<span id="cb94-28"><a href="case-study.html#cb94-28"></a>  <span class="co"># Application title</span></span>
-<span id="cb94-29"><a href="case-study.html#cb94-29"></a>  <span class="kw">titlePanel</span>(<span class="st">&quot;Stack Overflow: User Statistics&quot;</span>),</span>
-<span id="cb94-30"><a href="case-study.html#cb94-30"></a></span>
-<span id="cb94-31"><a href="case-study.html#cb94-31"></a>  <span class="co"># Sidebar for selecting which Stack Overflow user&#39;s data is presented</span></span>
-<span id="cb94-32"><a href="case-study.html#cb94-32"></a>  <span class="kw">sidebarLayout</span>(</span>
-<span id="cb94-33"><a href="case-study.html#cb94-33"></a>    <span class="kw">sidebarPanel</span>(</span>
-<span id="cb94-34"><a href="case-study.html#cb94-34"></a>      <span class="kw">textInput</span>(<span class="st">&quot;user_id&quot;</span>, <span class="st">&quot;Select a Stack Overflow user ID:&quot;</span>, <span class="st">&quot;1845650&quot;</span>)</span>
-<span id="cb94-35"><a href="case-study.html#cb94-35"></a>    ),</span>
-<span id="cb94-36"><a href="case-study.html#cb94-36"></a></span>
-<span id="cb94-37"><a href="case-study.html#cb94-37"></a>    <span class="co"># Show a plot of a wordcloud of the user&#39;s answer-tags</span></span>
-<span id="cb94-38"><a href="case-study.html#cb94-38"></a>    <span class="kw">mainPanel</span>(</span>
-<span id="cb94-39"><a href="case-study.html#cb94-39"></a>      <span class="kw">plotOutput</span>(<span class="st">&quot;word_cloud&quot;</span>)</span>
-<span id="cb94-40"><a href="case-study.html#cb94-40"></a>    )</span>
-<span id="cb94-41"><a href="case-study.html#cb94-41"></a>  )</span>
-<span id="cb94-42"><a href="case-study.html#cb94-42"></a>)</span>
-<span id="cb94-43"><a href="case-study.html#cb94-43"></a></span>
-<span id="cb94-44"><a href="case-study.html#cb94-44"></a><span class="co"># Define server logic required to obtain data from stack-overflow and draw a</span></span>
-<span id="cb94-45"><a href="case-study.html#cb94-45"></a><span class="co"># wordcloud</span></span>
-<span id="cb94-46"><a href="case-study.html#cb94-46"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output) {</span>
-<span id="cb94-47"><a href="case-study.html#cb94-47"></a>  stack_data &lt;-<span class="st"> </span><span class="kw">reactive</span>(</span>
-<span id="cb94-48"><a href="case-study.html#cb94-48"></a>    stackr<span class="op">::</span><span class="kw">stack_users</span>(input[[<span class="st">&quot;user_id&quot;</span>]], <span class="st">&quot;top-tags&quot;</span>),</span>
-<span id="cb94-49"><a href="case-study.html#cb94-49"></a>  )</span>
-<span id="cb94-50"><a href="case-study.html#cb94-50"></a></span>
-<span id="cb94-51"><a href="case-study.html#cb94-51"></a>  output<span class="op">$</span>word_cloud &lt;-<span class="st"> </span><span class="kw">renderPlot</span>(</span>
-<span id="cb94-52"><a href="case-study.html#cb94-52"></a>    <span class="kw">make_word_cloud</span>(<span class="kw">stack_data</span>())</span>
-<span id="cb94-53"><a href="case-study.html#cb94-53"></a>  )</span>
-<span id="cb94-54"><a href="case-study.html#cb94-54"></a>}</span>
-<span id="cb94-55"><a href="case-study.html#cb94-55"></a></span>
-<span id="cb94-56"><a href="case-study.html#cb94-56"></a><span class="co"># Run the application</span></span>
-<span id="cb94-57"><a href="case-study.html#cb94-57"></a><span class="kw">shinyApp</span>(<span class="dt">ui =</span> ui, <span class="dt">server =</span> server)</span></code></pre></div>
-</div>
-<div id="the-final-app-app.r" class="section level3">
-<h3><span class="header-section-number">6.7.2</span> The final app (app.R)</h3>
-<p>Relative to the original app, we have:</p>
-<ul>
-<li>introduced a new results table (containing the data obtained from
-stack-overflow)</li>
-<li>converted from a single-panel to a multi-panel layout (using <code>tabsetPanel</code>
-and two <code>tabPanel</code>s)</li>
-<li>attempted to use the stack-overflow colour scheme as part of the apps theme,
-and also in the wordcloud colour scheme</li>
-</ul>
-<p>The stack overflow colour scheme was obtained by using the browser’s developer
-tools (here using “Inspect” in chromium and looking at the “styles” section) on
-an open SO page.</p>
 <div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="case-study.html#cb95-1"></a><span class="co"># Plot a wordcloud to summarise the tags that a stack-overflow user tends to</span></span>
 <span id="cb95-2"><a href="case-study.html#cb95-2"></a><span class="co"># answer/ask about</span></span>
 <span id="cb95-3"><a href="case-study.html#cb95-3"></a></span>
@@ -633,6 +562,78 @@ an open SO page.</p>
 <span id="cb95-55"><a href="case-study.html#cb95-55"></a></span>
 <span id="cb95-56"><a href="case-study.html#cb95-56"></a><span class="co"># Run the application</span></span>
 <span id="cb95-57"><a href="case-study.html#cb95-57"></a><span class="kw">shinyApp</span>(<span class="dt">ui =</span> ui, <span class="dt">server =</span> server)</span></code></pre></div>
+</div>
+<div id="the-final-app-app.r" class="section level3">
+<h3><span class="header-section-number">6.7.2</span> The final app (app.R)</h3>
+<p>Relative to the original app, we have:</p>
+<ul>
+<li>introduced a new results table (containing the data obtained from
+stack-overflow)</li>
+<li>converted from a single-panel to a multi-panel layout (using <code>tabsetPanel</code>
+and two <code>tabPanel</code>s)</li>
+<li>attempted to use the stack-overflow colour scheme as part of the apps theme,
+and also in the wordcloud colour scheme</li>
+</ul>
+<p>The stack overflow colour scheme was obtained by using the browser’s developer
+tools (here using “Inspect” in chromium and looking at the “styles” section) on
+an open SO page.</p>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="case-study.html#cb96-1"></a><span class="co"># Plot a wordcloud to summarise the tags that a stack-overflow user tends to</span></span>
+<span id="cb96-2"><a href="case-study.html#cb96-2"></a><span class="co"># answer/ask about</span></span>
+<span id="cb96-3"><a href="case-study.html#cb96-3"></a></span>
+<span id="cb96-4"><a href="case-study.html#cb96-4"></a><span class="kw">library</span>(shiny)</span>
+<span id="cb96-5"><a href="case-study.html#cb96-5"></a><span class="kw">library</span>(wordcloud)</span>
+<span id="cb96-6"><a href="case-study.html#cb96-6"></a><span class="kw">library</span>(stackr)</span>
+<span id="cb96-7"><a href="case-study.html#cb96-7"></a></span>
+<span id="cb96-8"><a href="case-study.html#cb96-8"></a><span class="co"># Helper functions</span></span>
+<span id="cb96-9"><a href="case-study.html#cb96-9"></a></span>
+<span id="cb96-10"><a href="case-study.html#cb96-10"></a>make_word_cloud &lt;-<span class="st"> </span><span class="cf">function</span>(df) {</span>
+<span id="cb96-11"><a href="case-study.html#cb96-11"></a>  <span class="kw">with</span>(</span>
+<span id="cb96-12"><a href="case-study.html#cb96-12"></a>    df,</span>
+<span id="cb96-13"><a href="case-study.html#cb96-13"></a>    wordcloud<span class="op">::</span><span class="kw">wordcloud</span>(</span>
+<span id="cb96-14"><a href="case-study.html#cb96-14"></a>      <span class="dt">words =</span> tag_name,</span>
+<span id="cb96-15"><a href="case-study.html#cb96-15"></a>      <span class="dt">freq =</span> answer_score,</span>
+<span id="cb96-16"><a href="case-study.html#cb96-16"></a>      <span class="dt">min.freq =</span> <span class="dv">0</span>,</span>
+<span id="cb96-17"><a href="case-study.html#cb96-17"></a>      <span class="dt">colors =</span> RColorBrewer<span class="op">::</span><span class="kw">brewer.pal</span>(<span class="dv">6</span>, <span class="st">&quot;Purples&quot;</span>)[<span class="op">-</span><span class="dv">1</span>],</span>
+<span id="cb96-18"><a href="case-study.html#cb96-18"></a>      <span class="dt">scale =</span> <span class="kw">c</span>(<span class="dv">10</span>, <span class="fl">0.5</span>)</span>
+<span id="cb96-19"><a href="case-study.html#cb96-19"></a>    )</span>
+<span id="cb96-20"><a href="case-study.html#cb96-20"></a>  )</span>
+<span id="cb96-21"><a href="case-study.html#cb96-21"></a>}</span>
+<span id="cb96-22"><a href="case-study.html#cb96-22"></a></span>
+<span id="cb96-23"><a href="case-study.html#cb96-23"></a><span class="co"># Define UI for application that plots information about a user&#39;s stack</span></span>
+<span id="cb96-24"><a href="case-study.html#cb96-24"></a><span class="co"># overflow presence</span></span>
+<span id="cb96-25"><a href="case-study.html#cb96-25"></a></span>
+<span id="cb96-26"><a href="case-study.html#cb96-26"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(</span>
+<span id="cb96-27"><a href="case-study.html#cb96-27"></a></span>
+<span id="cb96-28"><a href="case-study.html#cb96-28"></a>  <span class="co"># Application title</span></span>
+<span id="cb96-29"><a href="case-study.html#cb96-29"></a>  <span class="kw">titlePanel</span>(<span class="st">&quot;Stack Overflow: User Statistics&quot;</span>),</span>
+<span id="cb96-30"><a href="case-study.html#cb96-30"></a></span>
+<span id="cb96-31"><a href="case-study.html#cb96-31"></a>  <span class="co"># Sidebar for selecting which Stack Overflow user&#39;s data is presented</span></span>
+<span id="cb96-32"><a href="case-study.html#cb96-32"></a>  <span class="kw">sidebarLayout</span>(</span>
+<span id="cb96-33"><a href="case-study.html#cb96-33"></a>    <span class="kw">sidebarPanel</span>(</span>
+<span id="cb96-34"><a href="case-study.html#cb96-34"></a>      <span class="kw">textInput</span>(<span class="st">&quot;user_id&quot;</span>, <span class="st">&quot;Select a Stack Overflow user ID:&quot;</span>, <span class="st">&quot;1845650&quot;</span>)</span>
+<span id="cb96-35"><a href="case-study.html#cb96-35"></a>    ),</span>
+<span id="cb96-36"><a href="case-study.html#cb96-36"></a></span>
+<span id="cb96-37"><a href="case-study.html#cb96-37"></a>    <span class="co"># Show a plot of a wordcloud of the user&#39;s answer-tags</span></span>
+<span id="cb96-38"><a href="case-study.html#cb96-38"></a>    <span class="kw">mainPanel</span>(</span>
+<span id="cb96-39"><a href="case-study.html#cb96-39"></a>      <span class="kw">plotOutput</span>(<span class="st">&quot;word_cloud&quot;</span>)</span>
+<span id="cb96-40"><a href="case-study.html#cb96-40"></a>    )</span>
+<span id="cb96-41"><a href="case-study.html#cb96-41"></a>  )</span>
+<span id="cb96-42"><a href="case-study.html#cb96-42"></a>)</span>
+<span id="cb96-43"><a href="case-study.html#cb96-43"></a></span>
+<span id="cb96-44"><a href="case-study.html#cb96-44"></a><span class="co"># Define server logic required to obtain data from stack-overflow and draw a</span></span>
+<span id="cb96-45"><a href="case-study.html#cb96-45"></a><span class="co"># wordcloud</span></span>
+<span id="cb96-46"><a href="case-study.html#cb96-46"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output) {</span>
+<span id="cb96-47"><a href="case-study.html#cb96-47"></a>  stack_data &lt;-<span class="st"> </span><span class="kw">reactive</span>(</span>
+<span id="cb96-48"><a href="case-study.html#cb96-48"></a>    stackr<span class="op">::</span><span class="kw">stack_users</span>(input[[<span class="st">&quot;user_id&quot;</span>]], <span class="st">&quot;top-tags&quot;</span>),</span>
+<span id="cb96-49"><a href="case-study.html#cb96-49"></a>  )</span>
+<span id="cb96-50"><a href="case-study.html#cb96-50"></a></span>
+<span id="cb96-51"><a href="case-study.html#cb96-51"></a>  output<span class="op">$</span>word_cloud &lt;-<span class="st"> </span><span class="kw">renderPlot</span>(</span>
+<span id="cb96-52"><a href="case-study.html#cb96-52"></a>    <span class="kw">make_word_cloud</span>(<span class="kw">stack_data</span>())</span>
+<span id="cb96-53"><a href="case-study.html#cb96-53"></a>  )</span>
+<span id="cb96-54"><a href="case-study.html#cb96-54"></a>}</span>
+<span id="cb96-55"><a href="case-study.html#cb96-55"></a></span>
+<span id="cb96-56"><a href="case-study.html#cb96-56"></a><span class="co"># Run the application</span></span>
+<span id="cb96-57"><a href="case-study.html#cb96-57"></a><span class="kw">shinyApp</span>(<span class="dt">ui =</span> ui, <span class="dt">server =</span> server)</span></code></pre></div>
 
 </div>
 </div>

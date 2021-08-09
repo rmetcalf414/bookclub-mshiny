@@ -24,7 +24,7 @@
 <meta name="author" content="The R4DS Online Learning Community" />
 
 
-<meta name="date" content="2021-08-03" />
+<meta name="date" content="2021-08-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -170,6 +170,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.9" data-path="meeting-videos.html"><a href="meeting-videos.html"><i class="fa fa-check"></i><b>1.9</b> Meeting Videos</a><ul>
 <li class="chapter" data-level="1.9.1" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-1"><i class="fa fa-check"></i><b>1.9.1</b> Cohort 1</a></li>
 <li class="chapter" data-level="1.9.2" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-2"><i class="fa fa-check"></i><b>1.9.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="1.9.3" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-2-1"><i class="fa fa-check"></i><b>1.9.3</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="shiny-basic-user-interface.html"><a href="shiny-basic-user-interface.html"><i class="fa fa-check"></i><b>2</b> Shiny - Basic User Interface</a><ul>
@@ -458,7 +459,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="22.11" data-path="demo-of-the-workflow.html"><a href="demo-of-the-workflow.html"><i class="fa fa-check"></i><b>22.11</b> Demo of the workflow</a></li>
 <li class="chapter" data-level="22.12" data-path="other-resources-to-learn-more-about-git.html"><a href="other-resources-to-learn-more-about-git.html"><i class="fa fa-check"></i><b>22.12</b> Other resources to learn more about <code>git</code></a></li>
 <li class="chapter" data-level="22.13" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html"><i class="fa fa-check"></i><b>22.13</b> Meeting Videos</a><ul>
-<li class="chapter" data-level="22.13.1" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-2-1"><i class="fa fa-check"></i><b>22.13.1</b> Cohort 2</a></li>
+<li class="chapter" data-level="22.13.1" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-2-2"><i class="fa fa-check"></i><b>22.13.1</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -492,33 +493,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <hr />
 <p>In particular, we will see how <strong>invalidation</strong> caused by the user might not be captured by the reactivity graph, and for this reason, it is said to be <em>escaping the graph</em>. An example is a request of changing the input made by the user, such as when using the <em>reset</em> button (made with an <em>actionbutton()</em>), which is not evidenced in the reactivity graph.</p>
 <p>The figure below shows an app with an <strong>actionButton()</strong>, the input value of the app changes but the reactivity graph stays the same. The reactive graph does not capture the connection between the <em>unnamed observer</em> and the <em>input</em>.</p>
-<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="combine-reactive-values.html#cb171-1"></a><span class="kw">reactlog_enable</span>()</span>
-<span id="cb171-2"><a href="combine-reactive-values.html#cb171-2"></a></span>
-<span id="cb171-3"><a href="combine-reactive-values.html#cb171-3"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(</span>
-<span id="cb171-4"><a href="combine-reactive-values.html#cb171-4"></a>  <span class="kw">textInput</span>(<span class="st">&quot;name&quot;</span>, <span class="st">&quot;Your name here&quot;</span>),</span>
-<span id="cb171-5"><a href="combine-reactive-values.html#cb171-5"></a>  <span class="kw">actionButton</span>(<span class="st">&quot;clr&quot;</span>, <span class="st">&quot;Clear&quot;</span>),</span>
-<span id="cb171-6"><a href="combine-reactive-values.html#cb171-6"></a>  <span class="kw">textOutput</span>(<span class="st">&quot;salutation&quot;</span>)</span>
-<span id="cb171-7"><a href="combine-reactive-values.html#cb171-7"></a>)</span>
-<span id="cb171-8"><a href="combine-reactive-values.html#cb171-8"></a></span>
-<span id="cb171-9"><a href="combine-reactive-values.html#cb171-9"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
-<span id="cb171-10"><a href="combine-reactive-values.html#cb171-10"></a>  </span>
-<span id="cb171-11"><a href="combine-reactive-values.html#cb171-11"></a>  <span class="co"># reactive function</span></span>
-<span id="cb171-12"><a href="combine-reactive-values.html#cb171-12"></a>  hello &lt;-<span class="st"> </span><span class="kw">reactive</span>(<span class="kw">paste0</span>(<span class="st">&quot;Hello &quot;</span>, input<span class="op">$</span>name))</span>
-<span id="cb171-13"><a href="combine-reactive-values.html#cb171-13"></a>  </span>
-<span id="cb171-14"><a href="combine-reactive-values.html#cb171-14"></a>  output<span class="op">$</span>salutation &lt;-<span class="st"> </span><span class="kw">renderText</span>(<span class="kw">hello</span>())</span>
-<span id="cb171-15"><a href="combine-reactive-values.html#cb171-15"></a>  </span>
-<span id="cb171-16"><a href="combine-reactive-values.html#cb171-16"></a>  <span class="co"># observer</span></span>
-<span id="cb171-17"><a href="combine-reactive-values.html#cb171-17"></a>  <span class="kw">observeEvent</span>(input<span class="op">$</span>clr, {</span>
-<span id="cb171-18"><a href="combine-reactive-values.html#cb171-18"></a>    <span class="kw">updateTextInput</span>(session, <span class="st">&quot;name&quot;</span>, <span class="dt">value =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb171-19"><a href="combine-reactive-values.html#cb171-19"></a>  })</span>
-<span id="cb171-20"><a href="combine-reactive-values.html#cb171-20"></a>}</span>
-<span id="cb171-21"><a href="combine-reactive-values.html#cb171-21"></a></span>
-<span id="cb171-22"><a href="combine-reactive-values.html#cb171-22"></a><span class="co"># shinyApp(ui = ui, server = server)</span></span></code></pre></div>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="combine-reactive-values.html#cb172-1"></a><span class="kw">reactlog_enable</span>()</span>
+<span id="cb172-2"><a href="combine-reactive-values.html#cb172-2"></a></span>
+<span id="cb172-3"><a href="combine-reactive-values.html#cb172-3"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(</span>
+<span id="cb172-4"><a href="combine-reactive-values.html#cb172-4"></a>  <span class="kw">textInput</span>(<span class="st">&quot;name&quot;</span>, <span class="st">&quot;Your name here&quot;</span>),</span>
+<span id="cb172-5"><a href="combine-reactive-values.html#cb172-5"></a>  <span class="kw">actionButton</span>(<span class="st">&quot;clr&quot;</span>, <span class="st">&quot;Clear&quot;</span>),</span>
+<span id="cb172-6"><a href="combine-reactive-values.html#cb172-6"></a>  <span class="kw">textOutput</span>(<span class="st">&quot;salutation&quot;</span>)</span>
+<span id="cb172-7"><a href="combine-reactive-values.html#cb172-7"></a>)</span>
+<span id="cb172-8"><a href="combine-reactive-values.html#cb172-8"></a></span>
+<span id="cb172-9"><a href="combine-reactive-values.html#cb172-9"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
+<span id="cb172-10"><a href="combine-reactive-values.html#cb172-10"></a>  </span>
+<span id="cb172-11"><a href="combine-reactive-values.html#cb172-11"></a>  <span class="co"># reactive function</span></span>
+<span id="cb172-12"><a href="combine-reactive-values.html#cb172-12"></a>  hello &lt;-<span class="st"> </span><span class="kw">reactive</span>(<span class="kw">paste0</span>(<span class="st">&quot;Hello &quot;</span>, input<span class="op">$</span>name))</span>
+<span id="cb172-13"><a href="combine-reactive-values.html#cb172-13"></a>  </span>
+<span id="cb172-14"><a href="combine-reactive-values.html#cb172-14"></a>  output<span class="op">$</span>salutation &lt;-<span class="st"> </span><span class="kw">renderText</span>(<span class="kw">hello</span>())</span>
+<span id="cb172-15"><a href="combine-reactive-values.html#cb172-15"></a>  </span>
+<span id="cb172-16"><a href="combine-reactive-values.html#cb172-16"></a>  <span class="co"># observer</span></span>
+<span id="cb172-17"><a href="combine-reactive-values.html#cb172-17"></a>  <span class="kw">observeEvent</span>(input<span class="op">$</span>clr, {</span>
+<span id="cb172-18"><a href="combine-reactive-values.html#cb172-18"></a>    <span class="kw">updateTextInput</span>(session, <span class="st">&quot;name&quot;</span>, <span class="dt">value =</span> <span class="st">&quot;&quot;</span>)</span>
+<span id="cb172-19"><a href="combine-reactive-values.html#cb172-19"></a>  })</span>
+<span id="cb172-20"><a href="combine-reactive-values.html#cb172-20"></a>}</span>
+<span id="cb172-21"><a href="combine-reactive-values.html#cb172-21"></a></span>
+<span id="cb172-22"><a href="combine-reactive-values.html#cb172-22"></a><span class="co"># shinyApp(ui = ui, server = server)</span></span></code></pre></div>
 <p>To have an idea of what is happening inside the app we can sketch a graph of the connections with one of the {diagrammeR} functions for making flowcharts, such as the <strong>mermaid()</strong> function, so, we visually identify the connections related to the action of the reset button.</p>
 <p>Figure <a href="combine-reactive-values.html#fig:diagram2">15.2</a> Graph of the App</p>
 <div class="figure"><span id="fig:diagram2"></span>
-<div id="htmlwidget-af5d1adab98bd3b777fd" style="width:100%;height:100%;" class="DiagrammeR html-widget"></div>
-<script type="application/json" data-for="htmlwidget-af5d1adab98bd3b777fd">{"x":{"diagram":"\ngraph LR\n\nA((ui))-.-B\n   B(textInput)-.-C>textOutput]\n   C-. reactive connection .->D\n   D((server))-.-E\nE(reactive)-.-S(output)\n   \nA((ui))-.-F\n   F(name)-.-G(salutation)\n   G-. reactive connection .->    D((server))\n   D((server))-.-H(Hello)\nH-.-T(Your name here)\n   \nI((ui))-.-L(actionButton)\nL-.-M((server))\nM-.-N(observeEvent)\nN-.-O>updateTextInput]\n  O-.-P>no record of the reset in the reactive graph]\n\nI((ui))-.-Q\nQ(clr)-.-M\nM-.-R(Clear)\nR-.-U(name)\nU-.-P\n  style A fill:#f9f\n  style B fill:#bbf\n  style C fill:#f96\n  style D fill:#f9f\n  style I fill:#f9f\n  style L fill:#bbf\n  style M fill:#f9f\n  style O fill:#f96\n  style P fill:#bbf,stroke:#f66,stroke-width:2px,color:#fff,stroke-dasharray: 5 5\n\n "},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-5774c04f131abc67d016" style="width:100%;height:100%;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-5774c04f131abc67d016">{"x":{"diagram":"\ngraph LR\n\nA((ui))-.-B\n   B(textInput)-.-C>textOutput]\n   C-. reactive connection .->D\n   D((server))-.-E\nE(reactive)-.-S(output)\n   \nA((ui))-.-F\n   F(name)-.-G(salutation)\n   G-. reactive connection .->    D((server))\n   D((server))-.-H(Hello)\nH-.-T(Your name here)\n   \nI((ui))-.-L(actionButton)\nL-.-M((server))\nM-.-N(observeEvent)\nN-.-O>updateTextInput]\n  O-.-P>no record of the reset in the reactive graph]\n\nI((ui))-.-Q\nQ(clr)-.-M\nM-.-R(Clear)\nR-.-U(name)\nU-.-P\n  style A fill:#f9f\n  style B fill:#bbf\n  style C fill:#f96\n  style D fill:#f9f\n  style I fill:#f9f\n  style L fill:#bbf\n  style M fill:#f9f\n  style O fill:#f96\n  style P fill:#bbf,stroke:#f66,stroke-width:2px,color:#fff,stroke-dasharray: 5 5\n\n "},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 Figure 15.2: Graph of the steps made by the app
 </p>

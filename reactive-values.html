@@ -24,7 +24,7 @@
 <meta name="author" content="The R4DS Online Learning Community" />
 
 
-<meta name="date" content="2021-08-03" />
+<meta name="date" content="2021-08-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -170,6 +170,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.9" data-path="meeting-videos.html"><a href="meeting-videos.html"><i class="fa fa-check"></i><b>1.9</b> Meeting Videos</a><ul>
 <li class="chapter" data-level="1.9.1" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-1"><i class="fa fa-check"></i><b>1.9.1</b> Cohort 1</a></li>
 <li class="chapter" data-level="1.9.2" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-2"><i class="fa fa-check"></i><b>1.9.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="1.9.3" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-2-1"><i class="fa fa-check"></i><b>1.9.3</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="shiny-basic-user-interface.html"><a href="shiny-basic-user-interface.html"><i class="fa fa-check"></i><b>2</b> Shiny - Basic User Interface</a><ul>
@@ -458,7 +459,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="22.11" data-path="demo-of-the-workflow.html"><a href="demo-of-the-workflow.html"><i class="fa fa-check"></i><b>22.11</b> Demo of the workflow</a></li>
 <li class="chapter" data-level="22.12" data-path="other-resources-to-learn-more-about-git.html"><a href="other-resources-to-learn-more-about-git.html"><i class="fa fa-check"></i><b>22.12</b> Other resources to learn more about <code>git</code></a></li>
 <li class="chapter" data-level="22.13" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html"><i class="fa fa-check"></i><b>22.13</b> Meeting Videos</a><ul>
-<li class="chapter" data-level="22.13.1" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-2-1"><i class="fa fa-check"></i><b>22.13.1</b> Cohort 2</a></li>
+<li class="chapter" data-level="22.13.1" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-2-2"><i class="fa fa-check"></i><b>22.13.1</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -555,108 +556,108 @@ reactivevalues
 </tbody>
 </table>
 <p>Reference semantics</p>
-<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="reactive-values.html#cb136-1"></a><span class="co"># Most of R uses copy-on-modify semantics</span></span>
-<span id="cb136-2"><a href="reactive-values.html#cb136-2"></a>f &lt;-<span class="st"> </span><span class="cf">function</span>(x) {</span>
-<span id="cb136-3"><a href="reactive-values.html#cb136-3"></a>  x<span class="op">$</span>a =<span class="st"> </span><span class="dv">2</span></span>
-<span id="cb136-4"><a href="reactive-values.html#cb136-4"></a>  x</span>
-<span id="cb136-5"><a href="reactive-values.html#cb136-5"></a>}</span>
-<span id="cb136-6"><a href="reactive-values.html#cb136-6"></a>x &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">a =</span> <span class="dv">1</span>, <span class="dt">b =</span> <span class="dv">2</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="reactive-values.html#cb137-1"></a><span class="kw">f</span>(x) <span class="co"># a new object is returned</span></span></code></pre></div>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="reactive-values.html#cb137-1"></a><span class="co"># Most of R uses copy-on-modify semantics</span></span>
+<span id="cb137-2"><a href="reactive-values.html#cb137-2"></a>f &lt;-<span class="st"> </span><span class="cf">function</span>(x) {</span>
+<span id="cb137-3"><a href="reactive-values.html#cb137-3"></a>  x<span class="op">$</span>a =<span class="st"> </span><span class="dv">2</span></span>
+<span id="cb137-4"><a href="reactive-values.html#cb137-4"></a>  x</span>
+<span id="cb137-5"><a href="reactive-values.html#cb137-5"></a>}</span>
+<span id="cb137-6"><a href="reactive-values.html#cb137-6"></a>x &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">a =</span> <span class="dv">1</span>, <span class="dt">b =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="reactive-values.html#cb138-1"></a><span class="kw">f</span>(x) <span class="co"># a new object is returned</span></span></code></pre></div>
 <pre><code>## $a
 ## [1] 2
 ## 
 ## $b
 ## [1] 2</code></pre>
-<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="reactive-values.html#cb139-1"></a>x <span class="co"># ... and the initial object is unchanged</span></span></code></pre></div>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="reactive-values.html#cb140-1"></a>x <span class="co"># ... and the initial object is unchanged</span></span></code></pre></div>
 <pre><code>## $a
 ## [1] 1
 ## 
 ## $b
 ## [1] 2</code></pre>
-<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="reactive-values.html#cb141-1"></a>x1 &lt;-<span class="st"> </span>x2 &lt;-<span class="st"> </span><span class="dv">1</span></span>
-<span id="cb141-2"><a href="reactive-values.html#cb141-2"></a>x2 &lt;-<span class="st"> </span><span class="dv">2</span></span>
-<span id="cb141-3"><a href="reactive-values.html#cb141-3"></a>x1</span></code></pre></div>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="reactive-values.html#cb142-1"></a>x1 &lt;-<span class="st"> </span>x2 &lt;-<span class="st"> </span><span class="dv">1</span></span>
+<span id="cb142-2"><a href="reactive-values.html#cb142-2"></a>x2 &lt;-<span class="st"> </span><span class="dv">2</span></span>
+<span id="cb142-3"><a href="reactive-values.html#cb142-3"></a>x1</span></code></pre></div>
 <pre><code>## [1] 1</code></pre>
-<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="reactive-values.html#cb143-1"></a>x2</span></code></pre></div>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="reactive-values.html#cb144-1"></a>x2</span></code></pre></div>
 <pre><code>## [1] 2</code></pre>
-<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="reactive-values.html#cb145-1"></a><span class="co"># R6 classes use reference semantics</span></span>
-<span id="cb145-2"><a href="reactive-values.html#cb145-2"></a>g &lt;-<span class="st"> </span><span class="cf">function</span>(x) {</span>
-<span id="cb145-3"><a href="reactive-values.html#cb145-3"></a>  x<span class="op">$</span>a =<span class="st"> </span><span class="dv">2</span></span>
-<span id="cb145-4"><a href="reactive-values.html#cb145-4"></a>  <span class="kw">invisible</span>(<span class="ot">NULL</span>)</span>
-<span id="cb145-5"><a href="reactive-values.html#cb145-5"></a>}</span>
-<span id="cb145-6"><a href="reactive-values.html#cb145-6"></a>Y &lt;-<span class="st"> </span>R6<span class="op">::</span><span class="kw">R6Class</span>(<span class="st">&quot;Y&quot;</span>, <span class="kw">list</span>(<span class="dt">a =</span> <span class="dv">1</span>, <span class="dt">b =</span> <span class="dv">2</span>))</span>
-<span id="cb145-7"><a href="reactive-values.html#cb145-7"></a>y &lt;-<span class="st"> </span>Y<span class="op">$</span><span class="kw">new</span>()</span>
-<span id="cb145-8"><a href="reactive-values.html#cb145-8"></a>y</span></code></pre></div>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="reactive-values.html#cb146-1"></a><span class="co"># R6 classes use reference semantics</span></span>
+<span id="cb146-2"><a href="reactive-values.html#cb146-2"></a>g &lt;-<span class="st"> </span><span class="cf">function</span>(x) {</span>
+<span id="cb146-3"><a href="reactive-values.html#cb146-3"></a>  x<span class="op">$</span>a =<span class="st"> </span><span class="dv">2</span></span>
+<span id="cb146-4"><a href="reactive-values.html#cb146-4"></a>  <span class="kw">invisible</span>(<span class="ot">NULL</span>)</span>
+<span id="cb146-5"><a href="reactive-values.html#cb146-5"></a>}</span>
+<span id="cb146-6"><a href="reactive-values.html#cb146-6"></a>Y &lt;-<span class="st"> </span>R6<span class="op">::</span><span class="kw">R6Class</span>(<span class="st">&quot;Y&quot;</span>, <span class="kw">list</span>(<span class="dt">a =</span> <span class="dv">1</span>, <span class="dt">b =</span> <span class="dv">2</span>))</span>
+<span id="cb146-7"><a href="reactive-values.html#cb146-7"></a>y &lt;-<span class="st"> </span>Y<span class="op">$</span><span class="kw">new</span>()</span>
+<span id="cb146-8"><a href="reactive-values.html#cb146-8"></a>y</span></code></pre></div>
 <pre><code>## &lt;Y&gt;
 ##   Public:
 ##     a: 1
 ##     b: 2
 ##     clone: function (deep = FALSE)</code></pre>
-<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="reactive-values.html#cb147-1"></a><span class="kw">g</span>(y)</span>
-<span id="cb147-2"><a href="reactive-values.html#cb147-2"></a>y</span></code></pre></div>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="reactive-values.html#cb148-1"></a><span class="kw">g</span>(y)</span>
+<span id="cb148-2"><a href="reactive-values.html#cb148-2"></a>y</span></code></pre></div>
 <pre><code>## &lt;Y&gt;
 ##   Public:
 ##     a: 2
 ##     b: 2
 ##     clone: function (deep = FALSE)</code></pre>
-<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="reactive-values.html#cb149-1"></a>y1 &lt;-<span class="st"> </span>y2 &lt;-<span class="st"> </span>Y<span class="op">$</span><span class="kw">new</span>()</span>
-<span id="cb149-2"><a href="reactive-values.html#cb149-2"></a>y2<span class="op">$</span>a &lt;-<span class="st"> </span><span class="dv">2</span></span>
-<span id="cb149-3"><a href="reactive-values.html#cb149-3"></a>y1</span></code></pre></div>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="reactive-values.html#cb150-1"></a>y1 &lt;-<span class="st"> </span>y2 &lt;-<span class="st"> </span>Y<span class="op">$</span><span class="kw">new</span>()</span>
+<span id="cb150-2"><a href="reactive-values.html#cb150-2"></a>y2<span class="op">$</span>a &lt;-<span class="st"> </span><span class="dv">2</span></span>
+<span id="cb150-3"><a href="reactive-values.html#cb150-3"></a>y1</span></code></pre></div>
 <pre><code>## &lt;Y&gt;
 ##   Public:
 ##     a: 2
 ##     b: 2
 ##     clone: function (deep = FALSE)</code></pre>
-<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="reactive-values.html#cb151-1"></a>y2</span></code></pre></div>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="reactive-values.html#cb152-1"></a>y2</span></code></pre></div>
 <pre><code>## &lt;Y&gt;
 ##   Public:
 ##     a: 2
 ##     b: 2
 ##     clone: function (deep = FALSE)</code></pre>
 <p>Both <code>reactiveVal</code> and <code>reactiveValues</code> have reference semantics</p>
-<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="reactive-values.html#cb153-1"></a><span class="co"># Exercise from the book</span></span>
-<span id="cb153-2"><a href="reactive-values.html#cb153-2"></a><span class="co"># Run this interactively:</span></span>
-<span id="cb153-3"><a href="reactive-values.html#cb153-3"></a></span>
-<span id="cb153-4"><a href="reactive-values.html#cb153-4"></a>l1 &lt;-<span class="st"> </span><span class="kw">reactiveValues</span>(<span class="dt">a =</span> <span class="dv">1</span>, <span class="dt">b =</span> <span class="dv">2</span>)</span>
-<span id="cb153-5"><a href="reactive-values.html#cb153-5"></a>l2 &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">a =</span> <span class="kw">reactiveVal</span>(<span class="dv">1</span>), <span class="dt">b =</span> <span class="kw">reactiveVal</span>(<span class="dv">2</span>))</span>
-<span id="cb153-6"><a href="reactive-values.html#cb153-6"></a></span>
-<span id="cb153-7"><a href="reactive-values.html#cb153-7"></a><span class="co"># ... with a little extra</span></span>
-<span id="cb153-8"><a href="reactive-values.html#cb153-8"></a>l3 &lt;-<span class="st"> </span><span class="kw">reactiveVal</span>(<span class="kw">list</span>(<span class="dt">a =</span> <span class="dv">1</span>, <span class="dt">b =</span> <span class="dv">2</span>))</span>
-<span id="cb153-9"><a href="reactive-values.html#cb153-9"></a></span>
-<span id="cb153-10"><a href="reactive-values.html#cb153-10"></a><span class="co"># Getting</span></span>
-<span id="cb153-11"><a href="reactive-values.html#cb153-11"></a>l1<span class="op">$</span>a</span>
-<span id="cb153-12"><a href="reactive-values.html#cb153-12"></a>l1[[<span class="st">&quot;a&quot;</span>]]</span>
-<span id="cb153-13"><a href="reactive-values.html#cb153-13"></a>l2<span class="op">$</span><span class="kw">a</span>()</span>
-<span id="cb153-14"><a href="reactive-values.html#cb153-14"></a>l2[[<span class="st">&quot;a&quot;</span>]]()</span>
-<span id="cb153-15"><a href="reactive-values.html#cb153-15"></a><span class="kw">l3</span>()<span class="op">$</span>a</span>
-<span id="cb153-16"><a href="reactive-values.html#cb153-16"></a></span>
-<span id="cb153-17"><a href="reactive-values.html#cb153-17"></a><span class="co"># Setting</span></span>
-<span id="cb153-18"><a href="reactive-values.html#cb153-18"></a>l1<span class="op">$</span>a &lt;-<span class="st"> </span><span class="dv">15</span></span>
-<span id="cb153-19"><a href="reactive-values.html#cb153-19"></a>l2<span class="op">$</span><span class="kw">a</span>(<span class="dv">15</span>)</span>
-<span id="cb153-20"><a href="reactive-values.html#cb153-20"></a><span class="co"># For l3, can&#39;t easily update just &#39;a&#39;</span></span>
-<span id="cb153-21"><a href="reactive-values.html#cb153-21"></a><span class="kw">l3</span>(<span class="kw">list</span>(<span class="dt">a =</span> <span class="dv">15</span>, <span class="dt">b =</span> <span class="dv">2</span>))</span></code></pre></div>
-<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="reactive-values.html#cb154-1"></a><span class="co"># Exercise, run this interactively:</span></span>
-<span id="cb154-2"><a href="reactive-values.html#cb154-2"></a></span>
-<span id="cb154-3"><a href="reactive-values.html#cb154-3"></a><span class="co"># reactiveVal has reference semantics</span></span>
-<span id="cb154-4"><a href="reactive-values.html#cb154-4"></a>x &lt;-<span class="st"> </span><span class="kw">reactiveVal</span>(<span class="dv">1</span>)</span>
-<span id="cb154-5"><a href="reactive-values.html#cb154-5"></a>y &lt;-<span class="st"> </span>x</span>
-<span id="cb154-6"><a href="reactive-values.html#cb154-6"></a>z &lt;-<span class="st"> </span><span class="kw">reactiveVal</span>(<span class="dv">1</span>)</span>
-<span id="cb154-7"><a href="reactive-values.html#cb154-7"></a></span>
-<span id="cb154-8"><a href="reactive-values.html#cb154-8"></a>x_init_address &lt;-<span class="st"> </span>pryr<span class="op">::</span><span class="kw">address</span>(x)</span>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="reactive-values.html#cb154-1"></a><span class="co"># Exercise from the book</span></span>
+<span id="cb154-2"><a href="reactive-values.html#cb154-2"></a><span class="co"># Run this interactively:</span></span>
+<span id="cb154-3"><a href="reactive-values.html#cb154-3"></a></span>
+<span id="cb154-4"><a href="reactive-values.html#cb154-4"></a>l1 &lt;-<span class="st"> </span><span class="kw">reactiveValues</span>(<span class="dt">a =</span> <span class="dv">1</span>, <span class="dt">b =</span> <span class="dv">2</span>)</span>
+<span id="cb154-5"><a href="reactive-values.html#cb154-5"></a>l2 &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">a =</span> <span class="kw">reactiveVal</span>(<span class="dv">1</span>), <span class="dt">b =</span> <span class="kw">reactiveVal</span>(<span class="dv">2</span>))</span>
+<span id="cb154-6"><a href="reactive-values.html#cb154-6"></a></span>
+<span id="cb154-7"><a href="reactive-values.html#cb154-7"></a><span class="co"># ... with a little extra</span></span>
+<span id="cb154-8"><a href="reactive-values.html#cb154-8"></a>l3 &lt;-<span class="st"> </span><span class="kw">reactiveVal</span>(<span class="kw">list</span>(<span class="dt">a =</span> <span class="dv">1</span>, <span class="dt">b =</span> <span class="dv">2</span>))</span>
 <span id="cb154-9"><a href="reactive-values.html#cb154-9"></a></span>
-<span id="cb154-10"><a href="reactive-values.html#cb154-10"></a><span class="kw">x</span>()</span>
-<span id="cb154-11"><a href="reactive-values.html#cb154-11"></a><span class="kw">y</span>()</span>
-<span id="cb154-12"><a href="reactive-values.html#cb154-12"></a><span class="kw">z</span>()</span>
-<span id="cb154-13"><a href="reactive-values.html#cb154-13"></a></span>
-<span id="cb154-14"><a href="reactive-values.html#cb154-14"></a><span class="kw">x</span>(<span class="dv">2</span>)</span>
-<span id="cb154-15"><a href="reactive-values.html#cb154-15"></a></span>
-<span id="cb154-16"><a href="reactive-values.html#cb154-16"></a><span class="kw">x</span>()</span>
-<span id="cb154-17"><a href="reactive-values.html#cb154-17"></a><span class="kw">y</span>()</span>
-<span id="cb154-18"><a href="reactive-values.html#cb154-18"></a><span class="kw">z</span>()</span>
-<span id="cb154-19"><a href="reactive-values.html#cb154-19"></a></span>
-<span id="cb154-20"><a href="reactive-values.html#cb154-20"></a>pryr<span class="op">::</span><span class="kw">address</span>(x) <span class="op">==</span><span class="st"> </span>pryr<span class="op">::</span><span class="kw">address</span>(y)</span>
-<span id="cb154-21"><a href="reactive-values.html#cb154-21"></a>pryr<span class="op">::</span><span class="kw">address</span>(x) <span class="op">==</span><span class="st"> </span>pryr<span class="op">::</span><span class="kw">address</span>(z)</span>
-<span id="cb154-22"><a href="reactive-values.html#cb154-22"></a>pryr<span class="op">::</span><span class="kw">address</span>(x) <span class="op">==</span><span class="st"> </span>x_init_address</span></code></pre></div>
+<span id="cb154-10"><a href="reactive-values.html#cb154-10"></a><span class="co"># Getting</span></span>
+<span id="cb154-11"><a href="reactive-values.html#cb154-11"></a>l1<span class="op">$</span>a</span>
+<span id="cb154-12"><a href="reactive-values.html#cb154-12"></a>l1[[<span class="st">&quot;a&quot;</span>]]</span>
+<span id="cb154-13"><a href="reactive-values.html#cb154-13"></a>l2<span class="op">$</span><span class="kw">a</span>()</span>
+<span id="cb154-14"><a href="reactive-values.html#cb154-14"></a>l2[[<span class="st">&quot;a&quot;</span>]]()</span>
+<span id="cb154-15"><a href="reactive-values.html#cb154-15"></a><span class="kw">l3</span>()<span class="op">$</span>a</span>
+<span id="cb154-16"><a href="reactive-values.html#cb154-16"></a></span>
+<span id="cb154-17"><a href="reactive-values.html#cb154-17"></a><span class="co"># Setting</span></span>
+<span id="cb154-18"><a href="reactive-values.html#cb154-18"></a>l1<span class="op">$</span>a &lt;-<span class="st"> </span><span class="dv">15</span></span>
+<span id="cb154-19"><a href="reactive-values.html#cb154-19"></a>l2<span class="op">$</span><span class="kw">a</span>(<span class="dv">15</span>)</span>
+<span id="cb154-20"><a href="reactive-values.html#cb154-20"></a><span class="co"># For l3, can&#39;t easily update just &#39;a&#39;</span></span>
+<span id="cb154-21"><a href="reactive-values.html#cb154-21"></a><span class="kw">l3</span>(<span class="kw">list</span>(<span class="dt">a =</span> <span class="dv">15</span>, <span class="dt">b =</span> <span class="dv">2</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="reactive-values.html#cb155-1"></a><span class="co"># Exercise, run this interactively:</span></span>
+<span id="cb155-2"><a href="reactive-values.html#cb155-2"></a></span>
+<span id="cb155-3"><a href="reactive-values.html#cb155-3"></a><span class="co"># reactiveVal has reference semantics</span></span>
+<span id="cb155-4"><a href="reactive-values.html#cb155-4"></a>x &lt;-<span class="st"> </span><span class="kw">reactiveVal</span>(<span class="dv">1</span>)</span>
+<span id="cb155-5"><a href="reactive-values.html#cb155-5"></a>y &lt;-<span class="st"> </span>x</span>
+<span id="cb155-6"><a href="reactive-values.html#cb155-6"></a>z &lt;-<span class="st"> </span><span class="kw">reactiveVal</span>(<span class="dv">1</span>)</span>
+<span id="cb155-7"><a href="reactive-values.html#cb155-7"></a></span>
+<span id="cb155-8"><a href="reactive-values.html#cb155-8"></a>x_init_address &lt;-<span class="st"> </span>pryr<span class="op">::</span><span class="kw">address</span>(x)</span>
+<span id="cb155-9"><a href="reactive-values.html#cb155-9"></a></span>
+<span id="cb155-10"><a href="reactive-values.html#cb155-10"></a><span class="kw">x</span>()</span>
+<span id="cb155-11"><a href="reactive-values.html#cb155-11"></a><span class="kw">y</span>()</span>
+<span id="cb155-12"><a href="reactive-values.html#cb155-12"></a><span class="kw">z</span>()</span>
+<span id="cb155-13"><a href="reactive-values.html#cb155-13"></a></span>
+<span id="cb155-14"><a href="reactive-values.html#cb155-14"></a><span class="kw">x</span>(<span class="dv">2</span>)</span>
+<span id="cb155-15"><a href="reactive-values.html#cb155-15"></a></span>
+<span id="cb155-16"><a href="reactive-values.html#cb155-16"></a><span class="kw">x</span>()</span>
+<span id="cb155-17"><a href="reactive-values.html#cb155-17"></a><span class="kw">y</span>()</span>
+<span id="cb155-18"><a href="reactive-values.html#cb155-18"></a><span class="kw">z</span>()</span>
+<span id="cb155-19"><a href="reactive-values.html#cb155-19"></a></span>
+<span id="cb155-20"><a href="reactive-values.html#cb155-20"></a>pryr<span class="op">::</span><span class="kw">address</span>(x) <span class="op">==</span><span class="st"> </span>pryr<span class="op">::</span><span class="kw">address</span>(y)</span>
+<span id="cb155-21"><a href="reactive-values.html#cb155-21"></a>pryr<span class="op">::</span><span class="kw">address</span>(x) <span class="op">==</span><span class="st"> </span>pryr<span class="op">::</span><span class="kw">address</span>(z)</span>
+<span id="cb155-22"><a href="reactive-values.html#cb155-22"></a>pryr<span class="op">::</span><span class="kw">address</span>(x) <span class="op">==</span><span class="st"> </span>x_init_address</span></code></pre></div>
 </div>
             </section>
 

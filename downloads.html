@@ -24,7 +24,7 @@
 <meta name="author" content="The R4DS Online Learning Community" />
 
 
-<meta name="date" content="2021-08-03" />
+<meta name="date" content="2021-08-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -170,6 +170,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.9" data-path="meeting-videos.html"><a href="meeting-videos.html"><i class="fa fa-check"></i><b>1.9</b> Meeting Videos</a><ul>
 <li class="chapter" data-level="1.9.1" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-1"><i class="fa fa-check"></i><b>1.9.1</b> Cohort 1</a></li>
 <li class="chapter" data-level="1.9.2" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-2"><i class="fa fa-check"></i><b>1.9.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="1.9.3" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-2-1"><i class="fa fa-check"></i><b>1.9.3</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="shiny-basic-user-interface.html"><a href="shiny-basic-user-interface.html"><i class="fa fa-check"></i><b>2</b> Shiny - Basic User Interface</a><ul>
@@ -458,7 +459,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="22.11" data-path="demo-of-the-workflow.html"><a href="demo-of-the-workflow.html"><i class="fa fa-check"></i><b>22.11</b> Demo of the workflow</a></li>
 <li class="chapter" data-level="22.12" data-path="other-resources-to-learn-more-about-git.html"><a href="other-resources-to-learn-more-about-git.html"><i class="fa fa-check"></i><b>22.12</b> Other resources to learn more about <code>git</code></a></li>
 <li class="chapter" data-level="22.13" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html"><i class="fa fa-check"></i><b>22.13</b> Meeting Videos</a><ul>
-<li class="chapter" data-level="22.13.1" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-2-1"><i class="fa fa-check"></i><b>22.13.1</b> Cohort 2</a></li>
+<li class="chapter" data-level="22.13.1" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-2-2"><i class="fa fa-check"></i><b>22.13.1</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -496,14 +497,14 @@ There are only 2 arguments, both are <strong>functions</strong>.</p>
 <li><code>filename</code> - no arguments. Returns file name as a string.</li>
 <li><code>content(file)</code> - one argument (<code>file</code>). Path to save the file.</li>
 </ul>
-<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="downloads.html#cb114-1"></a>output<span class="op">$</span>download &lt;-<span class="st"> </span><span class="kw">downloadHandler</span>(</span>
-<span id="cb114-2"><a href="downloads.html#cb114-2"></a>  <span class="dt">filename =</span> <span class="cf">function</span>() {</span>
-<span id="cb114-3"><a href="downloads.html#cb114-3"></a>    <span class="kw">paste0</span>(input<span class="op">$</span>dataset, <span class="st">&quot;.csv&quot;</span>)</span>
-<span id="cb114-4"><a href="downloads.html#cb114-4"></a>  },</span>
-<span id="cb114-5"><a href="downloads.html#cb114-5"></a>  <span class="dt">content =</span> <span class="cf">function</span>(file) {</span>
-<span id="cb114-6"><a href="downloads.html#cb114-6"></a>    <span class="kw">write.csv</span>(<span class="kw">data</span>(), file)</span>
-<span id="cb114-7"><a href="downloads.html#cb114-7"></a>  }</span>
-<span id="cb114-8"><a href="downloads.html#cb114-8"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="downloads.html#cb115-1"></a>output<span class="op">$</span>download &lt;-<span class="st"> </span><span class="kw">downloadHandler</span>(</span>
+<span id="cb115-2"><a href="downloads.html#cb115-2"></a>  <span class="dt">filename =</span> <span class="cf">function</span>() {</span>
+<span id="cb115-3"><a href="downloads.html#cb115-3"></a>    <span class="kw">paste0</span>(input<span class="op">$</span>dataset, <span class="st">&quot;.csv&quot;</span>)</span>
+<span id="cb115-4"><a href="downloads.html#cb115-4"></a>  },</span>
+<span id="cb115-5"><a href="downloads.html#cb115-5"></a>  <span class="dt">content =</span> <span class="cf">function</span>(file) {</span>
+<span id="cb115-6"><a href="downloads.html#cb115-6"></a>    <span class="kw">write.csv</span>(<span class="kw">data</span>(), file)</span>
+<span id="cb115-7"><a href="downloads.html#cb115-7"></a>  }</span>
+<span id="cb115-8"><a href="downloads.html#cb115-8"></a>)</span></code></pre></div>
 </div>
 <div id="downloading-reports" class="section level3">
 <h3><span class="header-section-number">9.2.3</span> Downloading reports</h3>

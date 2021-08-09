@@ -24,7 +24,7 @@
 <meta name="author" content="The R4DS Online Learning Community" />
 
 
-<meta name="date" content="2021-08-03" />
+<meta name="date" content="2021-08-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -170,6 +170,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.9" data-path="meeting-videos.html"><a href="meeting-videos.html"><i class="fa fa-check"></i><b>1.9</b> Meeting Videos</a><ul>
 <li class="chapter" data-level="1.9.1" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-1"><i class="fa fa-check"></i><b>1.9.1</b> Cohort 1</a></li>
 <li class="chapter" data-level="1.9.2" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-2"><i class="fa fa-check"></i><b>1.9.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="1.9.3" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-2-1"><i class="fa fa-check"></i><b>1.9.3</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="shiny-basic-user-interface.html"><a href="shiny-basic-user-interface.html"><i class="fa fa-check"></i><b>2</b> Shiny - Basic User Interface</a><ul>
@@ -458,7 +459,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="22.11" data-path="demo-of-the-workflow.html"><a href="demo-of-the-workflow.html"><i class="fa fa-check"></i><b>22.11</b> Demo of the workflow</a></li>
 <li class="chapter" data-level="22.12" data-path="other-resources-to-learn-more-about-git.html"><a href="other-resources-to-learn-more-about-git.html"><i class="fa fa-check"></i><b>22.12</b> Other resources to learn more about <code>git</code></a></li>
 <li class="chapter" data-level="22.13" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html"><i class="fa fa-check"></i><b>22.13</b> Meeting Videos</a><ul>
-<li class="chapter" data-level="22.13.1" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-2-1"><i class="fa fa-check"></i><b>22.13.1</b> Cohort 2</a></li>
+<li class="chapter" data-level="22.13.1" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-2-2"><i class="fa fa-check"></i><b>22.13.1</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -486,11 +487,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Reactives : cached and lazy</p>
 <p>Observers / Outputs : forgetful and eager</p>
 <p>Why does <code>x()</code> never run here?</p>
-<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="observers-and-outputs.html#cb161-1"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
-<span id="cb161-2"><a href="observers-and-outputs.html#cb161-2"></a>  x &lt;-<span class="st"> </span><span class="kw">reactive</span>({</span>
-<span id="cb161-3"><a href="observers-and-outputs.html#cb161-3"></a>    <span class="kw">rnorm</span>(<span class="dv">10</span>)</span>
-<span id="cb161-4"><a href="observers-and-outputs.html#cb161-4"></a>  })</span>
-<span id="cb161-5"><a href="observers-and-outputs.html#cb161-5"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="observers-and-outputs.html#cb162-1"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
+<span id="cb162-2"><a href="observers-and-outputs.html#cb162-2"></a>  x &lt;-<span class="st"> </span><span class="kw">reactive</span>({</span>
+<span id="cb162-3"><a href="observers-and-outputs.html#cb162-3"></a>    <span class="kw">rnorm</span>(<span class="dv">10</span>)</span>
+<span id="cb162-4"><a href="observers-and-outputs.html#cb162-4"></a>  })</span>
+<span id="cb162-5"><a href="observers-and-outputs.html#cb162-5"></a>}</span></code></pre></div>
 <p>In the reactive graph, observers and outputs are the terminal nodes.
 If they were lazy, nothing would get done.</p>
 <p>Eagerness is infectious</p>
@@ -504,34 +505,34 @@ If they were lazy, nothing would get done.</p>
 <li>as assigned to <code>output$x &lt;- ...</code> variable</li>
 </ul>
 <p>Both created using low-level function <code>observe()</code></p>
-<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="observers-and-outputs.html#cb162-1"></a><span class="co"># observers are eager</span></span>
-<span id="cb162-2"><a href="observers-and-outputs.html#cb162-2"></a></span>
-<span id="cb162-3"><a href="observers-and-outputs.html#cb162-3"></a>y &lt;-<span class="st"> </span><span class="kw">reactiveVal</span>(<span class="dv">10</span>)</span>
-<span id="cb162-4"><a href="observers-and-outputs.html#cb162-4"></a><span class="kw">observe</span>({</span>
-<span id="cb162-5"><a href="observers-and-outputs.html#cb162-5"></a>  <span class="kw">message</span>(<span class="st">&quot;`y` is &quot;</span>, <span class="kw">y</span>())</span>
-<span id="cb162-6"><a href="observers-and-outputs.html#cb162-6"></a>})</span>
-<span id="cb162-7"><a href="observers-and-outputs.html#cb162-7"></a><span class="kw">y</span>(<span class="dv">5</span>)</span>
-<span id="cb162-8"><a href="observers-and-outputs.html#cb162-8"></a><span class="kw">y</span>(<span class="dv">4</span>)</span></code></pre></div>
-<p><code>observe()</code> doesn’t do something, it creates something</p>
-<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="observers-and-outputs.html#cb163-1"></a><span class="co"># example from the book (I found this a bit confusing)</span></span>
-<span id="cb163-2"><a href="observers-and-outputs.html#cb163-2"></a>x &lt;-<span class="st"> </span><span class="kw">reactiveVal</span>(<span class="dv">1</span>)</span>
-<span id="cb163-3"><a href="observers-and-outputs.html#cb163-3"></a>y &lt;-<span class="st"> </span><span class="kw">observe</span>({</span>
-<span id="cb163-4"><a href="observers-and-outputs.html#cb163-4"></a>  <span class="kw">x</span>()</span>
-<span id="cb163-5"><a href="observers-and-outputs.html#cb163-5"></a>  <span class="kw">observe</span>(<span class="kw">print</span>(<span class="kw">x</span>()))</span>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="observers-and-outputs.html#cb163-1"></a><span class="co"># observers are eager</span></span>
+<span id="cb163-2"><a href="observers-and-outputs.html#cb163-2"></a></span>
+<span id="cb163-3"><a href="observers-and-outputs.html#cb163-3"></a>y &lt;-<span class="st"> </span><span class="kw">reactiveVal</span>(<span class="dv">10</span>)</span>
+<span id="cb163-4"><a href="observers-and-outputs.html#cb163-4"></a><span class="kw">observe</span>({</span>
+<span id="cb163-5"><a href="observers-and-outputs.html#cb163-5"></a>  <span class="kw">message</span>(<span class="st">&quot;`y` is &quot;</span>, <span class="kw">y</span>())</span>
 <span id="cb163-6"><a href="observers-and-outputs.html#cb163-6"></a>})</span>
-<span id="cb163-7"><a href="observers-and-outputs.html#cb163-7"></a><span class="kw">x</span>(<span class="dv">2</span>)</span>
-<span id="cb163-8"><a href="observers-and-outputs.html#cb163-8"></a><span class="kw">x</span>(<span class="dv">3</span>)</span>
-<span id="cb163-9"><a href="observers-and-outputs.html#cb163-9"></a></span>
-<span id="cb163-10"><a href="observers-and-outputs.html#cb163-10"></a><span class="co"># y() reacts each time x() updates</span></span>
-<span id="cb163-11"><a href="observers-and-outputs.html#cb163-11"></a><span class="co"># each time y() reacts it adds a new observer node that reacts to x()</span></span></code></pre></div>
-<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="observers-and-outputs.html#cb164-1"></a><span class="co"># alternative example:</span></span>
-<span id="cb164-2"><a href="observers-and-outputs.html#cb164-2"></a><span class="co"># each time you change f, a new observer of g is added to the graph</span></span>
-<span id="cb164-3"><a href="observers-and-outputs.html#cb164-3"></a>f &lt;-<span class="st"> </span><span class="kw">reactiveVal</span>(<span class="dv">1</span>)</span>
-<span id="cb164-4"><a href="observers-and-outputs.html#cb164-4"></a>g &lt;-<span class="st"> </span><span class="kw">reactiveVal</span>(<span class="dv">2</span>)</span>
-<span id="cb164-5"><a href="observers-and-outputs.html#cb164-5"></a>h &lt;-<span class="st"> </span><span class="kw">observe</span>({</span>
-<span id="cb164-6"><a href="observers-and-outputs.html#cb164-6"></a>  <span class="kw">f</span>()</span>
-<span id="cb164-7"><a href="observers-and-outputs.html#cb164-7"></a>  <span class="kw">observe</span>(<span class="kw">print</span>(<span class="kw">g</span>()))</span>
-<span id="cb164-8"><a href="observers-and-outputs.html#cb164-8"></a>})</span></code></pre></div>
+<span id="cb163-7"><a href="observers-and-outputs.html#cb163-7"></a><span class="kw">y</span>(<span class="dv">5</span>)</span>
+<span id="cb163-8"><a href="observers-and-outputs.html#cb163-8"></a><span class="kw">y</span>(<span class="dv">4</span>)</span></code></pre></div>
+<p><code>observe()</code> doesn’t do something, it creates something</p>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="observers-and-outputs.html#cb164-1"></a><span class="co"># example from the book (I found this a bit confusing)</span></span>
+<span id="cb164-2"><a href="observers-and-outputs.html#cb164-2"></a>x &lt;-<span class="st"> </span><span class="kw">reactiveVal</span>(<span class="dv">1</span>)</span>
+<span id="cb164-3"><a href="observers-and-outputs.html#cb164-3"></a>y &lt;-<span class="st"> </span><span class="kw">observe</span>({</span>
+<span id="cb164-4"><a href="observers-and-outputs.html#cb164-4"></a>  <span class="kw">x</span>()</span>
+<span id="cb164-5"><a href="observers-and-outputs.html#cb164-5"></a>  <span class="kw">observe</span>(<span class="kw">print</span>(<span class="kw">x</span>()))</span>
+<span id="cb164-6"><a href="observers-and-outputs.html#cb164-6"></a>})</span>
+<span id="cb164-7"><a href="observers-and-outputs.html#cb164-7"></a><span class="kw">x</span>(<span class="dv">2</span>)</span>
+<span id="cb164-8"><a href="observers-and-outputs.html#cb164-8"></a><span class="kw">x</span>(<span class="dv">3</span>)</span>
+<span id="cb164-9"><a href="observers-and-outputs.html#cb164-9"></a></span>
+<span id="cb164-10"><a href="observers-and-outputs.html#cb164-10"></a><span class="co"># y() reacts each time x() updates</span></span>
+<span id="cb164-11"><a href="observers-and-outputs.html#cb164-11"></a><span class="co"># each time y() reacts it adds a new observer node that reacts to x()</span></span></code></pre></div>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="observers-and-outputs.html#cb165-1"></a><span class="co"># alternative example:</span></span>
+<span id="cb165-2"><a href="observers-and-outputs.html#cb165-2"></a><span class="co"># each time you change f, a new observer of g is added to the graph</span></span>
+<span id="cb165-3"><a href="observers-and-outputs.html#cb165-3"></a>f &lt;-<span class="st"> </span><span class="kw">reactiveVal</span>(<span class="dv">1</span>)</span>
+<span id="cb165-4"><a href="observers-and-outputs.html#cb165-4"></a>g &lt;-<span class="st"> </span><span class="kw">reactiveVal</span>(<span class="dv">2</span>)</span>
+<span id="cb165-5"><a href="observers-and-outputs.html#cb165-5"></a>h &lt;-<span class="st"> </span><span class="kw">observe</span>({</span>
+<span id="cb165-6"><a href="observers-and-outputs.html#cb165-6"></a>  <span class="kw">f</span>()</span>
+<span id="cb165-7"><a href="observers-and-outputs.html#cb165-7"></a>  <span class="kw">observe</span>(<span class="kw">print</span>(<span class="kw">g</span>()))</span>
+<span id="cb165-8"><a href="observers-and-outputs.html#cb165-8"></a>})</span></code></pre></div>
 </div>
             </section>
 

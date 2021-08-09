@@ -24,7 +24,7 @@
 <meta name="author" content="The R4DS Online Learning Community" />
 
 
-<meta name="date" content="2021-08-03" />
+<meta name="date" content="2021-08-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -170,6 +170,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.9" data-path="meeting-videos.html"><a href="meeting-videos.html"><i class="fa fa-check"></i><b>1.9</b> Meeting Videos</a><ul>
 <li class="chapter" data-level="1.9.1" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-1"><i class="fa fa-check"></i><b>1.9.1</b> Cohort 1</a></li>
 <li class="chapter" data-level="1.9.2" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-2"><i class="fa fa-check"></i><b>1.9.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="1.9.3" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-2-1"><i class="fa fa-check"></i><b>1.9.3</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="shiny-basic-user-interface.html"><a href="shiny-basic-user-interface.html"><i class="fa fa-check"></i><b>2</b> Shiny - Basic User Interface</a><ul>
@@ -458,7 +459,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="22.11" data-path="demo-of-the-workflow.html"><a href="demo-of-the-workflow.html"><i class="fa fa-check"></i><b>22.11</b> Demo of the workflow</a></li>
 <li class="chapter" data-level="22.12" data-path="other-resources-to-learn-more-about-git.html"><a href="other-resources-to-learn-more-about-git.html"><i class="fa fa-check"></i><b>22.12</b> Other resources to learn more about <code>git</code></a></li>
 <li class="chapter" data-level="22.13" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html"><i class="fa fa-check"></i><b>22.13</b> Meeting Videos</a><ul>
-<li class="chapter" data-level="22.13.1" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-2-1"><i class="fa fa-check"></i><b>22.13.1</b> Cohort 2</a></li>
+<li class="chapter" data-level="22.13.1" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-2-2"><i class="fa fa-check"></i><b>22.13.1</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -490,25 +491,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="shiny" class="section level3">
 <h3><span class="header-section-number">8.3.1</span> Shiny</h3>
 <p>Use <code>withProgress()</code> and <code>incProgress()</code></p>
-<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="progress-bars.html#cb105-1"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(</span>
-<span id="cb105-2"><a href="progress-bars.html#cb105-2"></a>  <span class="kw">numericInput</span>(<span class="st">&quot;steps&quot;</span>, <span class="st">&quot;How many steps?&quot;</span>, <span class="dv">10</span>),</span>
-<span id="cb105-3"><a href="progress-bars.html#cb105-3"></a>  <span class="kw">actionButton</span>(<span class="st">&quot;go&quot;</span>, <span class="st">&quot;go&quot;</span>),</span>
-<span id="cb105-4"><a href="progress-bars.html#cb105-4"></a>  <span class="kw">textOutput</span>(<span class="st">&quot;result&quot;</span>)</span>
-<span id="cb105-5"><a href="progress-bars.html#cb105-5"></a>)</span>
-<span id="cb105-6"><a href="progress-bars.html#cb105-6"></a></span>
-<span id="cb105-7"><a href="progress-bars.html#cb105-7"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
-<span id="cb105-8"><a href="progress-bars.html#cb105-8"></a>  data &lt;-<span class="st"> </span><span class="kw">eventReactive</span>(input<span class="op">$</span>go, {</span>
-<span id="cb105-9"><a href="progress-bars.html#cb105-9"></a>    <span class="kw">withProgress</span>(<span class="dt">message =</span> <span class="st">&quot;Computing random number&quot;</span>, {</span>
-<span id="cb105-10"><a href="progress-bars.html#cb105-10"></a>      <span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_len</span>(input<span class="op">$</span>steps)) {</span>
-<span id="cb105-11"><a href="progress-bars.html#cb105-11"></a>        <span class="kw">Sys.sleep</span>(<span class="fl">0.5</span>)</span>
-<span id="cb105-12"><a href="progress-bars.html#cb105-12"></a>        <span class="kw">incProgress</span>(<span class="dv">1</span> <span class="op">/</span><span class="st"> </span>input<span class="op">$</span>steps)</span>
-<span id="cb105-13"><a href="progress-bars.html#cb105-13"></a>      }</span>
-<span id="cb105-14"><a href="progress-bars.html#cb105-14"></a>      <span class="kw">runif</span>(<span class="dv">1</span>)</span>
-<span id="cb105-15"><a href="progress-bars.html#cb105-15"></a>    })</span>
-<span id="cb105-16"><a href="progress-bars.html#cb105-16"></a>  })</span>
-<span id="cb105-17"><a href="progress-bars.html#cb105-17"></a>  </span>
-<span id="cb105-18"><a href="progress-bars.html#cb105-18"></a>  output<span class="op">$</span>result &lt;-<span class="st"> </span><span class="kw">renderText</span>(<span class="kw">round</span>(<span class="kw">data</span>(), <span class="dv">2</span>))</span>
-<span id="cb105-19"><a href="progress-bars.html#cb105-19"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="progress-bars.html#cb106-1"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(</span>
+<span id="cb106-2"><a href="progress-bars.html#cb106-2"></a>  <span class="kw">numericInput</span>(<span class="st">&quot;steps&quot;</span>, <span class="st">&quot;How many steps?&quot;</span>, <span class="dv">10</span>),</span>
+<span id="cb106-3"><a href="progress-bars.html#cb106-3"></a>  <span class="kw">actionButton</span>(<span class="st">&quot;go&quot;</span>, <span class="st">&quot;go&quot;</span>),</span>
+<span id="cb106-4"><a href="progress-bars.html#cb106-4"></a>  <span class="kw">textOutput</span>(<span class="st">&quot;result&quot;</span>)</span>
+<span id="cb106-5"><a href="progress-bars.html#cb106-5"></a>)</span>
+<span id="cb106-6"><a href="progress-bars.html#cb106-6"></a></span>
+<span id="cb106-7"><a href="progress-bars.html#cb106-7"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
+<span id="cb106-8"><a href="progress-bars.html#cb106-8"></a>  data &lt;-<span class="st"> </span><span class="kw">eventReactive</span>(input<span class="op">$</span>go, {</span>
+<span id="cb106-9"><a href="progress-bars.html#cb106-9"></a>    <span class="kw">withProgress</span>(<span class="dt">message =</span> <span class="st">&quot;Computing random number&quot;</span>, {</span>
+<span id="cb106-10"><a href="progress-bars.html#cb106-10"></a>      <span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_len</span>(input<span class="op">$</span>steps)) {</span>
+<span id="cb106-11"><a href="progress-bars.html#cb106-11"></a>        <span class="kw">Sys.sleep</span>(<span class="fl">0.5</span>)</span>
+<span id="cb106-12"><a href="progress-bars.html#cb106-12"></a>        <span class="kw">incProgress</span>(<span class="dv">1</span> <span class="op">/</span><span class="st"> </span>input<span class="op">$</span>steps)</span>
+<span id="cb106-13"><a href="progress-bars.html#cb106-13"></a>      }</span>
+<span id="cb106-14"><a href="progress-bars.html#cb106-14"></a>      <span class="kw">runif</span>(<span class="dv">1</span>)</span>
+<span id="cb106-15"><a href="progress-bars.html#cb106-15"></a>    })</span>
+<span id="cb106-16"><a href="progress-bars.html#cb106-16"></a>  })</span>
+<span id="cb106-17"><a href="progress-bars.html#cb106-17"></a>  </span>
+<span id="cb106-18"><a href="progress-bars.html#cb106-18"></a>  output<span class="op">$</span>result &lt;-<span class="st"> </span><span class="kw">renderText</span>(<span class="kw">round</span>(<span class="kw">data</span>(), <span class="dv">2</span>))</span>
+<span id="cb106-19"><a href="progress-bars.html#cb106-19"></a>}</span></code></pre></div>
 <p>Check out this app: <a href="https://hadley.shinyapps.io/ms-progress" class="uri">https://hadley.shinyapps.io/ms-progress</a></p>
 </div>
 <div id="waiter" class="section level3">
@@ -516,30 +517,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><code>waiter</code> package uses an R6 object</li>
 </ul>
-<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="progress-bars.html#cb106-1"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(</span>
-<span id="cb106-2"><a href="progress-bars.html#cb106-2"></a>  waiter<span class="op">::</span><span class="kw">use_waitress</span>(),</span>
-<span id="cb106-3"><a href="progress-bars.html#cb106-3"></a>  <span class="kw">numericInput</span>(<span class="st">&quot;steps&quot;</span>, <span class="st">&quot;How many steps?&quot;</span>, <span class="dv">10</span>),</span>
-<span id="cb106-4"><a href="progress-bars.html#cb106-4"></a>  <span class="kw">actionButton</span>(<span class="st">&quot;go&quot;</span>, <span class="st">&quot;go&quot;</span>),</span>
-<span id="cb106-5"><a href="progress-bars.html#cb106-5"></a>  <span class="kw">textOutput</span>(<span class="st">&quot;result&quot;</span>)</span>
-<span id="cb106-6"><a href="progress-bars.html#cb106-6"></a>)</span></code></pre></div>
-<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="progress-bars.html#cb107-1"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
-<span id="cb107-2"><a href="progress-bars.html#cb107-2"></a>  data &lt;-<span class="st"> </span><span class="kw">eventReactive</span>(input<span class="op">$</span>go, {</span>
-<span id="cb107-3"><a href="progress-bars.html#cb107-3"></a>    <span class="co"># Create a new progress bar</span></span>
-<span id="cb107-4"><a href="progress-bars.html#cb107-4"></a>    waitress &lt;-<span class="st"> </span>waiter<span class="op">::</span>Waitress<span class="op">$</span><span class="kw">new</span>(<span class="dt">max =</span> input<span class="op">$</span>steps)</span>
-<span id="cb107-5"><a href="progress-bars.html#cb107-5"></a>    <span class="co"># Automatically close it when done</span></span>
-<span id="cb107-6"><a href="progress-bars.html#cb107-6"></a>    <span class="kw">on.exit</span>(waitress<span class="op">$</span><span class="kw">close</span>())</span>
-<span id="cb107-7"><a href="progress-bars.html#cb107-7"></a>    </span>
-<span id="cb107-8"><a href="progress-bars.html#cb107-8"></a>    <span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_len</span>(input<span class="op">$</span>steps)) {</span>
-<span id="cb107-9"><a href="progress-bars.html#cb107-9"></a>      <span class="kw">Sys.sleep</span>(<span class="fl">0.5</span>)</span>
-<span id="cb107-10"><a href="progress-bars.html#cb107-10"></a>      <span class="co"># increment one step</span></span>
-<span id="cb107-11"><a href="progress-bars.html#cb107-11"></a>      waitress<span class="op">$</span><span class="kw">inc</span>(<span class="dv">1</span>)</span>
-<span id="cb107-12"><a href="progress-bars.html#cb107-12"></a>    }</span>
-<span id="cb107-13"><a href="progress-bars.html#cb107-13"></a>    </span>
-<span id="cb107-14"><a href="progress-bars.html#cb107-14"></a>    <span class="kw">runif</span>(<span class="dv">1</span>)</span>
-<span id="cb107-15"><a href="progress-bars.html#cb107-15"></a>  })</span>
-<span id="cb107-16"><a href="progress-bars.html#cb107-16"></a>  </span>
-<span id="cb107-17"><a href="progress-bars.html#cb107-17"></a>  output<span class="op">$</span>result &lt;-<span class="st"> </span><span class="kw">renderText</span>(<span class="kw">round</span>(<span class="kw">data</span>(), <span class="dv">2</span>))</span>
-<span id="cb107-18"><a href="progress-bars.html#cb107-18"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="progress-bars.html#cb107-1"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(</span>
+<span id="cb107-2"><a href="progress-bars.html#cb107-2"></a>  waiter<span class="op">::</span><span class="kw">use_waitress</span>(),</span>
+<span id="cb107-3"><a href="progress-bars.html#cb107-3"></a>  <span class="kw">numericInput</span>(<span class="st">&quot;steps&quot;</span>, <span class="st">&quot;How many steps?&quot;</span>, <span class="dv">10</span>),</span>
+<span id="cb107-4"><a href="progress-bars.html#cb107-4"></a>  <span class="kw">actionButton</span>(<span class="st">&quot;go&quot;</span>, <span class="st">&quot;go&quot;</span>),</span>
+<span id="cb107-5"><a href="progress-bars.html#cb107-5"></a>  <span class="kw">textOutput</span>(<span class="st">&quot;result&quot;</span>)</span>
+<span id="cb107-6"><a href="progress-bars.html#cb107-6"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="progress-bars.html#cb108-1"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
+<span id="cb108-2"><a href="progress-bars.html#cb108-2"></a>  data &lt;-<span class="st"> </span><span class="kw">eventReactive</span>(input<span class="op">$</span>go, {</span>
+<span id="cb108-3"><a href="progress-bars.html#cb108-3"></a>    <span class="co"># Create a new progress bar</span></span>
+<span id="cb108-4"><a href="progress-bars.html#cb108-4"></a>    waitress &lt;-<span class="st"> </span>waiter<span class="op">::</span>Waitress<span class="op">$</span><span class="kw">new</span>(<span class="dt">max =</span> input<span class="op">$</span>steps)</span>
+<span id="cb108-5"><a href="progress-bars.html#cb108-5"></a>    <span class="co"># Automatically close it when done</span></span>
+<span id="cb108-6"><a href="progress-bars.html#cb108-6"></a>    <span class="kw">on.exit</span>(waitress<span class="op">$</span><span class="kw">close</span>())</span>
+<span id="cb108-7"><a href="progress-bars.html#cb108-7"></a>    </span>
+<span id="cb108-8"><a href="progress-bars.html#cb108-8"></a>    <span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_len</span>(input<span class="op">$</span>steps)) {</span>
+<span id="cb108-9"><a href="progress-bars.html#cb108-9"></a>      <span class="kw">Sys.sleep</span>(<span class="fl">0.5</span>)</span>
+<span id="cb108-10"><a href="progress-bars.html#cb108-10"></a>      <span class="co"># increment one step</span></span>
+<span id="cb108-11"><a href="progress-bars.html#cb108-11"></a>      waitress<span class="op">$</span><span class="kw">inc</span>(<span class="dv">1</span>)</span>
+<span id="cb108-12"><a href="progress-bars.html#cb108-12"></a>    }</span>
+<span id="cb108-13"><a href="progress-bars.html#cb108-13"></a>    </span>
+<span id="cb108-14"><a href="progress-bars.html#cb108-14"></a>    <span class="kw">runif</span>(<span class="dv">1</span>)</span>
+<span id="cb108-15"><a href="progress-bars.html#cb108-15"></a>  })</span>
+<span id="cb108-16"><a href="progress-bars.html#cb108-16"></a>  </span>
+<span id="cb108-17"><a href="progress-bars.html#cb108-17"></a>  output<span class="op">$</span>result &lt;-<span class="st"> </span><span class="kw">renderText</span>(<span class="kw">round</span>(<span class="kw">data</span>(), <span class="dv">2</span>))</span>
+<span id="cb108-18"><a href="progress-bars.html#cb108-18"></a>}</span></code></pre></div>
 <p>–&gt; example app</p>
 </div>
 <div id="spinners" class="section level3">
@@ -548,41 +549,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>also use the <code>waiter()</code> package</li>
 <li>instead of <code>Waitress</code> –&gt; <code>Waiter</code></li>
 </ul>
-<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="progress-bars.html#cb108-1"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(</span>
-<span id="cb108-2"><a href="progress-bars.html#cb108-2"></a>  waiter<span class="op">::</span><span class="kw">use_waiter</span>(),</span>
-<span id="cb108-3"><a href="progress-bars.html#cb108-3"></a>  <span class="kw">actionButton</span>(<span class="st">&quot;go&quot;</span>, <span class="st">&quot;go&quot;</span>),</span>
-<span id="cb108-4"><a href="progress-bars.html#cb108-4"></a>  <span class="kw">textOutput</span>(<span class="st">&quot;result&quot;</span>)</span>
-<span id="cb108-5"><a href="progress-bars.html#cb108-5"></a>)</span>
-<span id="cb108-6"><a href="progress-bars.html#cb108-6"></a></span>
-<span id="cb108-7"><a href="progress-bars.html#cb108-7"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
-<span id="cb108-8"><a href="progress-bars.html#cb108-8"></a>  data &lt;-<span class="st"> </span><span class="kw">eventReactive</span>(input<span class="op">$</span>go, {</span>
-<span id="cb108-9"><a href="progress-bars.html#cb108-9"></a>    waiter &lt;-<span class="st"> </span>waiter<span class="op">::</span>Waiter<span class="op">$</span><span class="kw">new</span>()</span>
-<span id="cb108-10"><a href="progress-bars.html#cb108-10"></a>    waiter<span class="op">$</span><span class="kw">show</span>()</span>
-<span id="cb108-11"><a href="progress-bars.html#cb108-11"></a>    <span class="kw">on.exit</span>(waiter<span class="op">$</span><span class="kw">hide</span>())</span>
-<span id="cb108-12"><a href="progress-bars.html#cb108-12"></a>    </span>
-<span id="cb108-13"><a href="progress-bars.html#cb108-13"></a>    <span class="kw">Sys.sleep</span>(<span class="kw">sample</span>(<span class="dv">5</span>, <span class="dv">1</span>))</span>
-<span id="cb108-14"><a href="progress-bars.html#cb108-14"></a>    <span class="kw">runif</span>(<span class="dv">1</span>)</span>
-<span id="cb108-15"><a href="progress-bars.html#cb108-15"></a>  })</span>
-<span id="cb108-16"><a href="progress-bars.html#cb108-16"></a>  output<span class="op">$</span>result &lt;-<span class="st"> </span><span class="kw">renderText</span>(<span class="kw">round</span>(<span class="kw">data</span>(), <span class="dv">2</span>))</span>
-<span id="cb108-17"><a href="progress-bars.html#cb108-17"></a>}</span></code></pre></div>
-<p>Check out this app: <a href="https://hadley.shinyapps.io/ms-spinner-1" class="uri">https://hadley.shinyapps.io/ms-spinner-1</a></p>
-<p>You can use <code>Waiter</code> for specific outputs, which will make the code simpler:</p>
 <div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="progress-bars.html#cb109-1"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(</span>
 <span id="cb109-2"><a href="progress-bars.html#cb109-2"></a>  waiter<span class="op">::</span><span class="kw">use_waiter</span>(),</span>
 <span id="cb109-3"><a href="progress-bars.html#cb109-3"></a>  <span class="kw">actionButton</span>(<span class="st">&quot;go&quot;</span>, <span class="st">&quot;go&quot;</span>),</span>
-<span id="cb109-4"><a href="progress-bars.html#cb109-4"></a>  <span class="kw">plotOutput</span>(<span class="st">&quot;plot&quot;</span>),</span>
+<span id="cb109-4"><a href="progress-bars.html#cb109-4"></a>  <span class="kw">textOutput</span>(<span class="st">&quot;result&quot;</span>)</span>
 <span id="cb109-5"><a href="progress-bars.html#cb109-5"></a>)</span>
 <span id="cb109-6"><a href="progress-bars.html#cb109-6"></a></span>
 <span id="cb109-7"><a href="progress-bars.html#cb109-7"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
 <span id="cb109-8"><a href="progress-bars.html#cb109-8"></a>  data &lt;-<span class="st"> </span><span class="kw">eventReactive</span>(input<span class="op">$</span>go, {</span>
-<span id="cb109-9"><a href="progress-bars.html#cb109-9"></a>    waiter<span class="op">::</span>Waiter<span class="op">$</span><span class="kw">new</span>(<span class="dt">id =</span> <span class="st">&quot;plot&quot;</span>)<span class="op">$</span><span class="kw">show</span>()</span>
-<span id="cb109-10"><a href="progress-bars.html#cb109-10"></a>    </span>
-<span id="cb109-11"><a href="progress-bars.html#cb109-11"></a>    <span class="kw">Sys.sleep</span>(<span class="dv">3</span>)</span>
-<span id="cb109-12"><a href="progress-bars.html#cb109-12"></a>    <span class="kw">data.frame</span>(<span class="dt">x =</span> <span class="kw">runif</span>(<span class="dv">50</span>), <span class="dt">y =</span> <span class="kw">runif</span>(<span class="dv">50</span>))</span>
-<span id="cb109-13"><a href="progress-bars.html#cb109-13"></a>  })</span>
-<span id="cb109-14"><a href="progress-bars.html#cb109-14"></a>  </span>
-<span id="cb109-15"><a href="progress-bars.html#cb109-15"></a>  output<span class="op">$</span>plot &lt;-<span class="st"> </span><span class="kw">renderPlot</span>(<span class="kw">plot</span>(<span class="kw">data</span>()), <span class="dt">res =</span> <span class="dv">96</span>)</span>
-<span id="cb109-16"><a href="progress-bars.html#cb109-16"></a>}</span></code></pre></div>
+<span id="cb109-9"><a href="progress-bars.html#cb109-9"></a>    waiter &lt;-<span class="st"> </span>waiter<span class="op">::</span>Waiter<span class="op">$</span><span class="kw">new</span>()</span>
+<span id="cb109-10"><a href="progress-bars.html#cb109-10"></a>    waiter<span class="op">$</span><span class="kw">show</span>()</span>
+<span id="cb109-11"><a href="progress-bars.html#cb109-11"></a>    <span class="kw">on.exit</span>(waiter<span class="op">$</span><span class="kw">hide</span>())</span>
+<span id="cb109-12"><a href="progress-bars.html#cb109-12"></a>    </span>
+<span id="cb109-13"><a href="progress-bars.html#cb109-13"></a>    <span class="kw">Sys.sleep</span>(<span class="kw">sample</span>(<span class="dv">5</span>, <span class="dv">1</span>))</span>
+<span id="cb109-14"><a href="progress-bars.html#cb109-14"></a>    <span class="kw">runif</span>(<span class="dv">1</span>)</span>
+<span id="cb109-15"><a href="progress-bars.html#cb109-15"></a>  })</span>
+<span id="cb109-16"><a href="progress-bars.html#cb109-16"></a>  output<span class="op">$</span>result &lt;-<span class="st"> </span><span class="kw">renderText</span>(<span class="kw">round</span>(<span class="kw">data</span>(), <span class="dv">2</span>))</span>
+<span id="cb109-17"><a href="progress-bars.html#cb109-17"></a>}</span></code></pre></div>
+<p>Check out this app: <a href="https://hadley.shinyapps.io/ms-spinner-1" class="uri">https://hadley.shinyapps.io/ms-spinner-1</a></p>
+<p>You can use <code>Waiter</code> for specific outputs, which will make the code simpler:</p>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="progress-bars.html#cb110-1"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(</span>
+<span id="cb110-2"><a href="progress-bars.html#cb110-2"></a>  waiter<span class="op">::</span><span class="kw">use_waiter</span>(),</span>
+<span id="cb110-3"><a href="progress-bars.html#cb110-3"></a>  <span class="kw">actionButton</span>(<span class="st">&quot;go&quot;</span>, <span class="st">&quot;go&quot;</span>),</span>
+<span id="cb110-4"><a href="progress-bars.html#cb110-4"></a>  <span class="kw">plotOutput</span>(<span class="st">&quot;plot&quot;</span>),</span>
+<span id="cb110-5"><a href="progress-bars.html#cb110-5"></a>)</span>
+<span id="cb110-6"><a href="progress-bars.html#cb110-6"></a></span>
+<span id="cb110-7"><a href="progress-bars.html#cb110-7"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
+<span id="cb110-8"><a href="progress-bars.html#cb110-8"></a>  data &lt;-<span class="st"> </span><span class="kw">eventReactive</span>(input<span class="op">$</span>go, {</span>
+<span id="cb110-9"><a href="progress-bars.html#cb110-9"></a>    waiter<span class="op">::</span>Waiter<span class="op">$</span><span class="kw">new</span>(<span class="dt">id =</span> <span class="st">&quot;plot&quot;</span>)<span class="op">$</span><span class="kw">show</span>()</span>
+<span id="cb110-10"><a href="progress-bars.html#cb110-10"></a>    </span>
+<span id="cb110-11"><a href="progress-bars.html#cb110-11"></a>    <span class="kw">Sys.sleep</span>(<span class="dv">3</span>)</span>
+<span id="cb110-12"><a href="progress-bars.html#cb110-12"></a>    <span class="kw">data.frame</span>(<span class="dt">x =</span> <span class="kw">runif</span>(<span class="dv">50</span>), <span class="dt">y =</span> <span class="kw">runif</span>(<span class="dv">50</span>))</span>
+<span id="cb110-13"><a href="progress-bars.html#cb110-13"></a>  })</span>
+<span id="cb110-14"><a href="progress-bars.html#cb110-14"></a>  </span>
+<span id="cb110-15"><a href="progress-bars.html#cb110-15"></a>  output<span class="op">$</span>plot &lt;-<span class="st"> </span><span class="kw">renderPlot</span>(<span class="kw">plot</span>(<span class="kw">data</span>()), <span class="dt">res =</span> <span class="dv">96</span>)</span>
+<span id="cb110-16"><a href="progress-bars.html#cb110-16"></a>}</span></code></pre></div>
 <p>Check out this app: <a href="https://hadley.shinyapps.io/ms-spinner-2" class="uri">https://hadley.shinyapps.io/ms-spinner-2</a></p>
 <p>–&gt; example app for more spinners</p>
 </div>

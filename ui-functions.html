@@ -24,7 +24,7 @@
 <meta name="author" content="The R4DS Online Learning Community" />
 
 
-<meta name="date" content="2021-08-03" />
+<meta name="date" content="2021-08-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -170,6 +170,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.9" data-path="meeting-videos.html"><a href="meeting-videos.html"><i class="fa fa-check"></i><b>1.9</b> Meeting Videos</a><ul>
 <li class="chapter" data-level="1.9.1" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-1"><i class="fa fa-check"></i><b>1.9.1</b> Cohort 1</a></li>
 <li class="chapter" data-level="1.9.2" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-2"><i class="fa fa-check"></i><b>1.9.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="1.9.3" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-2-1"><i class="fa fa-check"></i><b>1.9.3</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="shiny-basic-user-interface.html"><a href="shiny-basic-user-interface.html"><i class="fa fa-check"></i><b>2</b> Shiny - Basic User Interface</a><ul>
@@ -458,7 +459,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="22.11" data-path="demo-of-the-workflow.html"><a href="demo-of-the-workflow.html"><i class="fa fa-check"></i><b>22.11</b> Demo of the workflow</a></li>
 <li class="chapter" data-level="22.12" data-path="other-resources-to-learn-more-about-git.html"><a href="other-resources-to-learn-more-about-git.html"><i class="fa fa-check"></i><b>22.12</b> Other resources to learn more about <code>git</code></a></li>
 <li class="chapter" data-level="22.13" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html"><i class="fa fa-check"></i><b>22.13</b> Meeting Videos</a><ul>
-<li class="chapter" data-level="22.13.1" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-2-1"><i class="fa fa-check"></i><b>22.13.1</b> Cohort 2</a></li>
+<li class="chapter" data-level="22.13.1" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-2-2"><i class="fa fa-check"></i><b>22.13.1</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -485,28 +486,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">17.2</span> UI Functions</h2>
 <p><strong>Functions are useful in reducing duplication</strong></p>
 <p>CASE 1: converting multiple sliders to a function</p>
-<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="ui-functions.html#cb174-1"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidRow</span>(</span>
-<span id="cb174-2"><a href="ui-functions.html#cb174-2"></a>  <span class="kw">sliderInput</span>(<span class="st">&quot;alpha&quot;</span>, <span class="st">&quot;alpha&quot;</span>, <span class="dt">min =</span> <span class="dv">0</span>, <span class="dt">max =</span> <span class="dv">1</span>, <span class="dt">value =</span> <span class="fl">0.5</span>, <span class="dt">step =</span> <span class="fl">0.1</span>),</span>
-<span id="cb174-3"><a href="ui-functions.html#cb174-3"></a>  <span class="kw">sliderInput</span>(<span class="st">&quot;beta&quot;</span>,  <span class="st">&quot;beta&quot;</span>,  <span class="dt">min =</span> <span class="dv">0</span>, <span class="dt">max =</span> <span class="dv">1</span>, <span class="dt">value =</span> <span class="fl">0.5</span>, <span class="dt">step =</span> <span class="fl">0.1</span>),</span>
-<span id="cb174-4"><a href="ui-functions.html#cb174-4"></a>  <span class="kw">sliderInput</span>(<span class="st">&quot;gamma&quot;</span>, <span class="st">&quot;gamma&quot;</span>, <span class="dt">min =</span> <span class="dv">0</span>, <span class="dt">max =</span> <span class="dv">1</span>, <span class="dt">value =</span> <span class="fl">0.5</span>, <span class="dt">step =</span> <span class="fl">0.1</span>),</span>
-<span id="cb174-5"><a href="ui-functions.html#cb174-5"></a>  <span class="kw">sliderInput</span>(<span class="st">&quot;delta&quot;</span>, <span class="st">&quot;delta&quot;</span>, <span class="dt">min =</span> <span class="dv">0</span>, <span class="dt">max =</span> <span class="dv">1</span>, <span class="dt">value =</span> <span class="fl">0.5</span>, <span class="dt">step =</span> <span class="fl">0.1</span>)</span>
-<span id="cb174-6"><a href="ui-functions.html#cb174-6"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="ui-functions.html#cb175-1"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidRow</span>(</span>
+<span id="cb175-2"><a href="ui-functions.html#cb175-2"></a>  <span class="kw">sliderInput</span>(<span class="st">&quot;alpha&quot;</span>, <span class="st">&quot;alpha&quot;</span>, <span class="dt">min =</span> <span class="dv">0</span>, <span class="dt">max =</span> <span class="dv">1</span>, <span class="dt">value =</span> <span class="fl">0.5</span>, <span class="dt">step =</span> <span class="fl">0.1</span>),</span>
+<span id="cb175-3"><a href="ui-functions.html#cb175-3"></a>  <span class="kw">sliderInput</span>(<span class="st">&quot;beta&quot;</span>,  <span class="st">&quot;beta&quot;</span>,  <span class="dt">min =</span> <span class="dv">0</span>, <span class="dt">max =</span> <span class="dv">1</span>, <span class="dt">value =</span> <span class="fl">0.5</span>, <span class="dt">step =</span> <span class="fl">0.1</span>),</span>
+<span id="cb175-4"><a href="ui-functions.html#cb175-4"></a>  <span class="kw">sliderInput</span>(<span class="st">&quot;gamma&quot;</span>, <span class="st">&quot;gamma&quot;</span>, <span class="dt">min =</span> <span class="dv">0</span>, <span class="dt">max =</span> <span class="dv">1</span>, <span class="dt">value =</span> <span class="fl">0.5</span>, <span class="dt">step =</span> <span class="fl">0.1</span>),</span>
+<span id="cb175-5"><a href="ui-functions.html#cb175-5"></a>  <span class="kw">sliderInput</span>(<span class="st">&quot;delta&quot;</span>, <span class="st">&quot;delta&quot;</span>, <span class="dt">min =</span> <span class="dv">0</span>, <span class="dt">max =</span> <span class="dv">1</span>, <span class="dt">value =</span> <span class="fl">0.5</span>, <span class="dt">step =</span> <span class="fl">0.1</span>)</span>
+<span id="cb175-6"><a href="ui-functions.html#cb175-6"></a>)</span></code></pre></div>
 <p>TO:</p>
-<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="ui-functions.html#cb175-1"></a>sliderInput01 &lt;-<span class="st"> </span><span class="cf">function</span>(id) {</span>
-<span id="cb175-2"><a href="ui-functions.html#cb175-2"></a>  <span class="kw">sliderInput</span>(id, <span class="dt">label =</span> id, <span class="dt">min =</span> <span class="dv">0</span>, <span class="dt">max =</span> <span class="dv">1</span>, <span class="dt">value =</span> <span class="fl">0.5</span>, <span class="dt">step =</span> <span class="fl">0.1</span>)</span>
-<span id="cb175-3"><a href="ui-functions.html#cb175-3"></a>}</span>
-<span id="cb175-4"><a href="ui-functions.html#cb175-4"></a></span>
-<span id="cb175-5"><a href="ui-functions.html#cb175-5"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidRow</span>(</span>
-<span id="cb175-6"><a href="ui-functions.html#cb175-6"></a>  <span class="kw">sliderInput01</span>(<span class="st">&quot;alpha&quot;</span>),</span>
-<span id="cb175-7"><a href="ui-functions.html#cb175-7"></a>  <span class="kw">sliderInput01</span>(<span class="st">&quot;beta&quot;</span>),</span>
-<span id="cb175-8"><a href="ui-functions.html#cb175-8"></a>  <span class="kw">sliderInput01</span>(<span class="st">&quot;gamma&quot;</span>),</span>
-<span id="cb175-9"><a href="ui-functions.html#cb175-9"></a>  <span class="kw">sliderInput01</span>(<span class="st">&quot;delta&quot;</span>)</span>
-<span id="cb175-10"><a href="ui-functions.html#cb175-10"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="ui-functions.html#cb176-1"></a>sliderInput01 &lt;-<span class="st"> </span><span class="cf">function</span>(id) {</span>
+<span id="cb176-2"><a href="ui-functions.html#cb176-2"></a>  <span class="kw">sliderInput</span>(id, <span class="dt">label =</span> id, <span class="dt">min =</span> <span class="dv">0</span>, <span class="dt">max =</span> <span class="dv">1</span>, <span class="dt">value =</span> <span class="fl">0.5</span>, <span class="dt">step =</span> <span class="fl">0.1</span>)</span>
+<span id="cb176-3"><a href="ui-functions.html#cb176-3"></a>}</span>
+<span id="cb176-4"><a href="ui-functions.html#cb176-4"></a></span>
+<span id="cb176-5"><a href="ui-functions.html#cb176-5"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidRow</span>(</span>
+<span id="cb176-6"><a href="ui-functions.html#cb176-6"></a>  <span class="kw">sliderInput01</span>(<span class="st">&quot;alpha&quot;</span>),</span>
+<span id="cb176-7"><a href="ui-functions.html#cb176-7"></a>  <span class="kw">sliderInput01</span>(<span class="st">&quot;beta&quot;</span>),</span>
+<span id="cb176-8"><a href="ui-functions.html#cb176-8"></a>  <span class="kw">sliderInput01</span>(<span class="st">&quot;gamma&quot;</span>),</span>
+<span id="cb176-9"><a href="ui-functions.html#cb176-9"></a>  <span class="kw">sliderInput01</span>(<span class="st">&quot;delta&quot;</span>)</span>
+<span id="cb176-10"><a href="ui-functions.html#cb176-10"></a>)</span></code></pre></div>
 <p>Like functions in R analyses, functions in apps makes you app more readable and efficient if we need to change the behavior, we would only do it one place.</p>
 <p>CASE 2: customized <code>dateInput</code> with <code>...</code></p>
-<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="ui-functions.html#cb176-1"></a>usWeekDateInput &lt;-<span class="st"> </span><span class="cf">function</span>(inputId, ...) {</span>
-<span id="cb176-2"><a href="ui-functions.html#cb176-2"></a>  <span class="kw">dateInput</span>(inputId, ..., <span class="dt">format =</span> <span class="st">&quot;dd M, yy&quot;</span>, <span class="dt">daysofweekdisabled =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">6</span>))</span>
-<span id="cb176-3"><a href="ui-functions.html#cb176-3"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="ui-functions.html#cb177-1"></a>usWeekDateInput &lt;-<span class="st"> </span><span class="cf">function</span>(inputId, ...) {</span>
+<span id="cb177-2"><a href="ui-functions.html#cb177-2"></a>  <span class="kw">dateInput</span>(inputId, ..., <span class="dt">format =</span> <span class="st">&quot;dd M, yy&quot;</span>, <span class="dt">daysofweekdisabled =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">6</span>))</span>
+<span id="cb177-3"><a href="ui-functions.html#cb177-3"></a>}</span></code></pre></div>
 <p>Just a reminder on <code>dateInput</code>:</p>
 <pre><code>dateInput(
   inputId,
@@ -524,47 +525,47 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   daysofweekdisabled = NULL
 )</code></pre>
 <p>CASE 3: radio buttons to make</p>
-<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="ui-functions.html#cb178-1"></a>iconRadioButtons &lt;-<span class="st"> </span><span class="cf">function</span>(inputId, label, choices, <span class="dt">selected =</span> <span class="ot">NULL</span>) {</span>
-<span id="cb178-2"><a href="ui-functions.html#cb178-2"></a>  names &lt;-<span class="st"> </span><span class="kw">lapply</span>(choices, icon)</span>
-<span id="cb178-3"><a href="ui-functions.html#cb178-3"></a>  values &lt;-<span class="st"> </span><span class="cf">if</span> (<span class="kw">is.null</span>(<span class="kw">names</span>(choices))) <span class="kw">names</span>(choices) <span class="cf">else</span> choices</span>
-<span id="cb178-4"><a href="ui-functions.html#cb178-4"></a>  <span class="kw">radioButtons</span>(inputId,</span>
-<span id="cb178-5"><a href="ui-functions.html#cb178-5"></a>               <span class="dt">label =</span> label,</span>
-<span id="cb178-6"><a href="ui-functions.html#cb178-6"></a>               <span class="dt">choiceNames =</span> names, <span class="dt">choiceValues =</span> values, <span class="dt">selected =</span> selected</span>
-<span id="cb178-7"><a href="ui-functions.html#cb178-7"></a>  )</span>
-<span id="cb178-8"><a href="ui-functions.html#cb178-8"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="ui-functions.html#cb179-1"></a>iconRadioButtons &lt;-<span class="st"> </span><span class="cf">function</span>(inputId, label, choices, <span class="dt">selected =</span> <span class="ot">NULL</span>) {</span>
+<span id="cb179-2"><a href="ui-functions.html#cb179-2"></a>  names &lt;-<span class="st"> </span><span class="kw">lapply</span>(choices, icon)</span>
+<span id="cb179-3"><a href="ui-functions.html#cb179-3"></a>  values &lt;-<span class="st"> </span><span class="cf">if</span> (<span class="kw">is.null</span>(<span class="kw">names</span>(choices))) <span class="kw">names</span>(choices) <span class="cf">else</span> choices</span>
+<span id="cb179-4"><a href="ui-functions.html#cb179-4"></a>  <span class="kw">radioButtons</span>(inputId,</span>
+<span id="cb179-5"><a href="ui-functions.html#cb179-5"></a>               <span class="dt">label =</span> label,</span>
+<span id="cb179-6"><a href="ui-functions.html#cb179-6"></a>               <span class="dt">choiceNames =</span> names, <span class="dt">choiceValues =</span> values, <span class="dt">selected =</span> selected</span>
+<span id="cb179-7"><a href="ui-functions.html#cb179-7"></a>  )</span>
+<span id="cb179-8"><a href="ui-functions.html#cb179-8"></a>}</span></code></pre></div>
 <div id="functional-programming" class="section level3">
 <h3><span class="header-section-number">17.2.1</span> Functional Programming</h3>
 <ul>
 <li>Using functions like <code>map()</code> may help reduce code further</li>
 </ul>
-<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="ui-functions.html#cb179-1"></a><span class="kw">library</span>(purrr)</span>
-<span id="cb179-2"><a href="ui-functions.html#cb179-2"></a><span class="co"># pass the variables for the slider to the built function sliderInput01</span></span>
-<span id="cb179-3"><a href="ui-functions.html#cb179-3"></a>vars &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;alpha&quot;</span>, <span class="st">&quot;beta&quot;</span>, <span class="st">&quot;gamma&quot;</span>, <span class="st">&quot;delta&quot;</span>)</span>
-<span id="cb179-4"><a href="ui-functions.html#cb179-4"></a><span class="co"># returns a list of sliders</span></span>
-<span id="cb179-5"><a href="ui-functions.html#cb179-5"></a>sliders &lt;-<span class="st"> </span><span class="kw">map</span>(vars, sliderInput01)</span>
-<span id="cb179-6"><a href="ui-functions.html#cb179-6"></a><span class="co"># fluidRow unpacks the list to become children of the container</span></span>
-<span id="cb179-7"><a href="ui-functions.html#cb179-7"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidRow</span>(sliders)</span></code></pre></div>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="ui-functions.html#cb180-1"></a><span class="kw">library</span>(purrr)</span>
+<span id="cb180-2"><a href="ui-functions.html#cb180-2"></a><span class="co"># pass the variables for the slider to the built function sliderInput01</span></span>
+<span id="cb180-3"><a href="ui-functions.html#cb180-3"></a>vars &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;alpha&quot;</span>, <span class="st">&quot;beta&quot;</span>, <span class="st">&quot;gamma&quot;</span>, <span class="st">&quot;delta&quot;</span>)</span>
+<span id="cb180-4"><a href="ui-functions.html#cb180-4"></a><span class="co"># returns a list of sliders</span></span>
+<span id="cb180-5"><a href="ui-functions.html#cb180-5"></a>sliders &lt;-<span class="st"> </span><span class="kw">map</span>(vars, sliderInput01)</span>
+<span id="cb180-6"><a href="ui-functions.html#cb180-6"></a><span class="co"># fluidRow unpacks the list to become children of the container</span></span>
+<span id="cb180-7"><a href="ui-functions.html#cb180-7"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidRow</span>(sliders)</span></code></pre></div>
 </div>
 <div id="ui-as-data" class="section level3">
 <h3><span class="header-section-number">17.2.2</span> UI as data</h3>
 <p><strong>Turning a UI structure into a data structure to have more varitey in inputs</strong></p>
-<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="ui-functions.html#cb180-1"></a>vars &lt;-<span class="st"> </span>tibble<span class="op">::</span><span class="kw">tribble</span>(</span>
-<span id="cb180-2"><a href="ui-functions.html#cb180-2"></a>  <span class="op">~</span><span class="st"> </span>id,   <span class="op">~</span><span class="st"> </span>min, <span class="op">~</span><span class="st"> </span>max,</span>
-<span id="cb180-3"><a href="ui-functions.html#cb180-3"></a>  <span class="st">&quot;alpha&quot;</span>,     <span class="dv">0</span>,     <span class="dv">1</span>,</span>
-<span id="cb180-4"><a href="ui-functions.html#cb180-4"></a>  <span class="st">&quot;beta&quot;</span>,      <span class="dv">0</span>,    <span class="dv">10</span>,</span>
-<span id="cb180-5"><a href="ui-functions.html#cb180-5"></a>  <span class="st">&quot;gamma&quot;</span>,    <span class="dv">-1</span>,     <span class="dv">1</span>,</span>
-<span id="cb180-6"><a href="ui-functions.html#cb180-6"></a>  <span class="st">&quot;delta&quot;</span>,     <span class="dv">0</span>,     <span class="dv">1</span>,</span>
-<span id="cb180-7"><a href="ui-functions.html#cb180-7"></a>)</span>
-<span id="cb180-8"><a href="ui-functions.html#cb180-8"></a></span>
-<span id="cb180-9"><a href="ui-functions.html#cb180-9"></a><span class="co"># function where arg names match the col names</span></span>
-<span id="cb180-10"><a href="ui-functions.html#cb180-10"></a></span>
-<span id="cb180-11"><a href="ui-functions.html#cb180-11"></a>mySliderInput &lt;-<span class="st"> </span><span class="cf">function</span>(id, <span class="dt">label =</span> id, <span class="dt">min =</span> <span class="dv">0</span>, <span class="dt">max =</span> <span class="dv">1</span>) {</span>
-<span id="cb180-12"><a href="ui-functions.html#cb180-12"></a>  <span class="kw">sliderInput</span>(id, label, <span class="dt">min =</span> min, <span class="dt">max =</span> max, <span class="dt">value =</span> <span class="fl">0.5</span>, <span class="dt">step =</span> <span class="fl">0.1</span>)</span>
-<span id="cb180-13"><a href="ui-functions.html#cb180-13"></a>}</span>
-<span id="cb180-14"><a href="ui-functions.html#cb180-14"></a></span>
-<span id="cb180-15"><a href="ui-functions.html#cb180-15"></a><span class="co"># pmap to call mySliderInput over vars</span></span>
-<span id="cb180-16"><a href="ui-functions.html#cb180-16"></a></span>
-<span id="cb180-17"><a href="ui-functions.html#cb180-17"></a>sliders &lt;-<span class="st"> </span><span class="kw">pmap</span>(vars, mySliderInput)</span></code></pre></div>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="ui-functions.html#cb181-1"></a>vars &lt;-<span class="st"> </span>tibble<span class="op">::</span><span class="kw">tribble</span>(</span>
+<span id="cb181-2"><a href="ui-functions.html#cb181-2"></a>  <span class="op">~</span><span class="st"> </span>id,   <span class="op">~</span><span class="st"> </span>min, <span class="op">~</span><span class="st"> </span>max,</span>
+<span id="cb181-3"><a href="ui-functions.html#cb181-3"></a>  <span class="st">&quot;alpha&quot;</span>,     <span class="dv">0</span>,     <span class="dv">1</span>,</span>
+<span id="cb181-4"><a href="ui-functions.html#cb181-4"></a>  <span class="st">&quot;beta&quot;</span>,      <span class="dv">0</span>,    <span class="dv">10</span>,</span>
+<span id="cb181-5"><a href="ui-functions.html#cb181-5"></a>  <span class="st">&quot;gamma&quot;</span>,    <span class="dv">-1</span>,     <span class="dv">1</span>,</span>
+<span id="cb181-6"><a href="ui-functions.html#cb181-6"></a>  <span class="st">&quot;delta&quot;</span>,     <span class="dv">0</span>,     <span class="dv">1</span>,</span>
+<span id="cb181-7"><a href="ui-functions.html#cb181-7"></a>)</span>
+<span id="cb181-8"><a href="ui-functions.html#cb181-8"></a></span>
+<span id="cb181-9"><a href="ui-functions.html#cb181-9"></a><span class="co"># function where arg names match the col names</span></span>
+<span id="cb181-10"><a href="ui-functions.html#cb181-10"></a></span>
+<span id="cb181-11"><a href="ui-functions.html#cb181-11"></a>mySliderInput &lt;-<span class="st"> </span><span class="cf">function</span>(id, <span class="dt">label =</span> id, <span class="dt">min =</span> <span class="dv">0</span>, <span class="dt">max =</span> <span class="dv">1</span>) {</span>
+<span id="cb181-12"><a href="ui-functions.html#cb181-12"></a>  <span class="kw">sliderInput</span>(id, label, <span class="dt">min =</span> min, <span class="dt">max =</span> max, <span class="dt">value =</span> <span class="fl">0.5</span>, <span class="dt">step =</span> <span class="fl">0.1</span>)</span>
+<span id="cb181-13"><a href="ui-functions.html#cb181-13"></a>}</span>
+<span id="cb181-14"><a href="ui-functions.html#cb181-14"></a></span>
+<span id="cb181-15"><a href="ui-functions.html#cb181-15"></a><span class="co"># pmap to call mySliderInput over vars</span></span>
+<span id="cb181-16"><a href="ui-functions.html#cb181-16"></a></span>
+<span id="cb181-17"><a href="ui-functions.html#cb181-17"></a>sliders &lt;-<span class="st"> </span><span class="kw">pmap</span>(vars, mySliderInput)</span></code></pre></div>
 <hr />
 </div>
 </div>

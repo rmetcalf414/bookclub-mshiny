@@ -24,7 +24,7 @@
 <meta name="author" content="The R4DS Online Learning Community" />
 
 
-<meta name="date" content="2021-08-03" />
+<meta name="date" content="2021-08-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -170,6 +170,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.9" data-path="meeting-videos.html"><a href="meeting-videos.html"><i class="fa fa-check"></i><b>1.9</b> Meeting Videos</a><ul>
 <li class="chapter" data-level="1.9.1" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-1"><i class="fa fa-check"></i><b>1.9.1</b> Cohort 1</a></li>
 <li class="chapter" data-level="1.9.2" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-2"><i class="fa fa-check"></i><b>1.9.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="1.9.3" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-2-1"><i class="fa fa-check"></i><b>1.9.3</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="shiny-basic-user-interface.html"><a href="shiny-basic-user-interface.html"><i class="fa fa-check"></i><b>2</b> Shiny - Basic User Interface</a><ul>
@@ -458,7 +459,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="22.11" data-path="demo-of-the-workflow.html"><a href="demo-of-the-workflow.html"><i class="fa fa-check"></i><b>22.11</b> Demo of the workflow</a></li>
 <li class="chapter" data-level="22.12" data-path="other-resources-to-learn-more-about-git.html"><a href="other-resources-to-learn-more-about-git.html"><i class="fa fa-check"></i><b>22.12</b> Other resources to learn more about <code>git</code></a></li>
 <li class="chapter" data-level="22.13" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html"><i class="fa fa-check"></i><b>22.13</b> Meeting Videos</a><ul>
-<li class="chapter" data-level="22.13.1" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-2-1"><i class="fa fa-check"></i><b>22.13.1</b> Cohort 2</a></li>
+<li class="chapter" data-level="22.13.1" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-2-2"><i class="fa fa-check"></i><b>22.13.1</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -485,38 +486,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">19.8</span> Testing non-reactive functions</h2>
 <p><a href="https://github.com/russHyde/er-injuries-sandpit/tree/04-use-count_by_weight">Release 0.4</a></p>
 <p>Before modification, the app code looked like this:</p>
-<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="testing-non-reactive-functions.html#cb186-1"></a>er_app &lt;-<span class="st"> </span><span class="cf">function</span>() {</span>
-<span id="cb186-2"><a href="testing-non-reactive-functions.html#cb186-2"></a>  <span class="co"># `injuries`, `products` and `population` are package-hosted datasets</span></span>
-<span id="cb186-3"><a href="testing-non-reactive-functions.html#cb186-3"></a>  <span class="co"># They can be accessed by name (but R CMD check complains about you referring to undefined vars)</span></span>
-<span id="cb186-4"><a href="testing-non-reactive-functions.html#cb186-4"></a>  injuries &lt;-<span class="st"> </span><span class="kw">get</span>(<span class="st">&quot;injuries&quot;</span>)</span>
-<span id="cb186-5"><a href="testing-non-reactive-functions.html#cb186-5"></a>  products &lt;-<span class="st"> </span><span class="kw">get</span>(<span class="st">&quot;products&quot;</span>)</span>
-<span id="cb186-6"><a href="testing-non-reactive-functions.html#cb186-6"></a>  population &lt;-<span class="st"> </span><span class="kw">get</span>(<span class="st">&quot;population&quot;</span>)</span>
-<span id="cb186-7"><a href="testing-non-reactive-functions.html#cb186-7"></a></span>
-<span id="cb186-8"><a href="testing-non-reactive-functions.html#cb186-8"></a>  prod_codes &lt;-<span class="st"> </span>stats<span class="op">::</span><span class="kw">setNames</span>(products<span class="op">$</span>prod_code, products<span class="op">$</span>title)</span>
-<span id="cb186-9"><a href="testing-non-reactive-functions.html#cb186-9"></a></span>
-<span id="cb186-10"><a href="testing-non-reactive-functions.html#cb186-10"></a>  ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(...)</span>
-<span id="cb186-11"><a href="testing-non-reactive-functions.html#cb186-11"></a></span>
-<span id="cb186-12"><a href="testing-non-reactive-functions.html#cb186-12"></a>  server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
-<span id="cb186-13"><a href="testing-non-reactive-functions.html#cb186-13"></a></span>
-<span id="cb186-14"><a href="testing-non-reactive-functions.html#cb186-14"></a>    selected &lt;-<span class="st"> </span><span class="kw">reactive</span>({...})</span>
-<span id="cb186-15"><a href="testing-non-reactive-functions.html#cb186-15"></a></span>
-<span id="cb186-16"><a href="testing-non-reactive-functions.html#cb186-16"></a>    output<span class="op">$</span>diag &lt;-<span class="st"> </span><span class="kw">renderTable</span>(</span>
-<span id="cb186-17"><a href="testing-non-reactive-functions.html#cb186-17"></a>      <span class="kw">selected</span>() <span class="op">%&gt;%</span><span class="st"> </span>dplyr<span class="op">::</span><span class="kw">count</span>(.data[[<span class="st">&quot;diag&quot;</span>]], <span class="dt">wt =</span> .data[[<span class="st">&quot;weight&quot;</span>]], <span class="dt">sort =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb186-18"><a href="testing-non-reactive-functions.html#cb186-18"></a>    )</span>
-<span id="cb186-19"><a href="testing-non-reactive-functions.html#cb186-19"></a>    output<span class="op">$</span>body_part &lt;-<span class="st"> </span><span class="kw">renderTable</span>(</span>
-<span id="cb186-20"><a href="testing-non-reactive-functions.html#cb186-20"></a>      <span class="kw">selected</span>() <span class="op">%&gt;%</span><span class="st"> </span>dplyr<span class="op">::</span><span class="kw">count</span>(.data[[<span class="st">&quot;body_part&quot;</span>]], <span class="dt">wt =</span> .data[[<span class="st">&quot;weight&quot;</span>]], <span class="dt">sort =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb186-21"><a href="testing-non-reactive-functions.html#cb186-21"></a>    )</span>
-<span id="cb186-22"><a href="testing-non-reactive-functions.html#cb186-22"></a>    output<span class="op">$</span>location &lt;-<span class="st"> </span><span class="kw">renderTable</span>(</span>
-<span id="cb186-23"><a href="testing-non-reactive-functions.html#cb186-23"></a>      <span class="kw">selected</span>() <span class="op">%&gt;%</span><span class="st"> </span>dplyr<span class="op">::</span><span class="kw">count</span>(.data[[<span class="st">&quot;location&quot;</span>]], <span class="dt">wt =</span> .data[[<span class="st">&quot;weight&quot;</span>]], <span class="dt">sort =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb186-24"><a href="testing-non-reactive-functions.html#cb186-24"></a>    )</span>
-<span id="cb186-25"><a href="testing-non-reactive-functions.html#cb186-25"></a></span>
-<span id="cb186-26"><a href="testing-non-reactive-functions.html#cb186-26"></a>    summary &lt;-<span class="st"> </span><span class="kw">reactive</span>({...})</span>
-<span id="cb186-27"><a href="testing-non-reactive-functions.html#cb186-27"></a></span>
-<span id="cb186-28"><a href="testing-non-reactive-functions.html#cb186-28"></a>    output<span class="op">$</span>age_sex &lt;-<span class="st"> </span><span class="kw">renderPlot</span>({...})</span>
-<span id="cb186-29"><a href="testing-non-reactive-functions.html#cb186-29"></a>  }</span>
-<span id="cb186-30"><a href="testing-non-reactive-functions.html#cb186-30"></a></span>
-<span id="cb186-31"><a href="testing-non-reactive-functions.html#cb186-31"></a>  shiny<span class="op">::</span><span class="kw">shinyApp</span>(ui, server)</span>
-<span id="cb186-32"><a href="testing-non-reactive-functions.html#cb186-32"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="testing-non-reactive-functions.html#cb187-1"></a>er_app &lt;-<span class="st"> </span><span class="cf">function</span>() {</span>
+<span id="cb187-2"><a href="testing-non-reactive-functions.html#cb187-2"></a>  <span class="co"># `injuries`, `products` and `population` are package-hosted datasets</span></span>
+<span id="cb187-3"><a href="testing-non-reactive-functions.html#cb187-3"></a>  <span class="co"># They can be accessed by name (but R CMD check complains about you referring to undefined vars)</span></span>
+<span id="cb187-4"><a href="testing-non-reactive-functions.html#cb187-4"></a>  injuries &lt;-<span class="st"> </span><span class="kw">get</span>(<span class="st">&quot;injuries&quot;</span>)</span>
+<span id="cb187-5"><a href="testing-non-reactive-functions.html#cb187-5"></a>  products &lt;-<span class="st"> </span><span class="kw">get</span>(<span class="st">&quot;products&quot;</span>)</span>
+<span id="cb187-6"><a href="testing-non-reactive-functions.html#cb187-6"></a>  population &lt;-<span class="st"> </span><span class="kw">get</span>(<span class="st">&quot;population&quot;</span>)</span>
+<span id="cb187-7"><a href="testing-non-reactive-functions.html#cb187-7"></a></span>
+<span id="cb187-8"><a href="testing-non-reactive-functions.html#cb187-8"></a>  prod_codes &lt;-<span class="st"> </span>stats<span class="op">::</span><span class="kw">setNames</span>(products<span class="op">$</span>prod_code, products<span class="op">$</span>title)</span>
+<span id="cb187-9"><a href="testing-non-reactive-functions.html#cb187-9"></a></span>
+<span id="cb187-10"><a href="testing-non-reactive-functions.html#cb187-10"></a>  ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(...)</span>
+<span id="cb187-11"><a href="testing-non-reactive-functions.html#cb187-11"></a></span>
+<span id="cb187-12"><a href="testing-non-reactive-functions.html#cb187-12"></a>  server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
+<span id="cb187-13"><a href="testing-non-reactive-functions.html#cb187-13"></a></span>
+<span id="cb187-14"><a href="testing-non-reactive-functions.html#cb187-14"></a>    selected &lt;-<span class="st"> </span><span class="kw">reactive</span>({...})</span>
+<span id="cb187-15"><a href="testing-non-reactive-functions.html#cb187-15"></a></span>
+<span id="cb187-16"><a href="testing-non-reactive-functions.html#cb187-16"></a>    output<span class="op">$</span>diag &lt;-<span class="st"> </span><span class="kw">renderTable</span>(</span>
+<span id="cb187-17"><a href="testing-non-reactive-functions.html#cb187-17"></a>      <span class="kw">selected</span>() <span class="op">%&gt;%</span><span class="st"> </span>dplyr<span class="op">::</span><span class="kw">count</span>(.data[[<span class="st">&quot;diag&quot;</span>]], <span class="dt">wt =</span> .data[[<span class="st">&quot;weight&quot;</span>]], <span class="dt">sort =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb187-18"><a href="testing-non-reactive-functions.html#cb187-18"></a>    )</span>
+<span id="cb187-19"><a href="testing-non-reactive-functions.html#cb187-19"></a>    output<span class="op">$</span>body_part &lt;-<span class="st"> </span><span class="kw">renderTable</span>(</span>
+<span id="cb187-20"><a href="testing-non-reactive-functions.html#cb187-20"></a>      <span class="kw">selected</span>() <span class="op">%&gt;%</span><span class="st"> </span>dplyr<span class="op">::</span><span class="kw">count</span>(.data[[<span class="st">&quot;body_part&quot;</span>]], <span class="dt">wt =</span> .data[[<span class="st">&quot;weight&quot;</span>]], <span class="dt">sort =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb187-21"><a href="testing-non-reactive-functions.html#cb187-21"></a>    )</span>
+<span id="cb187-22"><a href="testing-non-reactive-functions.html#cb187-22"></a>    output<span class="op">$</span>location &lt;-<span class="st"> </span><span class="kw">renderTable</span>(</span>
+<span id="cb187-23"><a href="testing-non-reactive-functions.html#cb187-23"></a>      <span class="kw">selected</span>() <span class="op">%&gt;%</span><span class="st"> </span>dplyr<span class="op">::</span><span class="kw">count</span>(.data[[<span class="st">&quot;location&quot;</span>]], <span class="dt">wt =</span> .data[[<span class="st">&quot;weight&quot;</span>]], <span class="dt">sort =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb187-24"><a href="testing-non-reactive-functions.html#cb187-24"></a>    )</span>
+<span id="cb187-25"><a href="testing-non-reactive-functions.html#cb187-25"></a></span>
+<span id="cb187-26"><a href="testing-non-reactive-functions.html#cb187-26"></a>    summary &lt;-<span class="st"> </span><span class="kw">reactive</span>({...})</span>
+<span id="cb187-27"><a href="testing-non-reactive-functions.html#cb187-27"></a></span>
+<span id="cb187-28"><a href="testing-non-reactive-functions.html#cb187-28"></a>    output<span class="op">$</span>age_sex &lt;-<span class="st"> </span><span class="kw">renderPlot</span>({...})</span>
+<span id="cb187-29"><a href="testing-non-reactive-functions.html#cb187-29"></a>  }</span>
+<span id="cb187-30"><a href="testing-non-reactive-functions.html#cb187-30"></a></span>
+<span id="cb187-31"><a href="testing-non-reactive-functions.html#cb187-31"></a>  shiny<span class="op">::</span><span class="kw">shinyApp</span>(ui, server)</span>
+<span id="cb187-32"><a href="testing-non-reactive-functions.html#cb187-32"></a>}</span></code></pre></div>
 <div id="workflow-1" class="section level3">
 <h3><span class="header-section-number">19.8.1</span> Workflow</h3>
 <ul>

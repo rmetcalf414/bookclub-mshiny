@@ -24,7 +24,7 @@
 <meta name="author" content="The R4DS Online Learning Community" />
 
 
-<meta name="date" content="2021-08-03" />
+<meta name="date" content="2021-08-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -170,6 +170,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.9" data-path="meeting-videos.html"><a href="meeting-videos.html"><i class="fa fa-check"></i><b>1.9</b> Meeting Videos</a><ul>
 <li class="chapter" data-level="1.9.1" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-1"><i class="fa fa-check"></i><b>1.9.1</b> Cohort 1</a></li>
 <li class="chapter" data-level="1.9.2" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-2"><i class="fa fa-check"></i><b>1.9.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="1.9.3" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-2-1"><i class="fa fa-check"></i><b>1.9.3</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="shiny-basic-user-interface.html"><a href="shiny-basic-user-interface.html"><i class="fa fa-check"></i><b>2</b> Shiny - Basic User Interface</a><ul>
@@ -458,7 +459,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="22.11" data-path="demo-of-the-workflow.html"><a href="demo-of-the-workflow.html"><i class="fa fa-check"></i><b>22.11</b> Demo of the workflow</a></li>
 <li class="chapter" data-level="22.12" data-path="other-resources-to-learn-more-about-git.html"><a href="other-resources-to-learn-more-about-git.html"><i class="fa fa-check"></i><b>22.12</b> Other resources to learn more about <code>git</code></a></li>
 <li class="chapter" data-level="22.13" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html"><i class="fa fa-check"></i><b>22.13</b> Meeting Videos</a><ul>
-<li class="chapter" data-level="22.13.1" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-2-1"><i class="fa fa-check"></i><b>22.13.1</b> Cohort 2</a></li>
+<li class="chapter" data-level="22.13.1" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-2-2"><i class="fa fa-check"></i><b>22.13.1</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -498,11 +499,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>scope (per session, or per process; in-memory or on-disk)</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="optimisation.html#cb214-1"></a>r &lt;-<span class="st"> </span><span class="kw">reactive</span>(<span class="kw">slow_function</span>(input<span class="op">$</span>x, input<span class="op">$</span>y)) <span class="op">%&gt;%</span></span>
-<span id="cb214-2"><a href="optimisation.html#cb214-2"></a><span class="st">  </span><span class="kw">bindCache</span>(input<span class="op">$</span>x, input<span class="op">$</span>y)</span>
-<span id="cb214-3"><a href="optimisation.html#cb214-3"></a></span>
-<span id="cb214-4"><a href="optimisation.html#cb214-4"></a>output<span class="op">$</span>text &lt;-<span class="st"> </span><span class="kw">renderText</span>(<span class="kw">slow_function2</span>(input<span class="op">$</span>z)) <span class="op">%&gt;%</span></span>
-<span id="cb214-5"><a href="optimisation.html#cb214-5"></a><span class="st">  </span><span class="kw">bindCache</span>(input<span class="op">$</span>z)</span></code></pre></div>
+<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="optimisation.html#cb215-1"></a>r &lt;-<span class="st"> </span><span class="kw">reactive</span>(<span class="kw">slow_function</span>(input<span class="op">$</span>x, input<span class="op">$</span>y)) <span class="op">%&gt;%</span></span>
+<span id="cb215-2"><a href="optimisation.html#cb215-2"></a><span class="st">  </span><span class="kw">bindCache</span>(input<span class="op">$</span>x, input<span class="op">$</span>y)</span>
+<span id="cb215-3"><a href="optimisation.html#cb215-3"></a></span>
+<span id="cb215-4"><a href="optimisation.html#cb215-4"></a>output<span class="op">$</span>text &lt;-<span class="st"> </span><span class="kw">renderText</span>(<span class="kw">slow_function2</span>(input<span class="op">$</span>z)) <span class="op">%&gt;%</span></span>
+<span id="cb215-5"><a href="optimisation.html#cb215-5"></a><span class="st">  </span><span class="kw">bindCache</span>(input<span class="op">$</span>z)</span></code></pre></div>
 </div>
 <div id="other-optimisations" class="section level3">
 <h3><span class="header-section-number">21.4.2</span> Other Optimisations</h3>
