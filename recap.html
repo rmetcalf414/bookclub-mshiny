@@ -24,7 +24,7 @@
 <meta name="author" content="The R4DS Online Learning Community" />
 
 
-<meta name="date" content="2021-09-05" />
+<meta name="date" content="2021-09-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="basic-reactivity.html"/>
-<link rel="next" href="reactive-programming.html"/>
+<link rel="next" href="a-deeper-dive-into-the-server-function.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -53,7 +53,7 @@
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <script src="libs/d3-3.3.8/d3.min.js"></script>
 <script src="libs/dagre-0.4.0/dagre-d3.min.js"></script>
 <link href="libs/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet" />
@@ -151,6 +151,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="book-club-meetings.html"><a href="book-club-meetings.html"><i class="fa fa-check"></i>Book club meetings</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="part"><span><b>Getting started</b></span></li>
 <li class="chapter" data-level="1" data-path="your-first-shiny-app.html"><a href="your-first-shiny-app.html"><i class="fa fa-check"></i><b>1</b> Your first Shiny app</a><ul>
 <li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1.1</b> Introduction</a><ul>
 <li class="chapter" data-level="1.1.1" data-path="introduction.html"><a href="introduction.html#if-you-havent-installed-shiny-already"><i class="fa fa-check"></i><b>1.1.1</b> If you haven’t installed Shiny already:</a></li>
@@ -194,19 +195,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="basic-reactivity.html"><a href="basic-reactivity.html"><i class="fa fa-check"></i><b>3</b> Basic Reactivity</a><ul>
-<li class="chapter" data-level="3.1" data-path="recap.html"><a href="recap.html"><i class="fa fa-check"></i><b>3.1</b> Recap</a></li>
-<li class="chapter" data-level="3.2" data-path="reactive-programming.html"><a href="reactive-programming.html"><i class="fa fa-check"></i><b>3.2</b> Reactive Programming</a><ul>
-<li class="chapter" data-level="3.2.1" data-path="reactive-programming.html"><a href="reactive-programming.html#imperative-vs-declarative-programming"><i class="fa fa-check"></i><b>3.2.1</b> Imperative vs declarative programming</a></li>
-<li class="chapter" data-level="3.2.2" data-path="reactive-programming.html"><a href="reactive-programming.html#laziness"><i class="fa fa-check"></i><b>3.2.2</b> Laziness</a></li>
-<li class="chapter" data-level="3.2.3" data-path="reactive-programming.html"><a href="reactive-programming.html#the-reactive-graph"><i class="fa fa-check"></i><b>3.2.3</b> The reactive graph</a></li>
+<li class="chapter" data-level="3.1" data-path="recap.html"><a href="recap.html"><i class="fa fa-check"></i><b>3.1</b> Recap</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="recap.html"><a href="recap.html#important-learnings-so-far-main-app-components"><i class="fa fa-check"></i><b>3.1.1</b> Important Learnings so far, main app components:</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="reactive-expressions-1.html"><a href="reactive-expressions-1.html"><i class="fa fa-check"></i><b>3.3</b> Reactive expressions</a></li>
-<li class="chapter" data-level="3.4" data-path="controlling-timing-of-evaluation.html"><a href="controlling-timing-of-evaluation.html"><i class="fa fa-check"></i><b>3.4</b> Controlling timing of evaluation</a></li>
-<li class="chapter" data-level="3.5" data-path="observers.html"><a href="observers.html"><i class="fa fa-check"></i><b>3.5</b> Observers</a></li>
-<li class="chapter" data-level="3.6" data-path="execises.html"><a href="execises.html"><i class="fa fa-check"></i><b>3.6</b> Execises</a></li>
-<li class="chapter" data-level="3.7" data-path="meeting-videos-2.html"><a href="meeting-videos-2.html"><i class="fa fa-check"></i><b>3.7</b> Meeting Videos</a><ul>
-<li class="chapter" data-level="3.7.1" data-path="meeting-videos-2.html"><a href="meeting-videos-2.html#cohort-1-2"><i class="fa fa-check"></i><b>3.7.1</b> Cohort 1</a></li>
-<li class="chapter" data-level="3.7.2" data-path="meeting-videos-2.html"><a href="meeting-videos-2.html#cohort-2-2"><i class="fa fa-check"></i><b>3.7.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="3.2" data-path="a-deeper-dive-into-the-server-function.html"><a href="a-deeper-dive-into-the-server-function.html"><i class="fa fa-check"></i><b>3.2</b> A deeper dive into the server function</a></li>
+<li class="chapter" data-level="3.3" data-path="reactive-programming.html"><a href="reactive-programming.html"><i class="fa fa-check"></i><b>3.3</b> Reactive Programming</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="reactive-programming.html"><a href="reactive-programming.html#imperative-vs-declarative-programming"><i class="fa fa-check"></i><b>3.3.1</b> Imperative vs declarative programming</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="laziness.html"><a href="laziness.html"><i class="fa fa-check"></i><b>3.4</b> Laziness</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="laziness.html"><a href="laziness.html#will-this-app-work"><i class="fa fa-check"></i><b>3.4.1</b> Will this app work?</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="the-reactive-graph.html"><a href="the-reactive-graph.html"><i class="fa fa-check"></i><b>3.5</b> The reactive graph</a></li>
+<li class="chapter" data-level="3.6" data-path="reactive-expressions-1.html"><a href="reactive-expressions-1.html"><i class="fa fa-check"></i><b>3.6</b> Reactive expressions</a></li>
+<li class="chapter" data-level="3.7" data-path="new-vocab---producers-and-consumers.html"><a href="new-vocab---producers-and-consumers.html"><i class="fa fa-check"></i><b>3.7</b> New vocab - producers and consumers</a></li>
+<li class="chapter" data-level="3.8" data-path="execution-order.html"><a href="execution-order.html"><i class="fa fa-check"></i><b>3.8</b> Execution order</a></li>
+<li class="chapter" data-level="3.9" data-path="controlling-timing-of-evaluation.html"><a href="controlling-timing-of-evaluation.html"><i class="fa fa-check"></i><b>3.9</b> Controlling timing of evaluation</a><ul>
+<li class="chapter" data-level="3.9.1" data-path="controlling-timing-of-evaluation.html"><a href="controlling-timing-of-evaluation.html#timed-invalidation"><i class="fa fa-check"></i><b>3.9.1</b> <strong><em>Timed invalidation</em></strong></a></li>
+<li class="chapter" data-level="3.9.2" data-path="controlling-timing-of-evaluation.html"><a href="controlling-timing-of-evaluation.html#on-click"><i class="fa fa-check"></i><b>3.9.2</b> <strong><em>On click</em></strong></a></li>
+</ul></li>
+<li class="chapter" data-level="3.10" data-path="observers.html"><a href="observers.html"><i class="fa fa-check"></i><b>3.10</b> Observers</a><ul>
+<li class="chapter" data-level="3.10.1" data-path="observers.html"><a href="observers.html#when-might-you-use-an-observer"><i class="fa fa-check"></i><b>3.10.1</b> When might you use an observer?</a></li>
+</ul></li>
+<li class="chapter" data-level="3.11" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i><b>3.11</b> Acknowledgements</a></li>
+<li class="chapter" data-level="3.12" data-path="meeting-videos-2.html"><a href="meeting-videos-2.html"><i class="fa fa-check"></i><b>3.12</b> Meeting Videos</a><ul>
+<li class="chapter" data-level="3.12.1" data-path="meeting-videos-2.html"><a href="meeting-videos-2.html#cohort-1-2"><i class="fa fa-check"></i><b>3.12.1</b> Cohort 1</a></li>
+<li class="chapter" data-level="3.12.2" data-path="meeting-videos-2.html"><a href="meeting-videos-2.html#cohort-2-2"><i class="fa fa-check"></i><b>3.12.2</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="case-study-er-injuries.html"><a href="case-study-er-injuries.html"><i class="fa fa-check"></i><b>4</b> Case study: ER injuries</a><ul>
@@ -222,27 +235,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.8.2" data-path="meeting-videos-3.html"><a href="meeting-videos-3.html#cohort-2-3"><i class="fa fa-check"></i><b>4.8.2</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
+<li class="part"><span><b>Shiny in action</b></span></li>
 <li class="chapter" data-level="5" data-path="workflow.html"><a href="workflow.html"><i class="fa fa-check"></i><b>5</b> Workflow</a><ul>
 <li class="chapter" data-level="5.1" data-path="why-workflow.html"><a href="why-workflow.html"><i class="fa fa-check"></i><b>5.1</b> Why workflow?</a></li>
 <li class="chapter" data-level="5.2" data-path="learning-objectives-1.html"><a href="learning-objectives-1.html"><i class="fa fa-check"></i><b>5.2</b> Learning objectives</a></li>
-<li class="chapter" data-level="5.3" data-path="development-workflow.html"><a href="development-workflow.html"><i class="fa fa-check"></i><b>5.3</b> Development workflow</a><ul>
-<li class="chapter" data-level="5.3.1" data-path="development-workflow.html"><a href="development-workflow.html#creating-apps"><i class="fa fa-check"></i><b>5.3.1</b> Creating apps</a></li>
-<li class="chapter" data-level="5.3.2" data-path="development-workflow.html"><a href="development-workflow.html#seeing-your-changes-faster"><i class="fa fa-check"></i><b>5.3.2</b> Seeing your changes faster</a></li>
-<li class="chapter" data-level="5.3.3" data-path="development-workflow.html"><a href="development-workflow.html#controlling-the-view"><i class="fa fa-check"></i><b>5.3.3</b> Controlling the view</a></li>
+<li class="chapter" data-level="5.3" data-path="development-workflow.html"><a href="development-workflow.html"><i class="fa fa-check"></i><b>5.3</b> Development workflow</a></li>
+<li class="chapter" data-level="5.4" data-path="creating-apps.html"><a href="creating-apps.html"><i class="fa fa-check"></i><b>5.4</b> Creating apps</a></li>
+<li class="chapter" data-level="5.5" data-path="seeing-your-changes-faster.html"><a href="seeing-your-changes-faster.html"><i class="fa fa-check"></i><b>5.5</b> Seeing your changes faster</a></li>
+<li class="chapter" data-level="5.6" data-path="controlling-the-view.html"><a href="controlling-the-view.html"><i class="fa fa-check"></i><b>5.6</b> Controlling the view</a></li>
+<li class="chapter" data-level="5.7" data-path="debugging.html"><a href="debugging.html"><i class="fa fa-check"></i><b>5.7</b> Debugging</a></li>
+<li class="chapter" data-level="5.8" data-path="three-dubugging-challenges.html"><a href="three-dubugging-challenges.html"><i class="fa fa-check"></i><b>5.8</b> Three dubugging Challenges</a><ul>
+<li class="chapter" data-level="5.8.1" data-path="three-dubugging-challenges.html"><a href="three-dubugging-challenges.html#you-get-an-unexpected-error-easiest-case."><i class="fa fa-check"></i><b>5.8.1</b> You get an unexpected error (easiest case).</a></li>
+<li class="chapter" data-level="5.8.2" data-path="three-dubugging-challenges.html"><a href="three-dubugging-challenges.html#you-dont-get-any-errors"><i class="fa fa-check"></i><b>5.8.2</b> You don’t get any errors</a></li>
+<li class="chapter" data-level="5.8.3" data-path="three-dubugging-challenges.html"><a href="three-dubugging-challenges.html#all-the-values-are-correct-but-theyre-not-updated-when-you-expect"><i class="fa fa-check"></i><b>5.8.3</b> All the values are correct, but they’re not updated when you expect</a></li>
 </ul></li>
-<li class="chapter" data-level="5.4" data-path="debugging.html"><a href="debugging.html"><i class="fa fa-check"></i><b>5.4</b> Debugging</a><ul>
-<li class="chapter" data-level="5.4.1" data-path="debugging.html"><a href="debugging.html#three-dubugging-challengeswhat-goes-wrong"><i class="fa fa-check"></i><b>5.4.1</b> Three dubugging Challenges(What goes wrong)</a></li>
-<li class="chapter" data-level="5.4.2" data-path="debugging.html"><a href="debugging.html#how-to-fix-errors-using-tracebacks"><i class="fa fa-check"></i><b>5.4.2</b> How to fix errors (using tracebacks)</a></li>
-<li class="chapter" data-level="5.4.3" data-path="debugging.html"><a href="debugging.html#three-part-of-shiny-error-stack"><i class="fa fa-check"></i><b>5.4.3</b> Three part of Shiny error stack</a></li>
-<li class="chapter" data-level="5.4.4" data-path="debugging.html"><a href="debugging.html#how-to-fix-errors-using-interactive-debugger"><i class="fa fa-check"></i><b>5.4.4</b> How to fix errors (using interactive debugger)</a></li>
+<li class="chapter" data-level="5.9" data-path="fixing-errors-tracebacks.html"><a href="fixing-errors-tracebacks.html"><i class="fa fa-check"></i><b>5.9</b> Fixing errors: Tracebacks</a><ul>
+<li class="chapter" data-level="5.9.1" data-path="fixing-errors-tracebacks.html"><a href="fixing-errors-tracebacks.html#example-of-reading-traceback"><i class="fa fa-check"></i><b>5.9.1</b> Example of reading traceback</a></li>
 </ul></li>
-<li class="chapter" data-level="5.5" data-path="getting-help-using-reprex.html"><a href="getting-help-using-reprex.html"><i class="fa fa-check"></i><b>5.5</b> Getting help (using Reprex)</a><ul>
-<li class="chapter" data-level="5.5.1" data-path="getting-help-using-reprex.html"><a href="getting-help-using-reprex.html#how-to-make-a-reprex"><i class="fa fa-check"></i><b>5.5.1</b> How to make a reprex</a></li>
-<li class="chapter" data-level="5.5.2" data-path="getting-help-using-reprex.html"><a href="getting-help-using-reprex.html#making-a-minimal-reprex"><i class="fa fa-check"></i><b>5.5.2</b> Making a minimal reprex</a></li>
+<li class="chapter" data-level="5.10" data-path="tracebacks-in-shiny.html"><a href="tracebacks-in-shiny.html"><i class="fa fa-check"></i><b>5.10</b> Tracebacks in Shiny</a></li>
+<li class="chapter" data-level="5.11" data-path="three-components-to-a-shiny-error-stack.html"><a href="three-components-to-a-shiny-error-stack.html"><i class="fa fa-check"></i><b>5.11</b> Three components to a Shiny error stack</a></li>
+<li class="chapter" data-level="5.12" data-path="fixing-errors-interactive-debugger.html"><a href="fixing-errors-interactive-debugger.html"><i class="fa fa-check"></i><b>5.12</b> Fixing errors: Interactive debugger</a><ul>
+<li class="chapter" data-level="5.12.1" data-path="fixing-errors-interactive-debugger.html"><a href="fixing-errors-interactive-debugger.html#useful-interactive-debugger-commands"><i class="fa fa-check"></i><b>5.12.1</b> Useful interactive debugger commands</a></li>
 </ul></li>
-<li class="chapter" data-level="5.6" data-path="meeting-videos-4.html"><a href="meeting-videos-4.html"><i class="fa fa-check"></i><b>5.6</b> Meeting Videos</a><ul>
-<li class="chapter" data-level="5.6.1" data-path="meeting-videos-4.html"><a href="meeting-videos-4.html#cohort-1-4"><i class="fa fa-check"></i><b>5.6.1</b> Cohort 1</a></li>
-<li class="chapter" data-level="5.6.2" data-path="meeting-videos-4.html"><a href="meeting-videos-4.html#cohort-2-4"><i class="fa fa-check"></i><b>5.6.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="5.13" data-path="debugging-reactivity.html"><a href="debugging-reactivity.html"><i class="fa fa-check"></i><b>5.13</b> Debugging reactivity</a></li>
+<li class="chapter" data-level="5.14" data-path="getting-help-using-reprex.html"><a href="getting-help-using-reprex.html"><i class="fa fa-check"></i><b>5.14</b> Getting help (using Reprex)</a><ul>
+<li class="chapter" data-level="5.14.1" data-path="getting-help-using-reprex.html"><a href="getting-help-using-reprex.html#how-to-make-a-reprex"><i class="fa fa-check"></i><b>5.14.1</b> How to make a reprex</a></li>
+<li class="chapter" data-level="5.14.2" data-path="getting-help-using-reprex.html"><a href="getting-help-using-reprex.html#making-a-minimal-reprex"><i class="fa fa-check"></i><b>5.14.2</b> Making a minimal reprex</a></li>
+</ul></li>
+<li class="chapter" data-level="5.15" data-path="meeting-videos-4.html"><a href="meeting-videos-4.html"><i class="fa fa-check"></i><b>5.15</b> Meeting Videos</a><ul>
+<li class="chapter" data-level="5.15.1" data-path="meeting-videos-4.html"><a href="meeting-videos-4.html#cohort-1-4"><i class="fa fa-check"></i><b>5.15.1</b> Cohort 1</a></li>
+<li class="chapter" data-level="5.15.2" data-path="meeting-videos-4.html"><a href="meeting-videos-4.html#cohort-2-4"><i class="fa fa-check"></i><b>5.15.2</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="layout-themes-html.html"><a href="layout-themes-html.html"><i class="fa fa-check"></i><b>6</b> Layout, themes, HTML</a><ul>
@@ -392,7 +414,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="15.6" data-path="observers-and-outputs.html"><a href="observers-and-outputs.html"><i class="fa fa-check"></i><b>15.6</b> Observers and Outputs</a></li>
 <li class="chapter" data-level="15.7" data-path="isolating-code.html"><a href="isolating-code.html"><i class="fa fa-check"></i><b>15.7</b> Isolating Code</a></li>
-<li class="chapter" data-level="15.8" data-path="timed-invalidation.html"><a href="timed-invalidation.html"><i class="fa fa-check"></i><b>15.8</b> Timed Invalidation</a></li>
+<li class="chapter" data-level="15.8" data-path="timed-invalidation-1.html"><a href="timed-invalidation-1.html"><i class="fa fa-check"></i><b>15.8</b> Timed Invalidation</a></li>
 <li class="chapter" data-level="15.9" data-path="meeting-videos-14.html"><a href="meeting-videos-14.html"><i class="fa fa-check"></i><b>15.9</b> Meeting Videos</a><ul>
 <li class="chapter" data-level="15.9.1" data-path="meeting-videos-14.html"><a href="meeting-videos-14.html#cohort-1-14"><i class="fa fa-check"></i><b>15.9.1</b> Cohort 1</a></li>
 <li class="chapter" data-level="15.9.2" data-path="meeting-videos-14.html"><a href="meeting-videos-14.html#cohort-2-14"><i class="fa fa-check"></i><b>15.9.2</b> Cohort 2</a></li>
@@ -586,47 +608,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="recap" class="section level2">
 <h2><span class="header-section-number">3.1</span> Recap</h2>
-<div id="htmlwidget-b56d8875135e294c46aa" style="width:672px;height:480px;" class="DiagrammeR html-widget"></div>
-<script type="application/json" data-for="htmlwidget-b56d8875135e294c46aa">{"x":{"diagram":"\ngraph LR\nA[R scripting]-->B[sequential logic]\n"},"evals":[],"jsHooks":[]}</script>
-<div id="htmlwidget-6293470f6e42fea6f806" style="width:672px;height:480px;" class="DiagrammeR html-widget"></div>
-<script type="application/json" data-for="htmlwidget-6293470f6e42fea6f806">{"x":{"diagram":"\ngraph LR\nA[Reactive Programming]-->B[graph of dependencies]\n"},"evals":[],"jsHooks":[]}</script>
-<p>Important Learnings so far, main app components:</p>
+<div id="htmlwidget-f38370ac11ec1a490905" style="width:672px;height:200px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f38370ac11ec1a490905">{"x":{"diagram":"\ngraph LR\nA[R scripting]-->B[sequential logic]\n"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-9610057db28b836590b9" style="width:672px;height:200px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-9610057db28b836590b9">{"x":{"diagram":"\ngraph LR\nA[Reactive Programming]-->B[graph of dependencies]\n"},"evals":[],"jsHooks":[]}</script>
+<div id="important-learnings-so-far-main-app-components" class="section level3">
+<h3><span class="header-section-number">3.1.1</span> Important Learnings so far, main app components:</h3>
 <ol style="list-style-type: decimal">
-<li>Front end - the ui object</li>
+<li><strong>Front end</strong> - the ui object</li>
 </ol>
 <ul>
 <li>contains the HTML presented to every user of your app.</li>
 <li>is simple because <strong>every user</strong> gets the <strong>same</strong> HTML.</li>
 </ul>
 <ol start="2" style="list-style-type: decimal">
-<li>Back end - the server object</li>
+<li><strong>Back end</strong> - the server object</li>
 </ol>
 <ul>
 <li>is more complicated because <strong>every user</strong> needs to get an <strong>independent version</strong> of the app (when user A modifies an input field, user B shouldn’t see their outputs change).</li>
 <li>creates a new environment for each run, giving each session to have a unique state.</li>
 </ul>
-<blockquote>
-<p>server &lt;- function(input, output, session)</p>
-</blockquote>
-<p>1 <em>input</em><br />
-- list-like object<br />
-- used for receiving input( sent from the browser)<br />
-- read-only<br />
-- must be read in a reactive context (e.g. renderText() or reactive())</p>
-<p>2 <em>output</em><br />
-- list-like object<br />
-- used for sending output<br />
-- ALWAYS use with a render fn() - sets up the reactive context &amp; renders the HTML.</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="recap.html#cb24-1"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(</span>
-<span id="cb24-2"><a href="recap.html#cb24-2"></a>  <span class="kw">textInput</span>(<span class="st">&quot;name&quot;</span>, <span class="st">&quot;What&#39;s your name?&quot;</span>),</span>
-<span id="cb24-3"><a href="recap.html#cb24-3"></a>  <span class="kw">textOutput</span>(<span class="st">&quot;greeting&quot;</span>)</span>
-<span id="cb24-4"><a href="recap.html#cb24-4"></a>)</span>
-<span id="cb24-5"><a href="recap.html#cb24-5"></a></span>
-<span id="cb24-6"><a href="recap.html#cb24-6"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
-<span id="cb24-7"><a href="recap.html#cb24-7"></a>  output<span class="op">$</span>greeting &lt;-<span class="st"> </span><span class="kw">renderText</span>({</span>
-<span id="cb24-8"><a href="recap.html#cb24-8"></a>    <span class="kw">paste0</span>(<span class="st">&quot;Hello &quot;</span>, input<span class="op">$</span>name, <span class="st">&quot;!&quot;</span>)</span>
-<span id="cb24-9"><a href="recap.html#cb24-9"></a>  })</span>
-<span id="cb24-10"><a href="recap.html#cb24-10"></a>}</span></code></pre></div>
+<p><img src="images/03-basic-reactivity/shiny-users-server.png" /></p>
+</div>
 </div>
             </section>
 
@@ -634,7 +637,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 <a href="basic-reactivity.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="reactive-programming.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="a-deeper-dive-into-the-server-function.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>5.4 Debugging | Mastering Shiny Book Club</title>
+  <title>5.7 Debugging | Mastering Shiny Book Club</title>
   <meta name="description" content="This is the product of the R4DS Online Learning Community’s Book Club." />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="5.4 Debugging | Mastering Shiny Book Club" />
+  <meta property="og:title" content="5.7 Debugging | Mastering Shiny Book Club" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="r4ds/bookclub-mshiny" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="5.4 Debugging | Mastering Shiny Book Club" />
+  <meta name="twitter:title" content="5.7 Debugging | Mastering Shiny Book Club" />
   
   <meta name="twitter:description" content="This is the product of the R4DS Online Learning Community’s Book Club." />
   
@@ -24,15 +24,15 @@
 <meta name="author" content="The R4DS Online Learning Community" />
 
 
-<meta name="date" content="2021-09-05" />
+<meta name="date" content="2021-09-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="development-workflow.html"/>
-<link rel="next" href="getting-help-using-reprex.html"/>
+<link rel="prev" href="controlling-the-view.html"/>
+<link rel="next" href="three-dubugging-challenges.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -53,7 +53,7 @@
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <script src="libs/d3-3.3.8/d3.min.js"></script>
 <script src="libs/dagre-0.4.0/dagre-d3.min.js"></script>
 <link href="libs/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet" />
@@ -151,6 +151,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="book-club-meetings.html"><a href="book-club-meetings.html"><i class="fa fa-check"></i>Book club meetings</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="part"><span><b>Getting started</b></span></li>
 <li class="chapter" data-level="1" data-path="your-first-shiny-app.html"><a href="your-first-shiny-app.html"><i class="fa fa-check"></i><b>1</b> Your first Shiny app</a><ul>
 <li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1.1</b> Introduction</a><ul>
 <li class="chapter" data-level="1.1.1" data-path="introduction.html"><a href="introduction.html#if-you-havent-installed-shiny-already"><i class="fa fa-check"></i><b>1.1.1</b> If you haven’t installed Shiny already:</a></li>
@@ -194,19 +195,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="basic-reactivity.html"><a href="basic-reactivity.html"><i class="fa fa-check"></i><b>3</b> Basic Reactivity</a><ul>
-<li class="chapter" data-level="3.1" data-path="recap.html"><a href="recap.html"><i class="fa fa-check"></i><b>3.1</b> Recap</a></li>
-<li class="chapter" data-level="3.2" data-path="reactive-programming.html"><a href="reactive-programming.html"><i class="fa fa-check"></i><b>3.2</b> Reactive Programming</a><ul>
-<li class="chapter" data-level="3.2.1" data-path="reactive-programming.html"><a href="reactive-programming.html#imperative-vs-declarative-programming"><i class="fa fa-check"></i><b>3.2.1</b> Imperative vs declarative programming</a></li>
-<li class="chapter" data-level="3.2.2" data-path="reactive-programming.html"><a href="reactive-programming.html#laziness"><i class="fa fa-check"></i><b>3.2.2</b> Laziness</a></li>
-<li class="chapter" data-level="3.2.3" data-path="reactive-programming.html"><a href="reactive-programming.html#the-reactive-graph"><i class="fa fa-check"></i><b>3.2.3</b> The reactive graph</a></li>
+<li class="chapter" data-level="3.1" data-path="recap.html"><a href="recap.html"><i class="fa fa-check"></i><b>3.1</b> Recap</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="recap.html"><a href="recap.html#important-learnings-so-far-main-app-components"><i class="fa fa-check"></i><b>3.1.1</b> Important Learnings so far, main app components:</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="reactive-expressions-1.html"><a href="reactive-expressions-1.html"><i class="fa fa-check"></i><b>3.3</b> Reactive expressions</a></li>
-<li class="chapter" data-level="3.4" data-path="controlling-timing-of-evaluation.html"><a href="controlling-timing-of-evaluation.html"><i class="fa fa-check"></i><b>3.4</b> Controlling timing of evaluation</a></li>
-<li class="chapter" data-level="3.5" data-path="observers.html"><a href="observers.html"><i class="fa fa-check"></i><b>3.5</b> Observers</a></li>
-<li class="chapter" data-level="3.6" data-path="execises.html"><a href="execises.html"><i class="fa fa-check"></i><b>3.6</b> Execises</a></li>
-<li class="chapter" data-level="3.7" data-path="meeting-videos-2.html"><a href="meeting-videos-2.html"><i class="fa fa-check"></i><b>3.7</b> Meeting Videos</a><ul>
-<li class="chapter" data-level="3.7.1" data-path="meeting-videos-2.html"><a href="meeting-videos-2.html#cohort-1-2"><i class="fa fa-check"></i><b>3.7.1</b> Cohort 1</a></li>
-<li class="chapter" data-level="3.7.2" data-path="meeting-videos-2.html"><a href="meeting-videos-2.html#cohort-2-2"><i class="fa fa-check"></i><b>3.7.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="3.2" data-path="a-deeper-dive-into-the-server-function.html"><a href="a-deeper-dive-into-the-server-function.html"><i class="fa fa-check"></i><b>3.2</b> A deeper dive into the server function</a></li>
+<li class="chapter" data-level="3.3" data-path="reactive-programming.html"><a href="reactive-programming.html"><i class="fa fa-check"></i><b>3.3</b> Reactive Programming</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="reactive-programming.html"><a href="reactive-programming.html#imperative-vs-declarative-programming"><i class="fa fa-check"></i><b>3.3.1</b> Imperative vs declarative programming</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="laziness.html"><a href="laziness.html"><i class="fa fa-check"></i><b>3.4</b> Laziness</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="laziness.html"><a href="laziness.html#will-this-app-work"><i class="fa fa-check"></i><b>3.4.1</b> Will this app work?</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="the-reactive-graph.html"><a href="the-reactive-graph.html"><i class="fa fa-check"></i><b>3.5</b> The reactive graph</a></li>
+<li class="chapter" data-level="3.6" data-path="reactive-expressions-1.html"><a href="reactive-expressions-1.html"><i class="fa fa-check"></i><b>3.6</b> Reactive expressions</a></li>
+<li class="chapter" data-level="3.7" data-path="new-vocab---producers-and-consumers.html"><a href="new-vocab---producers-and-consumers.html"><i class="fa fa-check"></i><b>3.7</b> New vocab - producers and consumers</a></li>
+<li class="chapter" data-level="3.8" data-path="execution-order.html"><a href="execution-order.html"><i class="fa fa-check"></i><b>3.8</b> Execution order</a></li>
+<li class="chapter" data-level="3.9" data-path="controlling-timing-of-evaluation.html"><a href="controlling-timing-of-evaluation.html"><i class="fa fa-check"></i><b>3.9</b> Controlling timing of evaluation</a><ul>
+<li class="chapter" data-level="3.9.1" data-path="controlling-timing-of-evaluation.html"><a href="controlling-timing-of-evaluation.html#timed-invalidation"><i class="fa fa-check"></i><b>3.9.1</b> <strong><em>Timed invalidation</em></strong></a></li>
+<li class="chapter" data-level="3.9.2" data-path="controlling-timing-of-evaluation.html"><a href="controlling-timing-of-evaluation.html#on-click"><i class="fa fa-check"></i><b>3.9.2</b> <strong><em>On click</em></strong></a></li>
+</ul></li>
+<li class="chapter" data-level="3.10" data-path="observers.html"><a href="observers.html"><i class="fa fa-check"></i><b>3.10</b> Observers</a><ul>
+<li class="chapter" data-level="3.10.1" data-path="observers.html"><a href="observers.html#when-might-you-use-an-observer"><i class="fa fa-check"></i><b>3.10.1</b> When might you use an observer?</a></li>
+</ul></li>
+<li class="chapter" data-level="3.11" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i><b>3.11</b> Acknowledgements</a></li>
+<li class="chapter" data-level="3.12" data-path="meeting-videos-2.html"><a href="meeting-videos-2.html"><i class="fa fa-check"></i><b>3.12</b> Meeting Videos</a><ul>
+<li class="chapter" data-level="3.12.1" data-path="meeting-videos-2.html"><a href="meeting-videos-2.html#cohort-1-2"><i class="fa fa-check"></i><b>3.12.1</b> Cohort 1</a></li>
+<li class="chapter" data-level="3.12.2" data-path="meeting-videos-2.html"><a href="meeting-videos-2.html#cohort-2-2"><i class="fa fa-check"></i><b>3.12.2</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="case-study-er-injuries.html"><a href="case-study-er-injuries.html"><i class="fa fa-check"></i><b>4</b> Case study: ER injuries</a><ul>
@@ -222,27 +235,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.8.2" data-path="meeting-videos-3.html"><a href="meeting-videos-3.html#cohort-2-3"><i class="fa fa-check"></i><b>4.8.2</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
+<li class="part"><span><b>Shiny in action</b></span></li>
 <li class="chapter" data-level="5" data-path="workflow.html"><a href="workflow.html"><i class="fa fa-check"></i><b>5</b> Workflow</a><ul>
 <li class="chapter" data-level="5.1" data-path="why-workflow.html"><a href="why-workflow.html"><i class="fa fa-check"></i><b>5.1</b> Why workflow?</a></li>
 <li class="chapter" data-level="5.2" data-path="learning-objectives-1.html"><a href="learning-objectives-1.html"><i class="fa fa-check"></i><b>5.2</b> Learning objectives</a></li>
-<li class="chapter" data-level="5.3" data-path="development-workflow.html"><a href="development-workflow.html"><i class="fa fa-check"></i><b>5.3</b> Development workflow</a><ul>
-<li class="chapter" data-level="5.3.1" data-path="development-workflow.html"><a href="development-workflow.html#creating-apps"><i class="fa fa-check"></i><b>5.3.1</b> Creating apps</a></li>
-<li class="chapter" data-level="5.3.2" data-path="development-workflow.html"><a href="development-workflow.html#seeing-your-changes-faster"><i class="fa fa-check"></i><b>5.3.2</b> Seeing your changes faster</a></li>
-<li class="chapter" data-level="5.3.3" data-path="development-workflow.html"><a href="development-workflow.html#controlling-the-view"><i class="fa fa-check"></i><b>5.3.3</b> Controlling the view</a></li>
+<li class="chapter" data-level="5.3" data-path="development-workflow.html"><a href="development-workflow.html"><i class="fa fa-check"></i><b>5.3</b> Development workflow</a></li>
+<li class="chapter" data-level="5.4" data-path="creating-apps.html"><a href="creating-apps.html"><i class="fa fa-check"></i><b>5.4</b> Creating apps</a></li>
+<li class="chapter" data-level="5.5" data-path="seeing-your-changes-faster.html"><a href="seeing-your-changes-faster.html"><i class="fa fa-check"></i><b>5.5</b> Seeing your changes faster</a></li>
+<li class="chapter" data-level="5.6" data-path="controlling-the-view.html"><a href="controlling-the-view.html"><i class="fa fa-check"></i><b>5.6</b> Controlling the view</a></li>
+<li class="chapter" data-level="5.7" data-path="debugging.html"><a href="debugging.html"><i class="fa fa-check"></i><b>5.7</b> Debugging</a></li>
+<li class="chapter" data-level="5.8" data-path="three-dubugging-challenges.html"><a href="three-dubugging-challenges.html"><i class="fa fa-check"></i><b>5.8</b> Three dubugging Challenges</a><ul>
+<li class="chapter" data-level="5.8.1" data-path="three-dubugging-challenges.html"><a href="three-dubugging-challenges.html#you-get-an-unexpected-error-easiest-case."><i class="fa fa-check"></i><b>5.8.1</b> You get an unexpected error (easiest case).</a></li>
+<li class="chapter" data-level="5.8.2" data-path="three-dubugging-challenges.html"><a href="three-dubugging-challenges.html#you-dont-get-any-errors"><i class="fa fa-check"></i><b>5.8.2</b> You don’t get any errors</a></li>
+<li class="chapter" data-level="5.8.3" data-path="three-dubugging-challenges.html"><a href="three-dubugging-challenges.html#all-the-values-are-correct-but-theyre-not-updated-when-you-expect"><i class="fa fa-check"></i><b>5.8.3</b> All the values are correct, but they’re not updated when you expect</a></li>
 </ul></li>
-<li class="chapter" data-level="5.4" data-path="debugging.html"><a href="debugging.html"><i class="fa fa-check"></i><b>5.4</b> Debugging</a><ul>
-<li class="chapter" data-level="5.4.1" data-path="debugging.html"><a href="debugging.html#three-dubugging-challengeswhat-goes-wrong"><i class="fa fa-check"></i><b>5.4.1</b> Three dubugging Challenges(What goes wrong)</a></li>
-<li class="chapter" data-level="5.4.2" data-path="debugging.html"><a href="debugging.html#how-to-fix-errors-using-tracebacks"><i class="fa fa-check"></i><b>5.4.2</b> How to fix errors (using tracebacks)</a></li>
-<li class="chapter" data-level="5.4.3" data-path="debugging.html"><a href="debugging.html#three-part-of-shiny-error-stack"><i class="fa fa-check"></i><b>5.4.3</b> Three part of Shiny error stack</a></li>
-<li class="chapter" data-level="5.4.4" data-path="debugging.html"><a href="debugging.html#how-to-fix-errors-using-interactive-debugger"><i class="fa fa-check"></i><b>5.4.4</b> How to fix errors (using interactive debugger)</a></li>
+<li class="chapter" data-level="5.9" data-path="fixing-errors-tracebacks.html"><a href="fixing-errors-tracebacks.html"><i class="fa fa-check"></i><b>5.9</b> Fixing errors: Tracebacks</a><ul>
+<li class="chapter" data-level="5.9.1" data-path="fixing-errors-tracebacks.html"><a href="fixing-errors-tracebacks.html#example-of-reading-traceback"><i class="fa fa-check"></i><b>5.9.1</b> Example of reading traceback</a></li>
 </ul></li>
-<li class="chapter" data-level="5.5" data-path="getting-help-using-reprex.html"><a href="getting-help-using-reprex.html"><i class="fa fa-check"></i><b>5.5</b> Getting help (using Reprex)</a><ul>
-<li class="chapter" data-level="5.5.1" data-path="getting-help-using-reprex.html"><a href="getting-help-using-reprex.html#how-to-make-a-reprex"><i class="fa fa-check"></i><b>5.5.1</b> How to make a reprex</a></li>
-<li class="chapter" data-level="5.5.2" data-path="getting-help-using-reprex.html"><a href="getting-help-using-reprex.html#making-a-minimal-reprex"><i class="fa fa-check"></i><b>5.5.2</b> Making a minimal reprex</a></li>
+<li class="chapter" data-level="5.10" data-path="tracebacks-in-shiny.html"><a href="tracebacks-in-shiny.html"><i class="fa fa-check"></i><b>5.10</b> Tracebacks in Shiny</a></li>
+<li class="chapter" data-level="5.11" data-path="three-components-to-a-shiny-error-stack.html"><a href="three-components-to-a-shiny-error-stack.html"><i class="fa fa-check"></i><b>5.11</b> Three components to a Shiny error stack</a></li>
+<li class="chapter" data-level="5.12" data-path="fixing-errors-interactive-debugger.html"><a href="fixing-errors-interactive-debugger.html"><i class="fa fa-check"></i><b>5.12</b> Fixing errors: Interactive debugger</a><ul>
+<li class="chapter" data-level="5.12.1" data-path="fixing-errors-interactive-debugger.html"><a href="fixing-errors-interactive-debugger.html#useful-interactive-debugger-commands"><i class="fa fa-check"></i><b>5.12.1</b> Useful interactive debugger commands</a></li>
 </ul></li>
-<li class="chapter" data-level="5.6" data-path="meeting-videos-4.html"><a href="meeting-videos-4.html"><i class="fa fa-check"></i><b>5.6</b> Meeting Videos</a><ul>
-<li class="chapter" data-level="5.6.1" data-path="meeting-videos-4.html"><a href="meeting-videos-4.html#cohort-1-4"><i class="fa fa-check"></i><b>5.6.1</b> Cohort 1</a></li>
-<li class="chapter" data-level="5.6.2" data-path="meeting-videos-4.html"><a href="meeting-videos-4.html#cohort-2-4"><i class="fa fa-check"></i><b>5.6.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="5.13" data-path="debugging-reactivity.html"><a href="debugging-reactivity.html"><i class="fa fa-check"></i><b>5.13</b> Debugging reactivity</a></li>
+<li class="chapter" data-level="5.14" data-path="getting-help-using-reprex.html"><a href="getting-help-using-reprex.html"><i class="fa fa-check"></i><b>5.14</b> Getting help (using Reprex)</a><ul>
+<li class="chapter" data-level="5.14.1" data-path="getting-help-using-reprex.html"><a href="getting-help-using-reprex.html#how-to-make-a-reprex"><i class="fa fa-check"></i><b>5.14.1</b> How to make a reprex</a></li>
+<li class="chapter" data-level="5.14.2" data-path="getting-help-using-reprex.html"><a href="getting-help-using-reprex.html#making-a-minimal-reprex"><i class="fa fa-check"></i><b>5.14.2</b> Making a minimal reprex</a></li>
+</ul></li>
+<li class="chapter" data-level="5.15" data-path="meeting-videos-4.html"><a href="meeting-videos-4.html"><i class="fa fa-check"></i><b>5.15</b> Meeting Videos</a><ul>
+<li class="chapter" data-level="5.15.1" data-path="meeting-videos-4.html"><a href="meeting-videos-4.html#cohort-1-4"><i class="fa fa-check"></i><b>5.15.1</b> Cohort 1</a></li>
+<li class="chapter" data-level="5.15.2" data-path="meeting-videos-4.html"><a href="meeting-videos-4.html#cohort-2-4"><i class="fa fa-check"></i><b>5.15.2</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="layout-themes-html.html"><a href="layout-themes-html.html"><i class="fa fa-check"></i><b>6</b> Layout, themes, HTML</a><ul>
@@ -392,7 +414,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="15.6" data-path="observers-and-outputs.html"><a href="observers-and-outputs.html"><i class="fa fa-check"></i><b>15.6</b> Observers and Outputs</a></li>
 <li class="chapter" data-level="15.7" data-path="isolating-code.html"><a href="isolating-code.html"><i class="fa fa-check"></i><b>15.7</b> Isolating Code</a></li>
-<li class="chapter" data-level="15.8" data-path="timed-invalidation.html"><a href="timed-invalidation.html"><i class="fa fa-check"></i><b>15.8</b> Timed Invalidation</a></li>
+<li class="chapter" data-level="15.8" data-path="timed-invalidation-1.html"><a href="timed-invalidation-1.html"><i class="fa fa-check"></i><b>15.8</b> Timed Invalidation</a></li>
 <li class="chapter" data-level="15.9" data-path="meeting-videos-14.html"><a href="meeting-videos-14.html"><i class="fa fa-check"></i><b>15.9</b> Meeting Videos</a><ul>
 <li class="chapter" data-level="15.9.1" data-path="meeting-videos-14.html"><a href="meeting-videos-14.html#cohort-1-14"><i class="fa fa-check"></i><b>15.9.1</b> Cohort 1</a></li>
 <li class="chapter" data-level="15.9.2" data-path="meeting-videos-14.html"><a href="meeting-videos-14.html#cohort-2-14"><i class="fa fa-check"></i><b>15.9.2</b> Cohort 2</a></li>
@@ -585,187 +607,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="debugging" class="section level2">
-<h2><span class="header-section-number">5.4</span> Debugging</h2>
+<h2><span class="header-section-number">5.7</span> Debugging</h2>
+<blockquote>
+<p>It’s an eight line app, what could possibly go wrong? -Hadley Wickham (author)</p>
+</blockquote>
+<blockquote>
+<p>The process of systematically comparing your expectations to reality until you find the mismatch. -Hadley Wickham (author)</p>
+</blockquote>
 <ul>
 <li><p>something will go wrong definitely.</p></li>
 <li><p>it takes years of experience to write code that works the first time (So, we need a robust workflow for identifying and fixing mistakes)</p></li>
 <li><p>Specific focus to three debugging challenges to Shiny apps</p></li>
 </ul>
-<div id="three-dubugging-challengeswhat-goes-wrong" class="section level3">
-<h3><span class="header-section-number">5.4.1</span> Three dubugging Challenges(What goes wrong)</h3>
-<!-- A grammatically correct program may give you incorrect results due to logic errors. In case such errors (i.e. bugs) occur, you need to find out why and where they occur so that you can fix them. The procedure to identify and fix bugs is called “debugging”. -->
-<!-- - R’s debugging tools include the traceback, browser, debug, debugonce, trace, and recover functions -->
-<!-- - it takes years of experience in any language before you can reliably write code that works the first time. -->
-<!-- - So,bugs do happens. -->
-<!-- - Three main cases of problems: -->
-<p><img src="images/05-workflow/debugging_challenges.png" /></p>
-<ul>
-<li>You get an unexpected error (easiest case).</li>
-</ul>
-<p>Solution :</p>
-<ul>
-<li><p>You will get a traceback which allows you to figure out exactly where the error occurred</p></li>
-<li><p>The interactive debugger is a powerful assistant for this process.</p></li>
-</ul>
-<blockquote>
-<p>You don’t get any errors,</p>
-</blockquote>
-<ul>
-<li>Solution: use the interactive debugger, along with your investigative skills to track down the root cause.</li>
-</ul>
-<blockquote>
-<p>All the values are correct, but they’re not updated when you expect</p>
-</blockquote>
-<ul>
-<li>Most challenging problem because it’s unique to Shiny, so you can’t take advantage of your existing R debugging skills.</li>
-</ul>
-</div>
-<div id="how-to-fix-errors-using-tracebacks" class="section level3">
-<h3><span class="header-section-number">5.4.2</span> How to fix errors (using tracebacks)</h3>
-<ul>
-<li><p>In R, every error is accompanied by a traceback, or call stack, which literally traces back through the sequence of calls that lead to the error</p></li>
-<li><p>The functions are printed in reverse order</p></li>
-<li><p>The traceback tool pinpoints the location of an error.</p>
-<p><img src="images/05-workflow/call_stack.png" /></p></li>
-<li><p>Example of reading traceback</p></li>
-</ul>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="debugging.html#cb58-1"></a>f &lt;-<span class="st"> </span><span class="cf">function</span>(x) <span class="kw">g</span>(x)</span>
-<span id="cb58-2"><a href="debugging.html#cb58-2"></a>g &lt;-<span class="st"> </span><span class="cf">function</span>(x) <span class="kw">h</span>(x)</span>
-<span id="cb58-3"><a href="debugging.html#cb58-3"></a>h &lt;-<span class="st"> </span><span class="cf">function</span>(x) <span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="dv">2</span></span>
-<span id="cb58-4"><a href="debugging.html#cb58-4"></a></span>
-<span id="cb58-5"><a href="debugging.html#cb58-5"></a><span class="kw">f</span>(<span class="dv">3</span>)</span></code></pre></div>
-<pre><code>## [1] 4</code></pre>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="debugging.html#cb60-1"></a>f &lt;-<span class="st"> </span><span class="cf">function</span>(x) <span class="kw">g</span>(x)</span>
-<span id="cb60-2"><a href="debugging.html#cb60-2"></a>g &lt;-<span class="st"> </span><span class="cf">function</span>(x) <span class="kw">h</span>(x)</span>
-<span id="cb60-3"><a href="debugging.html#cb60-3"></a>h &lt;-<span class="st"> </span><span class="cf">function</span>(x) x <span class="op">*</span><span class="st"> </span><span class="dv">2</span></span>
-<span id="cb60-4"><a href="debugging.html#cb60-4"></a></span>
-<span id="cb60-5"><a href="debugging.html#cb60-5"></a><span class="kw">f</span>(<span class="st">&quot;a&quot;</span>)</span></code></pre></div>
-<ul>
-<li>This will generate an error below</li>
-</ul>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="debugging.html#cb61-1"></a><span class="kw">f</span>(<span class="st">&quot;a&quot;</span>)</span>
-<span id="cb61-2"><a href="debugging.html#cb61-2"></a><span class="co">#&gt; Error in x * 2: non-numeric argument to binary operator</span></span></code></pre></div>
-<ul>
-<li>The traceback is shown below:</li>
-<li>Top of the stack point to an error</li>
-</ul>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="debugging.html#cb62-1"></a><span class="kw">traceback</span>()</span>
-<span id="cb62-2"><a href="debugging.html#cb62-2"></a></span>
-<span id="cb62-3"><a href="debugging.html#cb62-3"></a><span class="co">#&gt; 3: h(x)</span></span>
-<span id="cb62-4"><a href="debugging.html#cb62-4"></a><span class="co">#&gt; 2: g(x)</span></span>
-<span id="cb62-5"><a href="debugging.html#cb62-5"></a><span class="co">#&gt; 1: f(&quot;a&quot;)</span></span></code></pre></div>
-<ul>
-<li><p>Flipping the traceback shows the better sequence(the top of the stack poins to an error location)</p></li>
-<li><p>shows sequence of calls that lead to the error — f() called g() called h() (which errors)</p></li>
-</ul>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="debugging.html#cb63-1"></a><span class="dv">1</span><span class="op">:</span><span class="st"> </span><span class="kw">f</span>(<span class="st">&quot;a&quot;</span>)</span>
-<span id="cb63-2"><a href="debugging.html#cb63-2"></a><span class="dv">2</span><span class="op">:</span><span class="st"> </span><span class="kw">g</span>(x)</span>
-<span id="cb63-3"><a href="debugging.html#cb63-3"></a><span class="dv">3</span><span class="op">:</span><span class="st"> </span><span class="kw">h</span>(x)</span></code></pre></div>
-<ul>
-<li><h3 id="tracebacks-in-shiny"><span class="header-section-number">5.4.2</span> Tracebacks in Shiny</h3></li>
-<li><p>You can’t use traceback() in Shiny because you can’t run code while an app is running.</p></li>
-<li><p>Shiny automatically print the traceback for you.</p></li>
-</ul>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="debugging.html#cb64-1"></a><span class="kw">library</span>(shiny)</span>
-<span id="cb64-2"><a href="debugging.html#cb64-2"></a></span>
-<span id="cb64-3"><a href="debugging.html#cb64-3"></a>f &lt;-<span class="st"> </span><span class="cf">function</span>(x) <span class="kw">g</span>(x)</span>
-<span id="cb64-4"><a href="debugging.html#cb64-4"></a>g &lt;-<span class="st"> </span><span class="cf">function</span>(x) <span class="kw">h</span>(x)</span>
-<span id="cb64-5"><a href="debugging.html#cb64-5"></a>h &lt;-<span class="st"> </span><span class="cf">function</span>(x) x <span class="op">*</span><span class="st"> </span><span class="dv">2</span></span>
-<span id="cb64-6"><a href="debugging.html#cb64-6"></a></span>
-<span id="cb64-7"><a href="debugging.html#cb64-7"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(</span>
-<span id="cb64-8"><a href="debugging.html#cb64-8"></a>  <span class="kw">selectInput</span>(<span class="st">&quot;n&quot;</span>, <span class="st">&quot;N&quot;</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>),</span>
-<span id="cb64-9"><a href="debugging.html#cb64-9"></a>  <span class="kw">plotOutput</span>(<span class="st">&quot;plot&quot;</span>)</span>
-<span id="cb64-10"><a href="debugging.html#cb64-10"></a>)</span>
-<span id="cb64-11"><a href="debugging.html#cb64-11"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
-<span id="cb64-12"><a href="debugging.html#cb64-12"></a>  output<span class="op">$</span>plot &lt;-<span class="st"> </span><span class="kw">renderPlot</span>({</span>
-<span id="cb64-13"><a href="debugging.html#cb64-13"></a>    n &lt;-<span class="st"> </span><span class="kw">f</span>(input<span class="op">$</span>n)</span>
-<span id="cb64-14"><a href="debugging.html#cb64-14"></a>    <span class="kw">plot</span>(<span class="kw">head</span>(cars, n))</span>
-<span id="cb64-15"><a href="debugging.html#cb64-15"></a>  }, <span class="dt">res =</span> <span class="dv">96</span>)</span>
-<span id="cb64-16"><a href="debugging.html#cb64-16"></a>}</span>
-<span id="cb64-17"><a href="debugging.html#cb64-17"></a><span class="kw">shinyApp</span>(ui, server)</span></code></pre></div>
-<ul>
-<li>We will see an error below</li>
-</ul>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="debugging.html#cb65-1"></a>Error <span class="cf">in</span> <span class="op">*</span><span class="er">:</span><span class="st"> </span>non<span class="op">-</span>numeric argument to binary operator</span>
-<span id="cb65-2"><a href="debugging.html#cb65-2"></a>  <span class="dv">169</span><span class="op">:</span><span class="st"> </span>g [app.R<span class="co">#4]</span></span>
-<span id="cb65-3"><a href="debugging.html#cb65-3"></a>  <span class="dv">168</span><span class="op">:</span><span class="st"> </span>f [app.R<span class="co">#3]</span></span>
-<span id="cb65-4"><a href="debugging.html#cb65-4"></a>  <span class="dv">167</span><span class="op">:</span><span class="st"> </span>renderPlot [app.R<span class="co">#13]</span></span>
-<span id="cb65-5"><a href="debugging.html#cb65-5"></a>  <span class="dv">165</span><span class="op">:</span><span class="st"> </span>func</span>
-<span id="cb65-6"><a href="debugging.html#cb65-6"></a>  <span class="dv">125</span><span class="op">:</span><span class="st"> </span>drawPlot</span>
-<span id="cb65-7"><a href="debugging.html#cb65-7"></a>  <span class="dv">111</span><span class="op">:</span><span class="st"> </span><span class="er">&lt;</span>reactive<span class="op">:</span>plotObj<span class="op">&gt;</span></span>
-<span id="cb65-8"><a href="debugging.html#cb65-8"></a><span class="st">   </span><span class="dv">95</span><span class="op">:</span><span class="st"> </span>drawReactive</span>
-<span id="cb65-9"><a href="debugging.html#cb65-9"></a>   <span class="dv">82</span><span class="op">:</span><span class="st"> </span>renderFunc</span>
-<span id="cb65-10"><a href="debugging.html#cb65-10"></a>   <span class="dv">81</span><span class="op">:</span><span class="st"> </span>output<span class="op">$</span>plot</span>
-<span id="cb65-11"><a href="debugging.html#cb65-11"></a>    <span class="dv">1</span><span class="op">:</span><span class="st"> </span>runApp</span></code></pre></div>
-<ul>
-<li>We can also flip the error</li>
-</ul>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="debugging.html#cb66-1"></a>Error <span class="cf">in</span> <span class="op">*</span><span class="er">:</span><span class="st"> </span>non<span class="op">-</span>numeric argument to binary operator</span>
-<span id="cb66-2"><a href="debugging.html#cb66-2"></a>   <span class="dv">1</span><span class="op">:</span><span class="st"> </span>runApp</span>
-<span id="cb66-3"><a href="debugging.html#cb66-3"></a>  <span class="dv">81</span><span class="op">:</span><span class="st"> </span>output<span class="op">$</span>plot</span>
-<span id="cb66-4"><a href="debugging.html#cb66-4"></a>  <span class="dv">82</span><span class="op">:</span><span class="st"> </span>renderFunc</span>
-<span id="cb66-5"><a href="debugging.html#cb66-5"></a>  <span class="dv">95</span><span class="op">:</span><span class="st"> </span>drawReactive</span>
-<span id="cb66-6"><a href="debugging.html#cb66-6"></a> <span class="dv">111</span><span class="op">:</span><span class="st"> </span><span class="er">&lt;</span>reactive<span class="op">:</span>plotObj<span class="op">&gt;</span></span>
-<span id="cb66-7"><a href="debugging.html#cb66-7"></a><span class="st"> </span><span class="dv">125</span><span class="op">:</span><span class="st"> </span>drawPlot</span>
-<span id="cb66-8"><a href="debugging.html#cb66-8"></a> <span class="dv">165</span><span class="op">:</span><span class="st"> </span>func</span>
-<span id="cb66-9"><a href="debugging.html#cb66-9"></a> <span class="dv">167</span><span class="op">:</span><span class="st"> </span>renderPlot [app.R<span class="co">#13]</span></span>
-<span id="cb66-10"><a href="debugging.html#cb66-10"></a> <span class="dv">168</span><span class="op">:</span><span class="st"> </span>f [app.R<span class="co">#3]</span></span>
-<span id="cb66-11"><a href="debugging.html#cb66-11"></a> <span class="dv">169</span><span class="op">:</span><span class="st"> </span>g [app.R<span class="co">#4]</span></span></code></pre></div>
-</div>
-<div id="three-part-of-shiny-error-stack" class="section level3">
-<h3><span class="header-section-number">5.4.3</span> Three part of Shiny error stack</h3>
-<ul>
-<li><strong>First</strong>: few calls start the app. Ignore anything before the first runApp(); this is just the setup code to get the app running.</li>
-</ul>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="debugging.html#cb67-1"></a><span class="dv">1</span><span class="op">:</span><span class="st"> </span>runApp</span>
-<span id="cb67-2"><a href="debugging.html#cb67-2"></a></span>
-<span id="cb67-3"><a href="debugging.html#cb67-3"></a><span class="co">#Sometimes, you may see other things before runAPP ignore them</span></span>
-<span id="cb67-4"><a href="debugging.html#cb67-4"></a><span class="co">#1: source</span></span>
-<span id="cb67-5"><a href="debugging.html#cb67-5"></a><span class="co">#3: print.shiny.appobj</span></span>
-<span id="cb67-6"><a href="debugging.html#cb67-6"></a><span class="co">#5: runApp</span></span></code></pre></div>
-<ul>
-<li><strong>Second:</strong> some internal Shiny code in charge of calling the reactive expression(output$plot is where the problem is) :</li>
-</ul>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="debugging.html#cb68-1"></a> <span class="dv">81</span><span class="op">:</span><span class="st"> </span>output<span class="op">$</span>plot</span>
-<span id="cb68-2"><a href="debugging.html#cb68-2"></a> <span class="dv">82</span><span class="op">:</span><span class="st"> </span>renderFunc</span>
-<span id="cb68-3"><a href="debugging.html#cb68-3"></a> <span class="dv">95</span><span class="op">:</span><span class="st"> </span>drawReactive</span>
-<span id="cb68-4"><a href="debugging.html#cb68-4"></a><span class="dv">111</span><span class="op">:</span><span class="st"> </span><span class="er">&lt;</span>reactive<span class="op">:</span>plotObj<span class="op">&gt;</span></span>
-<span id="cb68-5"><a href="debugging.html#cb68-5"></a><span class="dv">125</span><span class="op">:</span><span class="st"> </span>drawPlot</span>
-<span id="cb68-6"><a href="debugging.html#cb68-6"></a><span class="dv">165</span><span class="op">:</span><span class="st"> </span>func</span></code></pre></div>
-<ul>
-<li><strong>Third</strong>: Code that you have written</li>
-</ul>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="debugging.html#cb69-1"></a><span class="dv">167</span><span class="op">:</span><span class="st"> </span>renderPlot [app.R<span class="co">#13]</span></span>
-<span id="cb69-2"><a href="debugging.html#cb69-2"></a><span class="dv">168</span><span class="op">:</span><span class="st"> </span>f [app.R<span class="co">#3]</span></span>
-<span id="cb69-3"><a href="debugging.html#cb69-3"></a><span class="dv">169</span><span class="op">:</span><span class="st"> </span>g [app.R<span class="co">#4]</span></span></code></pre></div>
-</div>
-<div id="how-to-fix-errors-using-interactive-debugger" class="section level3">
-<h3><span class="header-section-number">5.4.4</span> How to fix errors (using interactive debugger)</h3>
-<ul>
-<li><p>You have identified the error using <code>traceback</code> and want to figure out what’s causing it,</p></li>
-<li><p>Use the interactive debugger to debugg your code</p></li>
-<li><p>Two ways to launch the debugger:</p></li>
-<li><p>Add a call to <code>browser()</code> in your source code</p></li>
-</ul>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="debugging.html#cb70-1"></a><span class="cf">if</span> (input<span class="op">$</span>value <span class="op">==</span><span class="st"> &quot;a&quot;</span>) {</span>
-<span id="cb70-2"><a href="debugging.html#cb70-2"></a>  <span class="kw">browser</span>()</span>
-<span id="cb70-3"><a href="debugging.html#cb70-3"></a>}</span>
-<span id="cb70-4"><a href="debugging.html#cb70-4"></a><span class="co"># Or maybe</span></span>
-<span id="cb70-5"><a href="debugging.html#cb70-5"></a><span class="cf">if</span> (<span class="kw">my_reactive</span>() <span class="op">&lt;</span><span class="st"> </span><span class="dv">0</span>) {</span>
-<span id="cb70-6"><a href="debugging.html#cb70-6"></a>  <span class="kw">browser</span>()</span>
-<span id="cb70-7"><a href="debugging.html#cb70-7"></a>}</span></code></pre></div>
-<ul>
-<li>Add an RStudio breakpoint by clicking to the left of the line number</li>
-</ul>
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="development-workflow.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="getting-help-using-reprex.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="controlling-the-view.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="three-dubugging-challenges.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
