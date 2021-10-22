@@ -24,7 +24,7 @@
 <meta name="author" content="The R4DS Online Learning Community" />
 
 
-<meta name="date" content="2021-10-10" />
+<meta name="date" content="2021-10-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -627,8 +627,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb26-4"><a href="reactive-expressions-1.html#cb26-4"></a>  string &lt;-<span class="st"> </span><span class="kw">reactive</span>(<span class="kw">paste0</span>(<span class="st">&quot;Hello &quot;</span>, input<span class="op">$</span>name, <span class="st">&quot;!&quot;</span>))</span>
 <span id="cb26-5"><a href="reactive-expressions-1.html#cb26-5"></a>  output<span class="op">$</span>greeting &lt;-<span class="st"> </span><span class="kw">renderText</span>(<span class="kw">string</span>())</span>
 <span id="cb26-6"><a href="reactive-expressions-1.html#cb26-6"></a>}</span></code></pre></div>
-<div id="htmlwidget-981518e2a7edc8d6502d" style="width:672px;height:200px;" class="DiagrammeR html-widget"></div>
-<script type="application/json" data-for="htmlwidget-981518e2a7edc8d6502d">{"x":{"diagram":"\ngraph LR\nA[name] --- B>string]\nB>string] --- C>greeting]\n"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-83634463c5154a3a9885" style="width:672px;height:200px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-83634463c5154a3a9885">{"x":{"diagram":"\ngraph LR\nA[name] --- B>string]\nB>string] --- C>greeting]\n"},"evals":[],"jsHooks":[]}</script>
 <p>In other words, <code>reactive</code> makes apps cleaner &amp; more efficient (by removing redundant codes &amp; recomputation).
 It also simplifies the reactive graph.</p>
 <p>Reactive expressions have a flavour of both inputs and outputs:</p>

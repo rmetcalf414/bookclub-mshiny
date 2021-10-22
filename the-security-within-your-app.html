@@ -24,7 +24,7 @@
 <meta name="author" content="The R4DS Online Learning Community" />
 
 
-<meta name="date" content="2021-10-10" />
+<meta name="date" content="2021-10-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -620,8 +620,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="the-security-within-your-app" class="section level2">
 <h2><span class="header-section-number">22.2</span> The security within your app</h2>
 <p>Two main security actions:</p>
-<div id="htmlwidget-5770e081ba48d0116fae" style="width:100%;height:100%;" class="DiagrammeR html-widget"></div>
-<script type="application/json" data-for="htmlwidget-5770e081ba48d0116fae">{"x":{"diagram":"\ngraph LR\nA(validation)-.and.-B(isolation)\nstyle A fill:#f9f\nstyle B fill:#f9f"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-dd36d89f9e74667c9169" style="width:100%;height:100%;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-dd36d89f9e74667c9169">{"x":{"diagram":"\ngraph LR\nA(validation)-.and.-B(isolation)\nstyle A fill:#f9f\nstyle B fill:#f9f"},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><p>Shiny <code>inputs</code> use client-side <strong>validation</strong> such as data that is user-specific and need the user to authenticate before use</p></li>
 <li><p>Shiny <code>server()</code> code <strong>isolation</strong>; one user cannot see data from another user in a different session, the only exception is if caching is in use, more about this is specified in the last chapter of the book</p></li>
@@ -745,7 +745,7 @@ password = sodium::password_store(“pass_authr_1”)</p>
 <p>which releases the password in this format:</p>
 <div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb245-1"><a href="the-security-within-your-app.html#cb245-1"></a>password =<span class="st"> &quot;pass_authr_1&quot;</span></span>
 <span id="cb245-2"><a href="the-security-within-your-app.html#cb245-2"></a>sodium<span class="op">::</span><span class="kw">password_store</span>(password)</span></code></pre></div>
-<pre><code>## [1] &quot;$7$C6..../....LQNkSvNlw2zy6X9dMdW7Jeg4DamN/kyqaFCWHI4Myz.$dEYxn2B1E6vrV4h./5CGNyps1H5T6tckj4Vi9PDEFQD&quot;</code></pre>
+<pre><code>## [1] &quot;$7$C6..../....fy.p1TV5lJR5mPRcSgO1xIuHWY50giVU6uEbDjHxXmA$paYaiOUTmfpoyKZ17EcIYF6aKU5fXRYsm8iHQv1S2t3&quot;</code></pre>
 <div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="the-security-within-your-app.html#cb247-1"></a>hash &lt;-<span class="st"> </span>sodium<span class="op">::</span><span class="kw">password_store</span>(password)</span>
 <span id="cb247-2"><a href="the-security-within-your-app.html#cb247-2"></a>sodium<span class="op">::</span><span class="kw">password_verify</span>(hash, password)</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
