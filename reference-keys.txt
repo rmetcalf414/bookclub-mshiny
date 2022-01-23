@@ -278,7 +278,6 @@ demo
 lets-take-a-look
 meeting-videos-19
 cohort-1-19
-cohort-2-19
 testing-1
 learning-outcomes
 purpose-of-testing
@@ -305,7 +304,7 @@ new-rstudio-mentioned-in-the-chapter
 other-interesting-things
 meeting-videos-20
 cohort-1-20
-cohort-2-20
+cohort-2-19
 security
 introduction-7
 the-security-within-your-app
@@ -315,7 +314,7 @@ conclusions-2
 resources-2
 meeting-videos-21
 cohort-1-21
-cohort-2-21
+cohort-2-20
 performance
 restaurant-shiny
 benchmarking
@@ -328,11 +327,10 @@ other-optimisations
 resources-3
 meeting-videos-22
 cohort-1-22
-cohort-2-22
+cohort-2-21
 wrap-up-session
 meeting-videos-23
 cohort-1-23
-cohort-2-23
 up-and-running-with-git
 what-is-git
 accessing-and-using-git
@@ -354,4 +352,4 @@ push-changes-to-remote-repository
 demo-of-the-workflow
 other-resources-to-learn-more-about-git
 meeting-videos-24
-cohort-2-24
+cohort-2-22
