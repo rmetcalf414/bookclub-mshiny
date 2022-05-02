@@ -4,21 +4,269 @@
 
 - Learn the basic input/output handshake of Shiny
 - Comprehend the UI elements to allow interaction
-- Construct Server recievers of these UI elements
+- Construct Server receivers of these UI elements
 
 ## Introduction
+ - User Interface = Front End
+ - Code that Drives your app's behavior = Back End
+ 
+Lots of additional extensions are located at: [https://github.com/nanxstats/awesome-shiny-extensions](https://github.com/nanxstats/awesome-shiny-extensions)
+
 ## Inputs
-###Common structure
+Note from Chapter 1, we viewed:
+
+- `sliderInput()`
+- `selectInput()`
+- `textInput()`
+- `numericInput()`
+
+Do you see what is in common with this list? You guessed it, they all have a suffix of *Input*. Throughout the future chapters, there will be a relationship of Input/Output. This is a good time to establish the exchange.
+
+### Common structure
+
+All input functions follow similar structure. For example, all require an `inputID`, a unique name assigned to the input object. `inputID` has two constraints:
+
+1. It must be a simple string that contains only letters, numbers, and underscores (you cant use special characters)
+2. It must be unique
+
+Most input functions have a second argument called `label`. This is to create a *human readable* label.
+
+The third option is typically `value`. This allows a default value to be used.
+
 ### Free text
+
+Text input comes in three types:
+
+- `textInput()`
+- `passwordInput()`
+- `textAreaInput()`
+
+
+```{r, Text Input Examples, eval=FALSE}
+ui <- fluidPage(
+  textInput("name", "What's your name?"),
+  passwordInput("password", "What's your password?"),
+  textAreaInput("story", "Tell me about yourself", rows = 3)
+)
+
+```
+
+We can also use `validate()` to ensure text has certain properties. This is similar to a *mask* in a database entry.
+
+> Note the above code snippet has both a label (the first part) and some Text that will be displayed to the HTML browser. I'm being particular, but these are key elements to begin understanding.....build a mental picture in your head to seperate what is required within R and what the Shiny (HTML) output will be!
+
 ### Numeric inputs
+
+Numeric inputs utilize three types as well:
+
+- `numericInput()`
+- `sliderInput()`
+- `sliderInput()` #With Range
+
+```{r, Numeric Input Example, eval=FALSE}
+ui <- fluidPage(
+  numericInput("num", "Number one", value = 0, min = 0, max = 100),
+  sliderInput("num2", "Number two", value = 50, min = 0, max = 100),
+  sliderInput("rng", "Range", value = c(10, 20), min = 0, max = 100)
+)
+```
+
+> Note, either do not concern yourself with precision or ensure you aren't making large number ranges to slide through. This could lead to frustration from our user.
+
+Sliders are highly customizable. Check out [Shiny - Using sliders](https://shiny.rstudio.com/articles/sliders.html) for more information!
+
 ### Dates
+We have two choices for Data Input:
+
+- `dateInput()`
+- `dateRangeInput()`
+
+```{r, Date Input Example, eval=FALSE}
+ui <- fluidPage(
+  dateInput("dob", "When were you born?"),
+  dateRangeInput("holiday", "When do you want to go on vacation next?")
+)
+
+```
+
+> Again, note the label and what text will be displayed as HTML.
+
+>All values default to US standards. For international use, set: `format`, `language`, and `weekstart` to your audience locale.
+
 ### Limited choices
+
+There are two methods for user selection:
+
+- `selectInput()`
+- `radioButtons()`
+
+```{r, Limited Selection Example, eval=FALSE}
+animals <- c("dog", "cat", "mouse", "bird", "other", "I hate animals")
+
+ui <- fluidPage(
+  selectInput("state", "What's your favourite state?", state.name),
+  radioButtons("animal", "What's your favourite animal?", animals)
+)
+```
+
+Radio buttons are excellent for short lists (you don't want your user to scroll to find their selection). They are also great when used with `choiceNames/choiceValues` arguments.
+
+`choiceNames` determines what is shown to the user (our example uses emojis); `choiceValues` determines what is returned in your server function.
+
+Drop downs are created with `selectInput()` and take up the same amount of UI space regardless of length. You can use `multiple=TRUE` to allow more then one input.
+
+>Note: if your drop down selection is lengthy, you may want to use a *server-side* `selectInput()` option. This removes the list from the UI and makes for a speeder load time. The call between UI and Server is "as needed" which makes your app more efficient. See [Shiny - Using selectize input](https://shiny.rstudio.com/articles/selectize.html#server-side-selectize) for more details.
+
+There is no method for multiple select with Radio Buttons. However, there is a work around with `checkboxGroupInput()`.
+
+```{r, Checkbox Group Input Example, eval=FALSE}
+ui <- fluidPage(
+  checkboxGroupInput("animal", "What animals do you like?", animals)
+)
+```
+
+You can also use `checkBoxInput()` for a yes/no option. 
+
+```{r, Check Box Yes/No Example, eval=FALSE}
+ui <- fluidPage(
+  checkboxInput("cleanup", "Clean up?", value = TRUE),
+  checkboxInput("shutdown", "Shutdown?")
+)
+```
+
+We can see with our check box, we have defaulted the selection with `value=TRUE`.
+
 ### File uploads
+You can allow users to upload files using the `fileInput()` option.
+
+```{r, File Input Option Example, eval=FALSE}
+ui <- fluidPage(
+  fileInput("upload", NULL)
+)
+```
+
+>CAUTION!!!!! Use this option sparingly, or better yet, ensure you have strict policies set when allowing file upload. This is a GREAT WAY to compromise your server with malware! This topic will be covered more in Chapter 9: Uploads and Downloads.
+
 ### Action buttons
+
+Arguably the simplest and most rewarding activity are Action Buttons. We have two options here:
+
+- `actionButton()`
+- `actionLink()`
+
+```{r, Action Button Example, eval=FALSE}
+ui <- fluidPage(
+  actionButton("click", "Click me!"),
+  actionButton("drink", "Drink me!", icon = icon("cocktail"))
+)
+```
+
+Action Buttons and Action Links are most often paired with `observeEvent()` or `eventReactive()` within your server function. These will be covered more in Chapter 3.
+
+A more advanced topic, you can customize the appearance of action buttons by using the `class` argument:
+
+- "btn-primary"
+- "btn-success"
+- "btn-info"
+- "btn-warning"
+- "btn-danger"
+
+You can also change the size with:
+
+- "btn-lg"
+- "btn-sm"
+- "btn-xs"
+
+Finally, you can make buttons span the entire width of the element they are embedded within using "btn-block".
+
+The `class` argument works by setting the `class` attribute of the underlying HTML, which affects how the element is styled. See [CSS · Bootstrap 3.3.6 Documentation - BootstrapDocs](http://bootstrapdocs.com/v3.3.6/docs/css/#buttons) for more information.
+
 ## Outputs
+Outputs in the UI create placeholders that are later filled by the server function.
+
+Outputs take a unique ID as their first argument.
+
+For example: : if your UI specification creates an output with ID "plot", you’ll access it in the server function with `output$plot`.
+
+Each output function on the front end is coupled with a render function in the back end.
+
+>Note: This is a key concept and we will continually comeback to this concept again and again.
+
+There are three main types of output, corresponding to the three things you usually include in a report: text, tables, and plots.
+
 ### Text
+
+Output regular text with `textOutput()` and fixed code and console output with `verbatimTextOutput()`.
+
+```{r, Text Output Example, eval=FALSE}
+ui <- fluidPage(
+  textOutput("text"),
+  verbatimTextOutput("code")
+)
+server <- function(input, output, session) {
+  output$text <- renderText({ 
+    "Hello friend!" 
+  })
+  output$code <- renderPrint({ 
+    summary(1:10) 
+  })
+}
+```
+
+>Note: UI `textOutput("text")` coupled with `output$text <- renderText()`.
+
+`{}` are used to surround multiple lines of `render` code. You should do as little computation in your render functions as possible. This is costly not only in network traffic between server and UI, but also on the user's browser/CPU.
+
+Note that there are two render functions which behave slightly differently:
+
+- `renderText()` combines the result into a single string, and is usually paired with `textOutput()`
+- `renderPrint()` prints the result, as if you were in an R console, and is usually paired with `verbatimTextOutput()`.
+
+This is equivalent to the difference between `cat()` and `print()` in base R.
+
 ### Tables
+There are two options for displaying data frames in tables:
+
+- `tableOutput()` and `renderTable()` render a static table of data, showing all the data at once. Most useful for small, fixed summaries.
+
+- `dataTableOutput()` and `renderDataTable()` render a dynamic table, showing a fixed number of rows along with controls to change which rows are visible. Most appropriate if you want to expose a complete data frame to the user. 
+
+For more control over `dataTableOutput()`, use the [Interactive data tables for R • reactable](https://glin.github.io/reactable/index.html) by Gret Lin.
+
+```{r, Table Ouput Example, eval=FALSE}
+ui <- fluidPage(
+  tableOutput("static"),
+  dataTableOutput("dynamic")
+)
+server <- function(input, output, session) {
+  output$static <- renderTable(head(mtcars))
+  output$dynamic <- renderDataTable(mtcars, options = list(pageLength = 5))
+}
+```
+
 ### Plots
+You can display any type of R graphic  with `plotOutput()` and `renderPlot()`.
+
+```{r, Plotting Example, eval=FALSE}
+ui <- fluidPage(
+  plotOutput("plot", width = "400px")
+)
+server <- function(input, output, session) {
+  output$plot <- renderPlot(plot(1:5), res = 96)
+}
+```
+
+By default, `plotOutput()` will take up the full width of its container and will be 400 pixels high.
+
+You can override height and width defaults with the height and width arguments. 
+
+Note: The Author recommends to always setting res = 96 px to match your RStudio session format, size, and shape.
+
+Plots are special because they are outputs that can also act as inputs. `plotOutput()` has a number of arguments like `click`, `dblclick`, and `hover`. If you pass a string, like    `click = "plot_click"`, it wil create a reactive input (`input$plot_click`) that you can use to handle user interaction on the plot. More on this subject in Chapter 7.
+
 ### Downloads
+You can let the user download a file with `downloadButton()` or `downloadLink()`. More information about this subject in Chapter 9.
+
 ## Summary
+Any Questions?
 
